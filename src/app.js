@@ -43,6 +43,7 @@ module.exports = function ({domain = null, tenant, apikey, protocol}) {
 			headers: {
 				'Content-Type': 'application/json',
 				'Accept': 'application/json',
+				'Accept-Encoding': 'gzip, deflate, br',
 				'AuthenticationToken': apikey
 			}
 		}).then(res => {

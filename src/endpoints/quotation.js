@@ -21,6 +21,15 @@ module.exports = {
 	},
 
 	/**
+	 * @param body
+	 *  @param id
+	 * @returns {Promise<*|Promise<*>|Promise|Promise<Response>|never>}
+	 */
+	async acceptQuotation(fetch, id, body) {
+		return fetch(`quotation/id/${id}/accept`, {method: 'POST', body})
+	},
+
+	/**
 	 * @returns {Promise<*|Promise<*>|Promise|Promise<Response>|never>}
 	 */
 	async getQuotationCount(fetch) {

@@ -1,19 +1,29 @@
-const chai = require('chai')
-const expect = chai.expect
+'use strict'
+
+const {expect} = require('chai')
 const weclapp = require('../src/app')
 
-const auth = {
-	username: '<USERNAME>',
-	apikey: '<APIKEY>',
-	tenant: '<TENANT>'
-}
+const tenant = process.env.WECLAPP_TENANT
+const apikey = process.env.WECLAPP_APIKEY
 
-// TODO Update tests
-describe('#1 connect.auth()', () => {
-	it('Will match response', async () => {
-		const resp = await weclapp(auth)
+describe('smoke (requires WECLAPP_TENANT + WECLAPP_APIKEY)', function () {
+	let v1
+	let v2
 
-		expect(resp.user)
-			.to.have.keys(['id', 'version', 'createdDate', 'email', 'firstName', 'lastModifiedDate', 'lastName', 'status', 'username'])
+	before(function () {
+		if (!tenant || !apikey) return this.skip()
+		v1 = weclapp({tenant, apikey})
+		v2 = weclapp({tenant, apikey, apiVersion: 'v2'})
+	})
+
+	it('v1 getUsers returns result array', async function () {
+		const res = await v1.getUsers({pageSize: 1})
+		expect(res).to.be.an('object')
+		expect(res.result).to.be.an('array')
+	})
+
+	it('v2 countParty returns count object', async function () {
+		const res = await v2.countParty()
+		expect(res).to.be.an('object')
 	})
 })

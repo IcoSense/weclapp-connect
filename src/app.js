@@ -6,7 +6,7 @@ const axios = require('axios')
  * @param tenant Your tenant
  * @param apikey Your apikey
  */
-module.exports = function ({domain = null, tenant, apikey, protocol}) {
+module.exports = function ({domain = null, tenant, apikey, protocol, apiVersion = 'v1'}) {
 
 	protocol = protocol || 'https'
 	// Validate some stuff
@@ -18,6 +18,11 @@ module.exports = function ({domain = null, tenant, apikey, protocol}) {
 
 	if (!apikey) {
 		throw 'APIKey missing'
+	}
+
+	const version = `v${String(apiVersion).replace(/^v/i, '')}`
+	if (version !== 'v1' && version !== 'v2') {
+		throw `Unsupported apiVersion '${apiVersion}', expected 'v1' or 'v2'`
 	}
 
 	// Strip protocol part
@@ -32,14 +37,15 @@ module.exports = function ({domain = null, tenant, apikey, protocol}) {
 	 * @param body Request body
 	 * @returns {Promise<*>}
 	 */
-	async function fetchAPI(endpoint, {method = 'GET', body = null} = {}) {
+	async function fetchAPI(endpoint, {method = 'GET', body = null, responseType} = {}) {
 		method = method.toUpperCase()
 
 
 		return axios({
-			url: `${protocol}://${domain || `${tenant}.weclapp.com`}/webapp/api/v1/${endpoint}`,
+			url: `${protocol}://${domain || `${tenant}.weclapp.com`}/webapp/api/${version}/${endpoint}`,
 			data: body,
 			method,
+			responseType,
 			headers: {
 				'Content-Type': 'application/json',
 				'Accept': 'application/json',
@@ -58,67 +64,69 @@ module.exports = function ({domain = null, tenant, apikey, protocol}) {
 	}
 
 	// Load modules
-	const endpoints = {
-		...require('./endpoints/archivedEmail'),
-		...require('./endpoints/article'),
-		...require('./endpoints/articleCategory'),
-		...require('./endpoints/articlePrice'),
-		...require('./endpoints/articleSupplySource'),
-		...require('./endpoints/batchNumber'),
-		...require('./endpoints/campaign'),
-		...require('./endpoints/campaignParticipant'),
-		...require('./endpoints/comment'),
-		...require('./endpoints/costCenter'),
-		...require('./endpoints/commercialLanguage'),
-		...require('./endpoints/companySize'),
-		...require('./endpoints/contact'),
-		...require('./endpoints/contract'),
-		...require('./endpoints/currency'),
-		...require('./endpoints/customAttributeDefinition'),
-		...require('./endpoints/customer'),
-		...require('./endpoints/customerCategory'),
-		...require('./endpoints/customerLeadLossReason'),
-		...require('./endpoints/customerTopic'),
-		...require('./endpoints/customsTariffNumber'),
-		...require('./endpoints/document'),
-		...require('./endpoints/fulfillmentProvider'),
-		...require('./endpoints/incomingGoods'),
-		...require('./endpoints/lead'),
-		...require('./endpoints/leadSource'),
-		...require('./endpoints/manufacturer'),
-		...require('./endpoints/meta'),
-		...require('./endpoints/opportunity'),
-		...require('./endpoints/opportunityWinLossReason'),
-		...require('./endpoints/party'),
-		...require('./endpoints/paymentMethod'),
-		...require('./endpoints/productionOrder'),
-		...require('./endpoints/pick'),
-		...require('./endpoints/purchaseOrder'),
-		...require('./endpoints/quotation'),
-		...require('./endpoints/salesChannel'),
-		...require('./endpoints/salesInvoice'),
-		...require('./endpoints/purchaseInvoice'),
-		...require('./endpoints/salesOrder'),
-		...require('./endpoints/salesStage'),
-		...require('./endpoints/sector'),
-		...require('./endpoints/serialNumber'),
-		...require('./endpoints/shipment'),
-		...require('./endpoints/shipmentMethod'),
-		...require('./endpoints/supplier'),
-		...require('./endpoints/tax'),
-		...require('./endpoints/termOfPayment'),
-		...require('./endpoints/ticket'),
-		...require('./endpoints/unit'),
-		...require('./endpoints/user'),
-		...require('./endpoints/variantArticle'),
-		...require('./endpoints/variantArticleAttribute'),
-		...require('./endpoints/variantArticleVariant'),
-		...require('./endpoints/warehouse'),
-		...require('./endpoints/warehouseLevel'),
-		...require('./endpoints/storagePlace'),
-		...require('./endpoints/warehouseStock'),
-		...require('./endpoints/warehouseStockMovement')
-	}
+	const endpoints = version === 'v2'
+		? {...require('./endpoints/v2')}
+		: {
+			...require('./endpoints/archivedEmail'),
+			...require('./endpoints/article'),
+			...require('./endpoints/articleCategory'),
+			...require('./endpoints/articlePrice'),
+			...require('./endpoints/articleSupplySource'),
+			...require('./endpoints/batchNumber'),
+			...require('./endpoints/campaign'),
+			...require('./endpoints/campaignParticipant'),
+			...require('./endpoints/comment'),
+			...require('./endpoints/costCenter'),
+			...require('./endpoints/commercialLanguage'),
+			...require('./endpoints/companySize'),
+			...require('./endpoints/contact'),
+			...require('./endpoints/contract'),
+			...require('./endpoints/currency'),
+			...require('./endpoints/customAttributeDefinition'),
+			...require('./endpoints/customer'),
+			...require('./endpoints/customerCategory'),
+			...require('./endpoints/customerLeadLossReason'),
+			...require('./endpoints/customerTopic'),
+			...require('./endpoints/customsTariffNumber'),
+			...require('./endpoints/document'),
+			...require('./endpoints/fulfillmentProvider'),
+			...require('./endpoints/incomingGoods'),
+			...require('./endpoints/lead'),
+			...require('./endpoints/leadSource'),
+			...require('./endpoints/manufacturer'),
+			...require('./endpoints/meta'),
+			...require('./endpoints/opportunity'),
+			...require('./endpoints/opportunityWinLossReason'),
+			...require('./endpoints/party'),
+			...require('./endpoints/paymentMethod'),
+			...require('./endpoints/productionOrder'),
+			...require('./endpoints/pick'),
+			...require('./endpoints/purchaseOrder'),
+			...require('./endpoints/quotation'),
+			...require('./endpoints/salesChannel'),
+			...require('./endpoints/salesInvoice'),
+			...require('./endpoints/purchaseInvoice'),
+			...require('./endpoints/salesOrder'),
+			...require('./endpoints/salesStage'),
+			...require('./endpoints/sector'),
+			...require('./endpoints/serialNumber'),
+			...require('./endpoints/shipment'),
+			...require('./endpoints/shipmentMethod'),
+			...require('./endpoints/supplier'),
+			...require('./endpoints/tax'),
+			...require('./endpoints/termOfPayment'),
+			...require('./endpoints/ticket'),
+			...require('./endpoints/unit'),
+			...require('./endpoints/user'),
+			...require('./endpoints/variantArticle'),
+			...require('./endpoints/variantArticleAttribute'),
+			...require('./endpoints/variantArticleVariant'),
+			...require('./endpoints/warehouse'),
+			...require('./endpoints/warehouseLevel'),
+			...require('./endpoints/storagePlace'),
+			...require('./endpoints/warehouseStock'),
+			...require('./endpoints/warehouseStockMovement')
+		}
 
 	// Bind fetch
 	for (const [name, fn] of Object.entries(endpoints)) {

@@ -7,7 +7,8 @@
 		"test": "mocha --timeout 5000",
 		"lint": "eslint src/app.js src/utils.js scripts src/endpoints/v2",
 		"lint:fix": "eslint --fix src/app.js src/utils.js scripts src/endpoints/v2",
-		"generate:v2": "node scripts/generate-v2.js"
+		"generate:v2": "node scripts/generate-v2.js",
+		"generate:migration-map": "node scripts/generate-migration-map.js"
 	},
 	"author": "weclapp",
 	"license": "MIT",

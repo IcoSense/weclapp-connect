@@ -1,0 +1,2433 @@
+{
+	"generatedBy": "scripts/generate-migration-map.js",
+	"generatedAt": "2026-07-29",
+	"sourceSpecs": [
+		"apidoc/weclapp-openapi-v1.yaml",
+		"apidoc/weclapp-openapi-v2.yaml"
+	],
+	"note": "Generated file -- do not edit by hand. Regenerate with: npm run generate:migration-map",
+	"schemasWithRemovals": 67,
+	"removedPropertyCount": 170,
+	"schemasWithReadOnly": 117,
+	"readOnlyPropertyCount": 371,
+	"removedResources": {
+		"contact": "party",
+		"customer": "party",
+		"lead": "party",
+		"supplier": "party"
+	},
+	"schemas": {
+		"abstractBillOfMaterial": {
+			"removed": [
+				{
+					"property": "articleNumber",
+					"kind": "secondary-reference",
+					"idProperty": "articleId",
+					"replacement": "includeReferencedEntities=articleId",
+					"silent": true
+				}
+			],
+			"added": [],
+			"readOnly": [
+				"positionNumber"
+			]
+		},
+		"abstractBookRecord": {
+			"removed": [],
+			"added": [],
+			"readOnly": [
+				"confirmedByUserId",
+				"confirmedDate"
+			]
+		},
+		"abstractEntity": {
+			"removed": [],
+			"added": [],
+			"readOnly": [
+				"createdDate",
+				"lastModifiedDate",
+				"version"
+			]
+		},
+		"abstractParty": {
+			"removed": [
+				{
+					"property": "title",
+					"kind": "removed",
+					"silent": true
+				}
+			],
+			"added": [],
+			"readOnly": []
+		},
+		"accountingTransaction": {
+			"removed": [
+				{
+					"property": "currencyName",
+					"kind": "secondary-reference",
+					"idProperty": "currencyId",
+					"replacement": "includeReferencedEntities=currencyId",
+					"silent": true
+				}
+			],
+			"added": [],
+			"readOnly": []
+		},
+		"address": {
+			"removed": [
+				{
+					"property": "primeAddress",
+					"kind": "rename-candidate",
+					"renamedTo": "primaryAddress",
+					"confidence": 0.79,
+					"silent": true
+				},
+				{
+					"property": "title",
+					"kind": "removed",
+					"silent": true
+				}
+			],
+			"added": [
+				"primaryAddress"
+			],
+			"readOnly": []
+		},
+		"article": {
+			"removed": [
+				{
+					"property": "accountNumber",
+					"kind": "secondary-reference",
+					"idProperty": "accountId",
+					"replacement": "includeReferencedEntities=accountId",
+					"silent": true
+				},
+				{
+					"property": "customsTariffNumber",
+					"kind": "removed",
+					"silent": true
+				},
+				{
+					"property": "expenseAccountNumber",
+					"kind": "secondary-reference",
+					"idProperty": "expenseAccountId",
+					"replacement": "includeReferencedEntities=expenseAccountId",
+					"silent": true
+				},
+				{
+					"property": "manufacturerName",
+					"kind": "secondary-reference",
+					"idProperty": "manufacturerId",
+					"replacement": "includeReferencedEntities=manufacturerId",
+					"silent": true
+				},
+				{
+					"property": "priceCalculationParameters",
+					"kind": "removed",
+					"silent": true
+				},
+				{
+					"property": "purchaseCostCenterNumber",
+					"kind": "secondary-reference",
+					"idProperty": "purchaseCostCenterId",
+					"replacement": "includeReferencedEntities=purchaseCostCenterId",
+					"silent": true
+				},
+				{
+					"property": "ratingName",
+					"kind": "secondary-reference",
+					"idProperty": "ratingId",
+					"replacement": "includeReferencedEntities=ratingId",
+					"silent": true
+				},
+				{
+					"property": "salesCostCenterNumber",
+					"kind": "secondary-reference",
+					"idProperty": "salesCostCenterId",
+					"replacement": "includeReferencedEntities=salesCostCenterId",
+					"silent": true
+				}
+			],
+			"added": [],
+			"readOnly": [
+				"lowLevelCode"
+			]
+		},
+		"articleAlternativeQuantity": {
+			"removed": [
+				{
+					"property": "warehouseName",
+					"kind": "secondary-reference",
+					"idProperty": "warehouseId",
+					"replacement": "includeReferencedEntities=warehouseId",
+					"silent": true
+				}
+			],
+			"added": [],
+			"readOnly": []
+		},
+		"articleCategory": {
+			"removed": [],
+			"added": [],
+			"readOnly": [
+				"imageId"
+			]
+		},
+		"articlePrice": {
+			"removed": [
+				{
+					"property": "articleNumber",
+					"kind": "secondary-reference",
+					"idProperty": "articleId",
+					"replacement": "includeReferencedEntities=articleId",
+					"silent": true
+				}
+			],
+			"added": [],
+			"readOnly": []
+		},
+		"articlePriceWithoutSalesChannel": {
+			"removed": [
+				{
+					"property": "currencyName",
+					"kind": "secondary-reference",
+					"idProperty": "currencyId",
+					"replacement": "includeReferencedEntities=currencyId",
+					"silent": true
+				}
+			],
+			"added": [],
+			"readOnly": [
+				"lastModifiedByUserId"
+			]
+		},
+		"articleSupplySource": {
+			"removed": [
+				{
+					"property": "supplierNumber",
+					"kind": "secondary-reference",
+					"idProperty": "supplierId",
+					"replacement": "includeReferencedEntities=supplierId",
+					"silent": true
+				}
+			],
+			"added": [],
+			"readOnly": []
+		},
+		"attendance": {
+			"removed": [],
+			"added": [],
+			"readOnly": [
+				"userId"
+			]
+		},
+		"bankAccount": {
+			"removed": [],
+			"added": [],
+			"readOnly": [
+				"balance",
+				"connectionFailure",
+				"lastDownload"
+			]
+		},
+		"bankTransaction": {
+			"removed": [],
+			"added": [],
+			"readOnly": [
+				"partyId"
+			]
+		},
+		"baseArticle": {
+			"removed": [
+				{
+					"property": "unitName",
+					"kind": "secondary-reference",
+					"idProperty": "unitId",
+					"replacement": "includeReferencedEntities=unitId",
+					"silent": true
+				}
+			],
+			"added": [],
+			"readOnly": []
+		},
+		"baseMinimalRecordItem": {
+			"removed": [
+				{
+					"property": "articleNumber",
+					"kind": "secondary-reference",
+					"idProperty": "articleId",
+					"replacement": "includeReferencedEntities=articleId",
+					"silent": true
+				}
+			],
+			"added": [],
+			"readOnly": []
+		},
+		"basePick": {
+			"removed": [],
+			"added": [],
+			"readOnly": [
+				"bookedDate",
+				"sourceInternalTransportReferenceId",
+				"sourceStoragePlaceId"
+			]
+		},
+		"basePurchaseRecord": {
+			"removed": [
+				{
+					"property": "responsibleUserUsername",
+					"kind": "removed",
+					"silent": true
+				},
+				{
+					"property": "supplierNumber",
+					"kind": "secondary-reference",
+					"idProperty": "supplierId",
+					"replacement": "includeReferencedEntities=supplierId",
+					"silent": true
+				}
+			],
+			"added": [],
+			"readOnly": []
+		},
+		"baseRecord": {
+			"removed": [
+				{
+					"property": "disableEmailTemplate",
+					"kind": "rename",
+					"renamedTo": "disableRecordEmailingRule",
+					"source": "changelog",
+					"silent": true
+				}
+			],
+			"added": [
+				"disableRecordEmailingRule"
+			],
+			"readOnly": [
+				"creatorId"
+			]
+		},
+		"baseRecordItem": {
+			"removed": [
+				{
+					"property": "unitName",
+					"kind": "secondary-reference",
+					"idProperty": "unitId",
+					"replacement": "includeReferencedEntities=unitId",
+					"silent": true
+				}
+			],
+			"added": [],
+			"readOnly": []
+		},
+		"baseRecordItemWithMoney": {
+			"removed": [
+				{
+					"property": "taxName",
+					"kind": "secondary-reference",
+					"idProperty": "taxId",
+					"replacement": "includeReferencedEntities=taxId",
+					"silent": true
+				}
+			],
+			"added": [],
+			"readOnly": [
+				"grossAmount",
+				"grossAmountInCompanyCurrency",
+				"netAmount",
+				"netAmountForStatistics",
+				"netAmountForStatisticsInCompanyCurrency",
+				"netAmountInCompanyCurrency",
+				"unitPriceInCompanyCurrency"
+			]
+		},
+		"baseRecordWithMoney": {
+			"removed": [
+				{
+					"property": "nonStandardTaxName",
+					"kind": "secondary-reference",
+					"idProperty": "nonStandardTaxId",
+					"replacement": "includeReferencedEntities=nonStandardTaxId",
+					"silent": true
+				},
+				{
+					"property": "paymentMethodName",
+					"kind": "secondary-reference",
+					"idProperty": "paymentMethodId",
+					"replacement": "includeReferencedEntities=paymentMethodId",
+					"silent": true
+				},
+				{
+					"property": "recordCurrencyName",
+					"kind": "secondary-reference",
+					"idProperty": "recordCurrencyId",
+					"replacement": "includeReferencedEntities=recordCurrencyId",
+					"silent": true
+				},
+				{
+					"property": "termOfPaymentName",
+					"kind": "secondary-reference",
+					"idProperty": "termOfPaymentId",
+					"replacement": "includeReferencedEntities=termOfPaymentId",
+					"silent": true
+				}
+			],
+			"added": [
+				"currencyConversionLocked"
+			],
+			"readOnly": [
+				"currencyConversionDate",
+				"grossAmount",
+				"grossAmountInCompanyCurrency",
+				"netAmount",
+				"netAmountInCompanyCurrency"
+			]
+		},
+		"baseSalesRecord": {
+			"removed": [
+				{
+					"property": "customerNumber",
+					"kind": "secondary-reference",
+					"idProperty": "customerId",
+					"replacement": "includeReferencedEntities=customerId",
+					"silent": true
+				},
+				{
+					"property": "responsibleUserUsername",
+					"kind": "removed",
+					"silent": true
+				},
+				{
+					"property": "shipmentMethodName",
+					"kind": "secondary-reference",
+					"idProperty": "shipmentMethodId",
+					"replacement": "includeReferencedEntities=shipmentMethodId",
+					"silent": true
+				}
+			],
+			"added": [],
+			"readOnly": []
+		},
+		"baseSalesRecordItemWithCost": {
+			"removed": [],
+			"added": [],
+			"readOnly": [
+				"recommendedRetailPrice",
+				"unitCostInCompanyCurrency"
+			]
+		},
+		"baseSalesRecordWithAddresses": {
+			"removed": [
+				{
+					"property": "defaultShippingCarrierName",
+					"kind": "secondary-reference",
+					"idProperty": "defaultShippingCarrierId",
+					"replacement": "includeReferencedEntities=defaultShippingCarrierId",
+					"silent": true
+				}
+			],
+			"added": [],
+			"readOnly": []
+		},
+		"baseShipment": {
+			"removed": [
+				{
+					"property": "salesOrderId",
+					"kind": "removed",
+					"silent": true
+				},
+				{
+					"property": "salesOrderNumber",
+					"kind": "removed",
+					"silent": true
+				}
+			],
+			"added": [],
+			"readOnly": [
+				"statusHistory"
+			]
+		},
+		"baseShippingCostItem": {
+			"removed": [
+				{
+					"property": "articleNumber",
+					"kind": "secondary-reference",
+					"idProperty": "articleId",
+					"replacement": "includeReferencedEntities=articleId",
+					"silent": true
+				},
+				{
+					"property": "taxName",
+					"kind": "secondary-reference",
+					"idProperty": "taxId",
+					"replacement": "includeReferencedEntities=taxId",
+					"silent": true
+				}
+			],
+			"added": [],
+			"readOnly": [
+				"grossAmount",
+				"grossAmountInCompanyCurrency",
+				"netAmount",
+				"netAmountInCompanyCurrency",
+				"reductionAdditionItems",
+				"unitPriceInCompanyCurrency"
+			]
+		},
+		"batchNumber": {
+			"removed": [
+				{
+					"property": "articleNumber",
+					"kind": "secondary-reference",
+					"idProperty": "articleId",
+					"replacement": "includeReferencedEntities=articleId",
+					"silent": true
+				}
+			],
+			"added": [],
+			"readOnly": []
+		},
+		"blanketPurchaseOrder": {
+			"removed": [
+				{
+					"property": "comment",
+					"kind": "rename",
+					"renamedTo": "note",
+					"source": "changelog",
+					"silent": true
+				},
+				{
+					"property": "formSettingsFromDistributionChannel",
+					"kind": "rename-candidate",
+					"renamedTo": "formSettingsFromSalesChannel",
+					"confidence": 0.69,
+					"silent": true
+				}
+			],
+			"added": [
+				"formSettingsFromSalesChannel",
+				"note"
+			],
+			"readOnly": [
+				"creatorId",
+				"currencyConversionDate",
+				"reductionAdditionItems",
+				"residualQuantity",
+				"statusHistory"
+			]
+		},
+		"blanketPurchaseOrderStatusHistory": {
+			"removed": [],
+			"added": [],
+			"readOnly": [
+				"status",
+				"statusDate",
+				"userId"
+			]
+		},
+		"blanketSalesOrder": {
+			"removed": [],
+			"added": [],
+			"readOnly": [
+				"reductionAdditionItems",
+				"statusHistory"
+			]
+		},
+		"blanketSalesOrderItem": {
+			"removed": [],
+			"added": [],
+			"readOnly": [
+				"orderItemId"
+			]
+		},
+		"blanketSalesOrderStatusHistory": {
+			"removed": [],
+			"added": [],
+			"readOnly": [
+				"status",
+				"userId"
+			]
+		},
+		"calendar": {
+			"removed": [],
+			"added": [],
+			"readOnly": [
+				"caldavAccountId",
+				"mailAccountId",
+				"ownerId"
+			]
+		},
+		"calendarEvent": {
+			"removed": [],
+			"added": [],
+			"readOnly": [
+				"deleted",
+				"userId"
+			]
+		},
+		"calendarEventAttendee": {
+			"removed": [],
+			"added": [],
+			"readOnly": [
+				"calendarEventId"
+			]
+		},
+		"calendarSharingPermissions": {
+			"removed": [],
+			"added": [],
+			"readOnly": [
+				"userId"
+			]
+		},
+		"campaign": {
+			"removed": [
+				{
+					"property": "responsibleUserUsername",
+					"kind": "removed",
+					"silent": true
+				}
+			],
+			"added": [],
+			"readOnly": [
+				"campaignNumber"
+			]
+		},
+		"campaignParticipant": {
+			"removed": [
+				{
+					"property": "campaignNumber",
+					"kind": "secondary-reference",
+					"idProperty": "campaignId",
+					"replacement": "includeReferencedEntities=campaignId",
+					"silent": true
+				}
+			],
+			"added": [],
+			"readOnly": []
+		},
+		"cashAccount": {
+			"removed": [
+				{
+					"property": "currencyName",
+					"kind": "secondary-reference",
+					"idProperty": "currencyId",
+					"replacement": "includeReferencedEntities=currencyId",
+					"silent": true
+				}
+			],
+			"added": [],
+			"readOnly": []
+		},
+		"cashAccountSheet": {
+			"removed": [],
+			"added": [],
+			"readOnly": [
+				"closingBalance",
+				"openingBalance",
+				"openingDate"
+			]
+		},
+		"comment": {
+			"removed": [
+				{
+					"property": "authorUserUsername",
+					"kind": "removed",
+					"silent": true
+				}
+			],
+			"added": [],
+			"readOnly": [
+				"authorName",
+				"authorUserId",
+				"lastEditDate"
+			]
+		},
+		"commissionSalesPartner": {
+			"removed": [
+				{
+					"property": "salesPartnerSupplierNumber",
+					"kind": "secondary-reference",
+					"idProperty": "salesPartnerSupplierId",
+					"replacement": "includeReferencedEntities=salesPartnerSupplierId",
+					"silent": true
+				}
+			],
+			"added": [],
+			"readOnly": []
+		},
+		"contract": {
+			"removed": [
+				{
+					"property": "recordCurrencyName",
+					"kind": "secondary-reference",
+					"idProperty": "recordCurrencyId",
+					"replacement": "includeReferencedEntities=recordCurrencyId",
+					"silent": true
+				}
+			],
+			"added": [],
+			"readOnly": [
+				"latestPossibleTerminationDate",
+				"nextContractBillingDate"
+			]
+		},
+		"contractCostItem": {
+			"removed": [],
+			"added": [],
+			"readOnly": [
+				"netAmount",
+				"netAmountInCompanyCurrency",
+				"unitPriceInCompanyCurrency"
+			]
+		},
+		"contractItem": {
+			"removed": [],
+			"added": [],
+			"readOnly": [
+				"nextContractBillingDate"
+			]
+		},
+		"costCenterWithDistributionPercentage": {
+			"removed": [
+				{
+					"property": "costCenterNumber",
+					"kind": "secondary-reference",
+					"idProperty": "costCenterId",
+					"replacement": "includeReferencedEntities=costCenterId",
+					"silent": true
+				}
+			],
+			"added": [],
+			"readOnly": []
+		},
+		"crmEvent": {
+			"removed": [],
+			"added": [],
+			"readOnly": [
+				"calendarEventId",
+				"creatorUserId"
+			]
+		},
+		"customAttributeDefinition": {
+			"removed": [],
+			"added": [],
+			"readOnly": [
+				"systemCustomAttribute"
+			]
+		},
+		"document": {
+			"removed": [],
+			"added": [],
+			"readOnly": [
+				"documentSize",
+				"userId"
+			]
+		},
+		"documentVersion": {
+			"removed": [],
+			"added": [],
+			"readOnly": [
+				"documentSize",
+				"userId"
+			]
+		},
+		"ecommerceOrder": {
+			"removed": [],
+			"added": [],
+			"readOnly": [
+				"amazonFeedSubmissionId",
+				"amazonInvoiceUploadSuccess"
+			]
+		},
+		"incomingBooking": {
+			"removed": [],
+			"added": [],
+			"readOnly": [
+				"confirmedByUserIdDeprecated",
+				"confirmedDateDeprecated",
+				"incomingGoodsItemId"
+			]
+		},
+		"incomingGoods": {
+			"removed": [
+				{
+					"property": "purchaseOrderId",
+					"kind": "removed",
+					"silent": true
+				},
+				{
+					"property": "purchaseOrderNumber",
+					"kind": "removed",
+					"silent": true
+				},
+				{
+					"property": "sourceWarehouseName",
+					"kind": "secondary-reference",
+					"idProperty": "sourceWarehouseId",
+					"replacement": "includeReferencedEntities=sourceWarehouseId",
+					"silent": true
+				},
+				{
+					"property": "warehouseName",
+					"kind": "secondary-reference",
+					"idProperty": "warehouseId",
+					"replacement": "includeReferencedEntities=warehouseId",
+					"silent": true
+				}
+			],
+			"added": [],
+			"readOnly": [
+				"dropshippingShipmentId",
+				"purchaseOrders",
+				"relatedShipmentId",
+				"senderCustomerNumber",
+				"senderSupplierNumber",
+				"sourceWarehouseId"
+			]
+		},
+		"incomingGoodsItem": {
+			"removed": [
+				{
+					"property": "returnAssessmentName",
+					"kind": "secondary-reference",
+					"idProperty": "returnAssessmentId",
+					"replacement": "includeReferencedEntities=returnAssessmentId",
+					"silent": true
+				},
+				{
+					"property": "returnErrorName",
+					"kind": "secondary-reference",
+					"idProperty": "returnErrorId",
+					"replacement": "includeReferencedEntities=returnErrorId",
+					"silent": true
+				},
+				{
+					"property": "returnReasonName",
+					"kind": "secondary-reference",
+					"idProperty": "returnReasonId",
+					"replacement": "includeReferencedEntities=returnReasonId",
+					"silent": true
+				},
+				{
+					"property": "returnRectificationName",
+					"kind": "secondary-reference",
+					"idProperty": "returnRectificationId",
+					"replacement": "includeReferencedEntities=returnRectificationId",
+					"silent": true
+				}
+			],
+			"added": [],
+			"readOnly": [
+				"dropshippingShipmentItemId"
+			]
+		},
+		"internalTransportReference": {
+			"removed": [],
+			"added": [],
+			"readOnly": [
+				"permanent"
+			]
+		},
+		"inventory": {
+			"removed": [],
+			"added": [],
+			"readOnly": [
+				"inventoryNumber",
+				"levelOfDetail",
+				"statusHistory"
+			]
+		},
+		"inventoryItem": {
+			"removed": [],
+			"added": [],
+			"readOnly": [
+				"expectedQuantity",
+				"manualPosition",
+				"positionNumber"
+			]
+		},
+		"inventoryStatusHistory": {
+			"removed": [],
+			"added": [],
+			"readOnly": [
+				"status",
+				"statusDate",
+				"userId"
+			]
+		},
+		"inventoryTransportReference": {
+			"removed": [],
+			"added": [],
+			"readOnly": [
+				"manualReference"
+			]
+		},
+		"itemPick": {
+			"removed": [],
+			"added": [],
+			"readOnly": [
+				"transportationOrderId"
+			]
+		},
+		"jobResult": {
+			"removed": [
+				{
+					"property": "errors",
+					"kind": "removed",
+					"silent": true
+				}
+			],
+			"added": [],
+			"readOnly": []
+		},
+		"ledgerAccount": {
+			"removed": [
+				{
+					"property": "parentAccountNumber",
+					"kind": "secondary-reference",
+					"idProperty": "parentAccountId",
+					"replacement": "includeReferencedEntities=parentAccountId",
+					"silent": true
+				}
+			],
+			"added": [],
+			"readOnly": []
+		},
+		"manufacturer": {
+			"removed": [
+				{
+					"property": "description",
+					"kind": "removed",
+					"silent": true
+				},
+				{
+					"property": "positionNumber",
+					"kind": "removed",
+					"silent": true
+				}
+			],
+			"added": [],
+			"readOnly": []
+		},
+		"onlyId": {
+			"removed": [],
+			"added": [],
+			"readOnly": [
+				"id"
+			]
+		},
+		"opportunity": {
+			"removed": [
+				{
+					"property": "customerNumber",
+					"kind": "secondary-reference",
+					"idProperty": "customerId",
+					"replacement": "includeReferencedEntities=customerId",
+					"silent": true
+				},
+				{
+					"property": "responsibleUserUsername",
+					"kind": "removed",
+					"silent": true
+				},
+				{
+					"property": "salesStageName",
+					"kind": "secondary-reference",
+					"idProperty": "salesStageId",
+					"replacement": "includeReferencedEntities=salesStageId",
+					"silent": true
+				},
+				{
+					"property": "winLossReasonName",
+					"kind": "secondary-reference",
+					"idProperty": "winLossReasonId",
+					"replacement": "includeReferencedEntities=winLossReasonId",
+					"silent": true
+				}
+			],
+			"added": [],
+			"readOnly": [
+				"creatorId",
+				"salesStageHistory"
+			]
+		},
+		"party": {
+			"removed": [
+				{
+					"property": "allowPurchaseOrderCreation",
+					"kind": "removed",
+					"source": "changelog",
+					"note": "documented as removed without replacement",
+					"silent": true
+				},
+				{
+					"property": "companySizeName",
+					"kind": "secondary-reference",
+					"idProperty": "companySizeId",
+					"replacement": "includeReferencedEntities=companySizeId",
+					"silent": true
+				},
+				{
+					"property": "currencyName",
+					"kind": "secondary-reference",
+					"idProperty": "currencyId",
+					"replacement": "includeReferencedEntities=currencyId",
+					"silent": true
+				},
+				{
+					"property": "customerCategoryName",
+					"kind": "secondary-reference",
+					"idProperty": "customerCategoryId",
+					"replacement": "includeReferencedEntities=customerCategoryId",
+					"silent": true
+				},
+				{
+					"property": "customerCurrentSalesStageName",
+					"kind": "secondary-reference",
+					"idProperty": "customerCurrentSalesStageId",
+					"replacement": "includeReferencedEntities=customerCurrentSalesStageId",
+					"silent": true
+				},
+				{
+					"property": "customerDebtorAccountNumber",
+					"kind": "secondary-reference",
+					"idProperty": "customerDebtorAccountId",
+					"replacement": "includeReferencedEntities=customerDebtorAccountId",
+					"silent": true
+				},
+				{
+					"property": "customerLossReasonName",
+					"kind": "secondary-reference",
+					"idProperty": "customerLossReasonId",
+					"replacement": "includeReferencedEntities=customerLossReasonId",
+					"silent": true
+				},
+				{
+					"property": "customerPaymentMethodName",
+					"kind": "secondary-reference",
+					"idProperty": "customerPaymentMethodId",
+					"replacement": "includeReferencedEntities=customerPaymentMethodId",
+					"silent": true
+				},
+				{
+					"property": "customerShipmentMethodName",
+					"kind": "secondary-reference",
+					"idProperty": "customerShipmentMethodId",
+					"replacement": "includeReferencedEntities=customerShipmentMethodId",
+					"silent": true
+				},
+				{
+					"property": "customerTermOfPaymentName",
+					"kind": "secondary-reference",
+					"idProperty": "customerTermOfPaymentId",
+					"replacement": "includeReferencedEntities=customerTermOfPaymentId",
+					"silent": true
+				},
+				{
+					"property": "leadRatingName",
+					"kind": "secondary-reference",
+					"idProperty": "leadRatingId",
+					"replacement": "includeReferencedEntities=leadRatingId",
+					"silent": true
+				},
+				{
+					"property": "leadSourceName",
+					"kind": "secondary-reference",
+					"idProperty": "leadSourceId",
+					"replacement": "includeReferencedEntities=leadSourceId",
+					"silent": true
+				},
+				{
+					"property": "legalFormName",
+					"kind": "secondary-reference",
+					"idProperty": "legalFormId",
+					"replacement": "includeReferencedEntities=legalFormId",
+					"silent": true
+				},
+				{
+					"property": "ratingName",
+					"kind": "secondary-reference",
+					"idProperty": "ratingId",
+					"replacement": "includeReferencedEntities=ratingId",
+					"silent": true
+				},
+				{
+					"property": "responsibleUserUsername",
+					"kind": "removed",
+					"silent": true
+				},
+				{
+					"property": "sectorName",
+					"kind": "secondary-reference",
+					"idProperty": "sectorId",
+					"replacement": "includeReferencedEntities=sectorId",
+					"silent": true
+				},
+				{
+					"property": "supplierCreditorAccountNumber",
+					"kind": "secondary-reference",
+					"idProperty": "supplierCreditorAccountId",
+					"replacement": "includeReferencedEntities=supplierCreditorAccountId",
+					"silent": true
+				},
+				{
+					"property": "supplierPaymentMethodName",
+					"kind": "secondary-reference",
+					"idProperty": "supplierPaymentMethodId",
+					"replacement": "includeReferencedEntities=supplierPaymentMethodId",
+					"silent": true
+				},
+				{
+					"property": "supplierShipmentMethodName",
+					"kind": "secondary-reference",
+					"idProperty": "supplierShipmentMethodId",
+					"replacement": "includeReferencedEntities=supplierShipmentMethodId",
+					"silent": true
+				},
+				{
+					"property": "supplierTermOfPaymentName",
+					"kind": "secondary-reference",
+					"idProperty": "supplierTermOfPaymentId",
+					"replacement": "includeReferencedEntities=supplierTermOfPaymentId",
+					"silent": true
+				}
+			],
+			"added": [
+				"supplierActive"
+			],
+			"readOnly": [
+				"convertedOnDate",
+				"customerSalesStageHistory",
+				"publicPageExpirationDate",
+				"publicPageUuid",
+				"regionId"
+			]
+		},
+		"partyHabitualExporterLetterOfIntent": {
+			"removed": [],
+			"added": [],
+			"readOnly": [
+				"invoices"
+			]
+		},
+		"paymentApplication": {
+			"removed": [
+				{
+					"property": "moneyTransactionId",
+					"kind": "rename-ambiguous",
+					"candidates": [
+						"bankTransactionId",
+						"cashAccountTransactionId"
+					],
+					"source": "changelog",
+					"note": "the changelog offers several targets -- pick per call site",
+					"silent": true
+				}
+			],
+			"added": [],
+			"readOnly": []
+		},
+		"paymentRun": {
+			"removed": [],
+			"added": [],
+			"readOnly": [
+				"paymentRunDate",
+				"paymentRunNumber",
+				"runByUserId",
+				"totalAmount"
+			]
+		},
+		"paymentRunItem": {
+			"removed": [
+				{
+					"property": "moneyTransaction",
+					"kind": "removed",
+					"silent": true
+				}
+			],
+			"added": [],
+			"readOnly": [
+				"amountDiscount",
+				"amountPayment",
+				"bankTransactionId",
+				"cleared",
+				"conversionRate",
+				"conversionRateDate",
+				"paymentRunId",
+				"paymentRunPaymentType",
+				"purchaseOpenItemId",
+				"recordCurrency"
+			]
+		},
+		"performanceRecord": {
+			"removed": [],
+			"added": [],
+			"readOnly": [
+				"customerSignatureDate",
+				"salesChannel",
+				"salesOrderId",
+				"serviceProviderSignatureDate",
+				"statusHistory"
+			]
+		},
+		"performanceRecordItem": {
+			"removed": [],
+			"added": [],
+			"readOnly": [
+				"invoicingType"
+			]
+		},
+		"performanceRecordStatusHistory": {
+			"removed": [],
+			"added": [],
+			"readOnly": [
+				"status",
+				"statusDate",
+				"userId"
+			]
+		},
+		"pick": {
+			"removed": [],
+			"added": [],
+			"readOnly": [
+				"transportationOrderId"
+			]
+		},
+		"productionOrder": {
+			"removed": [
+				{
+					"property": "articleNumber",
+					"kind": "secondary-reference",
+					"idProperty": "articleId",
+					"replacement": "includeReferencedEntities=articleId",
+					"silent": true
+				},
+				{
+					"property": "availability",
+					"kind": "removed",
+					"silent": true
+				},
+				{
+					"property": "availabilityForAllWarehouses",
+					"kind": "removed",
+					"silent": true
+				},
+				{
+					"property": "warehouseName",
+					"kind": "secondary-reference",
+					"idProperty": "warehouseId",
+					"replacement": "includeReferencedEntities=warehouseId",
+					"silent": true
+				}
+			],
+			"added": [],
+			"readOnly": [
+				"actualEndDate",
+				"actualQuantity",
+				"actualStartDate",
+				"picksComplete",
+				"purchaseOrderItemId",
+				"salesOrderItemId",
+				"statusHistory",
+				"workItems"
+			]
+		},
+		"productionOrderItem": {
+			"removed": [
+				{
+					"property": "availability",
+					"kind": "removed",
+					"silent": true
+				},
+				{
+					"property": "availabilityForAllWarehouses",
+					"kind": "removed",
+					"silent": true
+				}
+			],
+			"added": [],
+			"readOnly": [
+				"actualPickDate",
+				"actualQuantity",
+				"targetQuantity"
+			]
+		},
+		"productionOrderStatusHistory": {
+			"removed": [],
+			"added": [],
+			"readOnly": [
+				"status",
+				"statusDate",
+				"userId"
+			]
+		},
+		"productionWorkScheduleItem": {
+			"removed": [],
+			"added": [],
+			"readOnly": [
+				"productionWorkScheduleId"
+			]
+		},
+		"purchaseInvoice": {
+			"removed": [
+				{
+					"property": "costCenterNumber",
+					"kind": "secondary-reference",
+					"idProperty": "costCenterId",
+					"replacement": "includeReferencedEntities=costCenterId",
+					"silent": true
+				}
+			],
+			"added": [],
+			"readOnly": [
+				"cancellationDate",
+				"createdViaOcr",
+				"grossAmountOfHeaderTaxes",
+				"grossAmountOfHeaderTaxesInCompanyCurrency",
+				"importSalesTaxId",
+				"paymentBlock",
+				"paymentBlockNote",
+				"precedingPurchaseInvoiceId",
+				"statusHistory"
+			]
+		},
+		"purchaseInvoiceItem": {
+			"removed": [
+				{
+					"property": "accountNumber",
+					"kind": "secondary-reference",
+					"idProperty": "accountId",
+					"replacement": "includeReferencedEntities=accountId",
+					"silent": true
+				},
+				{
+					"property": "purchaseInvoiceItemRelationship",
+					"kind": "rename-candidate",
+					"renamedTo": "purchaseInvoiceItemRelationships",
+					"confidence": 0.97,
+					"silent": true
+				},
+				{
+					"property": "supplierArticleId",
+					"kind": "rename",
+					"renamedTo": "articleSupplySourceId",
+					"source": "changelog",
+					"silent": true
+				}
+			],
+			"added": [
+				"articleSupplySourceId",
+				"purchaseInvoiceItemRelationships"
+			],
+			"readOnly": [
+				"articleSupplySourceId",
+				"contractItemId"
+			]
+		},
+		"purchaseInvoiceItemRelationship": {
+			"removed": [
+				{
+					"property": "shipmentItemId",
+					"kind": "removed",
+					"silent": true
+				},
+				{
+					"property": "supplierOrderItemId",
+					"kind": "rename-candidate",
+					"renamedTo": "purchaseOrderItemId",
+					"confidence": 0.63,
+					"silent": true
+				}
+			],
+			"added": [
+				"incomingGoodsItemId",
+				"purchaseOrderItemId"
+			],
+			"readOnly": []
+		},
+		"purchaseInvoiceStatusHistory": {
+			"removed": [],
+			"added": [],
+			"readOnly": [
+				"status",
+				"statusDate",
+				"userId"
+			]
+		},
+		"purchaseOpenItem": {
+			"removed": [],
+			"added": [],
+			"readOnly": [
+				"purchaseInvoiceId"
+			]
+		},
+		"purchaseOrder": {
+			"removed": [
+				{
+					"property": "salesOrderNumber",
+					"kind": "secondary-reference",
+					"idProperty": "salesOrderId",
+					"replacement": "includeReferencedEntities=salesOrderId",
+					"silent": true
+				},
+				{
+					"property": "shipmentMethodName",
+					"kind": "secondary-reference",
+					"idProperty": "shipmentMethodId",
+					"replacement": "includeReferencedEntities=shipmentMethodId",
+					"silent": true
+				},
+				{
+					"property": "warehouseName",
+					"kind": "secondary-reference",
+					"idProperty": "warehouseId",
+					"replacement": "includeReferencedEntities=warehouseId",
+					"silent": true
+				}
+			],
+			"added": [],
+			"readOnly": [
+				"advancePaymentStatus",
+				"invoiced",
+				"mergedToPurchaseOrderId",
+				"paid",
+				"purchaseOrderRequestId",
+				"received",
+				"statusHistory"
+			]
+		},
+		"purchaseOrderItem": {
+			"removed": [
+				{
+					"property": "supplierArticleId",
+					"kind": "rename",
+					"renamedTo": "articleSupplySourceId",
+					"source": "changelog",
+					"silent": true
+				}
+			],
+			"added": [
+				"articleSupplySourceId"
+			],
+			"readOnly": [
+				"articleSupplySourceId",
+				"blanketPurchaseOrderReleaseId",
+				"invoicedQuantity",
+				"purchaseOrderRequestOfferItemId",
+				"receivedQuantity",
+				"salesOrderItemId"
+			]
+		},
+		"purchaseOrderRequest": {
+			"removed": [
+				{
+					"property": "quotationNumber",
+					"kind": "secondary-reference",
+					"idProperty": "quotationId",
+					"replacement": "includeReferencedEntities=quotationId",
+					"silent": true
+				},
+				{
+					"property": "responsibleUserUsername",
+					"kind": "removed",
+					"silent": true
+				},
+				{
+					"property": "salesOrderNumber",
+					"kind": "secondary-reference",
+					"idProperty": "salesOrderId",
+					"replacement": "includeReferencedEntities=salesOrderId",
+					"silent": true
+				},
+				{
+					"property": "warehouseName",
+					"kind": "secondary-reference",
+					"idProperty": "warehouseId",
+					"replacement": "includeReferencedEntities=warehouseId",
+					"silent": true
+				}
+			],
+			"added": [],
+			"readOnly": [
+				"statusHistory"
+			]
+		},
+		"purchaseOrderRequestItem": {
+			"removed": [],
+			"added": [],
+			"readOnly": [
+				"deleted"
+			]
+		},
+		"purchaseOrderRequestOffer": {
+			"removed": [
+				{
+					"property": "commercialLanguage",
+					"kind": "removed",
+					"silent": true
+				},
+				{
+					"property": "disableEmailTemplate",
+					"kind": "rename",
+					"renamedTo": "disableRecordEmailingRule",
+					"source": "changelog",
+					"silent": true
+				},
+				{
+					"property": "nonStandardTaxName",
+					"kind": "secondary-reference",
+					"idProperty": "nonStandardTaxId",
+					"replacement": "includeReferencedEntities=nonStandardTaxId",
+					"silent": true
+				},
+				{
+					"property": "paymentMethodName",
+					"kind": "secondary-reference",
+					"idProperty": "paymentMethodId",
+					"replacement": "includeReferencedEntities=paymentMethodId",
+					"silent": true
+				},
+				{
+					"property": "recordComment",
+					"kind": "removed",
+					"silent": true
+				},
+				{
+					"property": "recordCurrencyName",
+					"kind": "secondary-reference",
+					"idProperty": "recordCurrencyId",
+					"replacement": "includeReferencedEntities=recordCurrencyId",
+					"silent": true
+				},
+				{
+					"property": "recordFreeText",
+					"kind": "removed",
+					"silent": true
+				},
+				{
+					"property": "recordOpening",
+					"kind": "removed",
+					"silent": true
+				},
+				{
+					"property": "sentToRecipient",
+					"kind": "removed",
+					"silent": true
+				},
+				{
+					"property": "supplierNumber",
+					"kind": "secondary-reference",
+					"idProperty": "supplierId",
+					"replacement": "includeReferencedEntities=supplierId",
+					"silent": true
+				},
+				{
+					"property": "tags",
+					"kind": "removed",
+					"silent": true
+				},
+				{
+					"property": "termOfPaymentName",
+					"kind": "secondary-reference",
+					"idProperty": "termOfPaymentId",
+					"replacement": "includeReferencedEntities=termOfPaymentId",
+					"silent": true
+				}
+			],
+			"added": [
+				"currencyConversionLocked"
+			],
+			"readOnly": [
+				"creatorId",
+				"currencyConversionDate",
+				"grossAmount",
+				"grossAmountInCompanyCurrency",
+				"netAmount",
+				"netAmountInCompanyCurrency"
+			]
+		},
+		"purchaseOrderRequestOfferItem": {
+			"removed": [
+				{
+					"property": "articleNumber",
+					"kind": "secondary-reference",
+					"idProperty": "articleId",
+					"replacement": "includeReferencedEntities=articleId",
+					"silent": true
+				},
+				{
+					"property": "description",
+					"kind": "removed",
+					"silent": true
+				},
+				{
+					"property": "descriptionFixed",
+					"kind": "removed",
+					"silent": true
+				},
+				{
+					"property": "manualQuantity",
+					"kind": "removed",
+					"silent": true
+				},
+				{
+					"property": "manualUnitPrice",
+					"kind": "removed",
+					"silent": true
+				},
+				{
+					"property": "note",
+					"kind": "removed",
+					"silent": true
+				},
+				{
+					"property": "parentItemId",
+					"kind": "removed",
+					"silent": true
+				},
+				{
+					"property": "positionNumber",
+					"kind": "removed",
+					"silent": true
+				},
+				{
+					"property": "taxName",
+					"kind": "secondary-reference",
+					"idProperty": "taxId",
+					"replacement": "includeReferencedEntities=taxId",
+					"silent": true
+				},
+				{
+					"property": "unitId",
+					"kind": "removed",
+					"silent": true
+				},
+				{
+					"property": "unitName",
+					"kind": "removed",
+					"silent": true
+				}
+			],
+			"added": [],
+			"readOnly": [
+				"articleId",
+				"grossAmount",
+				"grossAmountInCompanyCurrency",
+				"netAmount",
+				"netAmountForStatistics",
+				"netAmountForStatisticsInCompanyCurrency",
+				"netAmountInCompanyCurrency",
+				"quantity",
+				"title",
+				"unitPriceInCompanyCurrency"
+			]
+		},
+		"purchaseOrderRequestStatusHistory": {
+			"removed": [],
+			"added": [],
+			"readOnly": [
+				"status",
+				"statusDate",
+				"userId"
+			]
+		},
+		"purchaseOrderStatusHistory": {
+			"removed": [],
+			"added": [],
+			"readOnly": [
+				"status",
+				"statusDate",
+				"userId"
+			]
+		},
+		"purchaseRequisition": {
+			"removed": [],
+			"added": [],
+			"readOnly": [
+				"articleId",
+				"earliestRequiredDate",
+				"internalShipmentId",
+				"latestRequiredDate",
+				"productionOrderId",
+				"productionOrderItemId",
+				"proposedDate",
+				"purchaseOrderId",
+				"requirementQuantity",
+				"requisitionNumber",
+				"salesOrderItemId",
+				"statusHistory",
+				"warehouseId"
+			]
+		},
+		"purchaseRequisitionStatusHistory": {
+			"removed": [],
+			"added": [],
+			"readOnly": [
+				"status",
+				"statusDate",
+				"userId"
+			]
+		},
+		"quantityConversion": {
+			"removed": [],
+			"added": [],
+			"readOnly": [
+				"createdUserId",
+				"lastEditedUserId"
+			]
+		},
+		"quotation": {
+			"removed": [
+				{
+					"property": "opportunityNumber",
+					"kind": "secondary-reference",
+					"idProperty": "opportunityId",
+					"replacement": "includeReferencedEntities=opportunityId",
+					"silent": true
+				},
+				{
+					"property": "salesStageName",
+					"kind": "secondary-reference",
+					"idProperty": "salesStageId",
+					"replacement": "includeReferencedEntities=salesStageId",
+					"silent": true
+				},
+				{
+					"property": "warehouseName",
+					"kind": "secondary-reference",
+					"idProperty": "warehouseId",
+					"replacement": "includeReferencedEntities=warehouseId",
+					"silent": true
+				}
+			],
+			"added": [],
+			"readOnly": [
+				"mergedToQuotationId",
+				"quotationVersion",
+				"salesStageHistory",
+				"statusHistory"
+			]
+		},
+		"quotationItem": {
+			"removed": [],
+			"added": [],
+			"readOnly": [
+				"itScopeId",
+				"quotationItemRelationships"
+			]
+		},
+		"quotationItemRelationship": {
+			"removed": [],
+			"added": [],
+			"readOnly": [
+				"acceptedQuantity",
+				"contractItemId",
+				"projectMaterialItemId",
+				"projectRequirementItemId",
+				"salesInvoiceItemId",
+				"salesOrderItemId"
+			]
+		},
+		"quotationItemScaleValue": {
+			"removed": [],
+			"added": [],
+			"readOnly": [
+				"reductionAdditionItems"
+			]
+		},
+		"quotationStatusHistory": {
+			"removed": [],
+			"added": [],
+			"readOnly": [
+				"status",
+				"statusDate",
+				"userId"
+			]
+		},
+		"recordAddress": {
+			"removed": [
+				{
+					"property": "title",
+					"kind": "removed",
+					"silent": true
+				}
+			],
+			"added": [],
+			"readOnly": []
+		},
+		"recordEmailingRule": {
+			"removed": [
+				{
+					"property": "paymentMethodTypes",
+					"kind": "rename-candidate",
+					"renamedTo": "paymentMethods",
+					"confidence": 0.78,
+					"silent": true
+				}
+			],
+			"added": [
+				"paymentMethods"
+			],
+			"readOnly": []
+		},
+		"reductionAdditionItem": {
+			"removed": [],
+			"added": [],
+			"readOnly": [
+				"position",
+				"source",
+				"specialPriceReduction",
+				"title",
+				"type",
+				"value"
+			]
+		},
+		"releases": {
+			"removed": [],
+			"added": [],
+			"readOnly": [
+				"purchaseOrderId"
+			]
+		},
+		"reminder": {
+			"removed": [],
+			"added": [],
+			"readOnly": [
+				"lastReminderSentDate",
+				"userId"
+			]
+		},
+		"remotePrintJob": {
+			"removed": [],
+			"added": [],
+			"readOnly": [
+				"userId"
+			]
+		},
+		"salesInvoice": {
+			"removed": [
+				{
+					"property": "salesOrderNumber",
+					"kind": "secondary-reference",
+					"idProperty": "salesOrderId",
+					"replacement": "includeReferencedEntities=salesOrderId",
+					"silent": true
+				}
+			],
+			"added": [],
+			"readOnly": [
+				"cancellationNumber",
+				"cancellationSlipCommissionSettlementDone",
+				"commissionSettlementDone",
+				"directDebitFileLatestDate",
+				"dunningBlockDateUntilDate",
+				"dunningBlockNote",
+				"dunningBlockState",
+				"epcQrCodeReference",
+				"paid",
+				"precedingSalesInvoiceId",
+				"quotationId",
+				"recurringInvoiceId",
+				"statusHistory"
+			]
+		},
+		"salesInvoiceItem": {
+			"removed": [
+				{
+					"property": "accountNumber",
+					"kind": "secondary-reference",
+					"idProperty": "accountId",
+					"replacement": "includeReferencedEntities=accountId",
+					"silent": true
+				},
+				{
+					"property": "salesInvoiceItemRelationship",
+					"kind": "rename-candidate",
+					"renamedTo": "salesInvoiceItemRelationships",
+					"confidence": 0.97,
+					"silent": true
+				}
+			],
+			"added": [
+				"salesInvoiceItemRelationships"
+			],
+			"readOnly": [
+				"contractItemId",
+				"salesInvoiceItemRelationships",
+				"serialNumbers"
+			]
+		},
+		"salesInvoiceItemRelationship": {
+			"removed": [
+				{
+					"property": "salesInvoiceItemId",
+					"kind": "removed",
+					"silent": true
+				}
+			],
+			"added": [],
+			"readOnly": [
+				"performanceRecordItemId",
+				"quantity",
+				"salesOrderItemId",
+				"shipmentItemId"
+			]
+		},
+		"salesInvoiceStatusHistory": {
+			"removed": [],
+			"added": [],
+			"readOnly": [
+				"status",
+				"statusDate",
+				"userId"
+			]
+		},
+		"salesOpenItem": {
+			"removed": [],
+			"added": [],
+			"readOnly": [
+				"salesInvoiceId"
+			]
+		},
+		"salesOrder": {
+			"removed": [
+				{
+					"property": "availability",
+					"kind": "removed",
+					"silent": true
+				},
+				{
+					"property": "availabilityForAllWarehouses",
+					"kind": "removed",
+					"silent": true
+				},
+				{
+					"property": "defaultShippingReturnCarrierName",
+					"kind": "secondary-reference",
+					"idProperty": "defaultShippingReturnCarrierId",
+					"replacement": "includeReferencedEntities=defaultShippingReturnCarrierId",
+					"silent": true
+				},
+				{
+					"property": "quotationNumber",
+					"kind": "secondary-reference",
+					"idProperty": "quotationId",
+					"replacement": "includeReferencedEntities=quotationId",
+					"silent": true
+				},
+				{
+					"property": "warehouseName",
+					"kind": "secondary-reference",
+					"idProperty": "warehouseId",
+					"replacement": "includeReferencedEntities=warehouseId",
+					"silent": true
+				}
+			],
+			"added": [],
+			"readOnly": [
+				"advancePaymentStatus",
+				"invoiced",
+				"paid",
+				"servicesFinished",
+				"shipped",
+				"statusHistory"
+			]
+		},
+		"salesOrderItem": {
+			"removed": [
+				{
+					"property": "availability",
+					"kind": "removed",
+					"silent": true
+				},
+				{
+					"property": "availabilityForAllWarehouses",
+					"kind": "removed",
+					"silent": true
+				}
+			],
+			"added": [],
+			"readOnly": [
+				"contractChargeId",
+				"invoicedQuantity",
+				"returnedQuantity",
+				"serviceQuotaId",
+				"shipped",
+				"shippedQuantity",
+				"tasks"
+			]
+		},
+		"salesOrderPayment": {
+			"removed": [],
+			"added": [],
+			"readOnly": [
+				"positionNumber",
+				"salesInvoiceId",
+				"salesInvoices"
+			]
+		},
+		"salesOrderStatusHistory": {
+			"removed": [],
+			"added": [],
+			"readOnly": [
+				"creditLimitExceeded",
+				"status",
+				"statusDate",
+				"userId"
+			]
+		},
+		"salesShippingCostItem": {
+			"removed": [],
+			"added": [],
+			"readOnly": [
+				"unitCostInCompanyCurrency"
+			]
+		},
+		"salesStageHistory": {
+			"removed": [
+				{
+					"property": "salesStageName",
+					"kind": "secondary-reference",
+					"idProperty": "salesStageId",
+					"replacement": "includeReferencedEntities=salesStageId",
+					"silent": true
+				}
+			],
+			"added": [],
+			"readOnly": [
+				"salesStageId",
+				"userId"
+			]
+		},
+		"serialNumber": {
+			"removed": [
+				{
+					"property": "articleNumber",
+					"kind": "secondary-reference",
+					"idProperty": "articleId",
+					"replacement": "includeReferencedEntities=articleId",
+					"silent": true
+				}
+			],
+			"added": [],
+			"readOnly": []
+		},
+		"serviceQuota": {
+			"removed": [],
+			"added": [],
+			"readOnly": [
+				"articleId",
+				"billableQuantitySeconds",
+				"customerId",
+				"quantitySeconds",
+				"serviceQuotaNumber",
+				"serviceQuotaRelationships",
+				"status",
+				"statusHistory",
+				"validFromDate",
+				"validUntilDate"
+			]
+		},
+		"serviceQuotaRelationship": {
+			"removed": [],
+			"added": [],
+			"readOnly": [
+				"quantity",
+				"salesOrderItemId",
+				"servicePeriodFromDate",
+				"servicePeriodToDate",
+				"serviceQuotaId"
+			]
+		},
+		"serviceQuotaStatusHistory": {
+			"removed": [],
+			"added": [],
+			"readOnly": [
+				"status",
+				"statusDate",
+				"userId"
+			]
+		},
+		"shelf": {
+			"removed": [],
+			"added": [],
+			"readOnly": [
+				"active"
+			]
+		},
+		"shipment": {
+			"removed": [
+				{
+					"property": "availability",
+					"kind": "removed",
+					"silent": true
+				},
+				{
+					"property": "availabilityForAllWarehouses",
+					"kind": "removed",
+					"silent": true
+				},
+				{
+					"property": "declaredValueAmountCurrencyName",
+					"kind": "secondary-reference",
+					"idProperty": "declaredValueAmountCurrencyId",
+					"replacement": "includeReferencedEntities=declaredValueAmountCurrencyId",
+					"silent": true
+				},
+				{
+					"property": "destinationWarehouseName",
+					"kind": "secondary-reference",
+					"idProperty": "destinationWarehouseId",
+					"replacement": "includeReferencedEntities=destinationWarehouseId",
+					"silent": true
+				},
+				{
+					"property": "shipmentMethodName",
+					"kind": "secondary-reference",
+					"idProperty": "shipmentMethodId",
+					"replacement": "includeReferencedEntities=shipmentMethodId",
+					"silent": true
+				},
+				{
+					"property": "shippingCarrierName",
+					"kind": "secondary-reference",
+					"idProperty": "shippingCarrierId",
+					"replacement": "includeReferencedEntities=shippingCarrierId",
+					"silent": true
+				},
+				{
+					"property": "shippingReturnCarrierName",
+					"kind": "secondary-reference",
+					"idProperty": "shippingReturnCarrierId",
+					"replacement": "includeReferencedEntities=shippingReturnCarrierId",
+					"silent": true
+				},
+				{
+					"property": "warehouseName",
+					"kind": "secondary-reference",
+					"idProperty": "warehouseId",
+					"replacement": "includeReferencedEntities=warehouseId",
+					"silent": true
+				}
+			],
+			"added": [
+				"mainSalesOrderId"
+			],
+			"readOnly": [
+				"picksComplete",
+				"purchaseOrders",
+				"recipientCustomerNumber",
+				"recipientSupplierNumber",
+				"shippedFromAddress"
+			]
+		},
+		"shipmentItem": {
+			"removed": [
+				{
+					"property": "availability",
+					"kind": "removed",
+					"silent": true
+				},
+				{
+					"property": "availabilityForAllWarehouses",
+					"kind": "removed",
+					"silent": true
+				},
+				{
+					"property": "returnAssessmentName",
+					"kind": "secondary-reference",
+					"idProperty": "returnAssessmentId",
+					"replacement": "includeReferencedEntities=returnAssessmentId",
+					"silent": true
+				},
+				{
+					"property": "returnErrorName",
+					"kind": "secondary-reference",
+					"idProperty": "returnErrorId",
+					"replacement": "includeReferencedEntities=returnErrorId",
+					"silent": true
+				},
+				{
+					"property": "returnReasonName",
+					"kind": "secondary-reference",
+					"idProperty": "returnReasonId",
+					"replacement": "includeReferencedEntities=returnReasonId",
+					"silent": true
+				},
+				{
+					"property": "returnRectificationName",
+					"kind": "secondary-reference",
+					"idProperty": "returnRectificationId",
+					"replacement": "includeReferencedEntities=returnRectificationId",
+					"silent": true
+				}
+			],
+			"added": [
+				"returnAssessments",
+				"returnErrors",
+				"returnReasons",
+				"returnRectifications"
+			],
+			"readOnly": []
+		},
+		"shipmentStatus": {
+			"removed": [],
+			"added": [],
+			"readOnly": [
+				"status",
+				"statusDate",
+				"userId"
+			]
+		},
+		"storageLocation": {
+			"removed": [],
+			"added": [],
+			"readOnly": [
+				"active"
+			]
+		},
+		"storagePlace": {
+			"removed": [],
+			"added": [],
+			"readOnly": [
+				"currentInventoryId",
+				"shelfId",
+				"shelfStorageLocationId",
+				"storageLocationId",
+				"warehouseId"
+			]
+		},
+		"task": {
+			"removed": [],
+			"added": [],
+			"readOnly": [
+				"billableStatus",
+				"calendarEventId",
+				"creatorUserId",
+				"identifier",
+				"invoicingStatus",
+				"lastReminderDateForOverdue",
+				"performanceRecordedStatus",
+				"userOfLastStatusChangeId"
+			]
+		},
+		"taskList": {
+			"removed": [],
+			"added": [],
+			"readOnly": [
+				"responsibleUserId"
+			]
+		},
+		"taskMailAccount": {
+			"removed": [],
+			"added": [],
+			"readOnly": [
+				"serverIdentifier"
+			]
+		},
+		"taskTemplate": {
+			"removed": [],
+			"added": [],
+			"readOnly": [
+				"creatorUserId"
+			]
+		},
+		"tax": {
+			"removed": [
+				{
+					"property": "accountNumber",
+					"kind": "secondary-reference",
+					"idProperty": "accountId",
+					"replacement": "includeReferencedEntities=accountId",
+					"silent": true
+				},
+				{
+					"property": "contraAccountNumber",
+					"kind": "secondary-reference",
+					"idProperty": "contraAccountId",
+					"replacement": "includeReferencedEntities=contraAccountId",
+					"silent": true
+				},
+				{
+					"property": "defaultDiscountAccountNumber",
+					"kind": "secondary-reference",
+					"idProperty": "defaultDiscountAccountId",
+					"replacement": "includeReferencedEntities=defaultDiscountAccountId",
+					"silent": true
+				},
+				{
+					"property": "defaultNominalAccountNumber",
+					"kind": "secondary-reference",
+					"idProperty": "defaultNominalAccountId",
+					"replacement": "includeReferencedEntities=defaultNominalAccountId",
+					"silent": true
+				}
+			],
+			"added": [],
+			"readOnly": [
+				"taxKey"
+			]
+		},
+		"ticket": {
+			"removed": [],
+			"added": [],
+			"readOnly": [
+				"billableStatus",
+				"finishedDate",
+				"invoicingStatus",
+				"performanceRecordedStatus",
+				"publicPageExpirationDate",
+				"publicPageUuid",
+				"resolvedYourIssue",
+				"salesOrderId",
+				"ticketRatingComment",
+				"ticketRatingDate"
+			]
+		},
+		"ticketCategory": {
+			"removed": [],
+			"added": [],
+			"readOnly": [
+				"pseudoCategory"
+			]
+		},
+		"timeRecord": {
+			"removed": [
+				{
+					"property": "userUsername",
+					"kind": "removed",
+					"silent": true
+				}
+			],
+			"added": [],
+			"readOnly": [
+				"billable",
+				"billableInvoiceStatus",
+				"externalConnectionSourceId",
+				"performanceRecordedStatus",
+				"timeRecordSource"
+			]
+		},
+		"transportPick": {
+			"removed": [],
+			"added": [],
+			"readOnly": [
+				"productionOrderItemId",
+				"salesOrderItemId",
+				"shipmentItemId"
+			]
+		},
+		"transportationOrder": {
+			"removed": [],
+			"added": [],
+			"readOnly": [
+				"productionOrderId",
+				"shipmentId",
+				"statusHistory",
+				"transportationOrderNumber",
+				"transportationOrderType"
+			]
+		},
+		"transportationOrderStatusHistory": {
+			"removed": [],
+			"added": [],
+			"readOnly": [
+				"status",
+				"statusDate",
+				"userId"
+			]
+		},
+		"user": {
+			"removed": [],
+			"added": [],
+			"readOnly": [
+				"imageId",
+				"username"
+			]
+		},
+		"userRole": {
+			"removed": [],
+			"added": [],
+			"readOnly": [
+				"allPermissionsEnabled"
+			]
+		},
+		"variantArticle": {
+			"removed": [
+				{
+					"property": "primaryArticleNumber",
+					"kind": "secondary-reference",
+					"idProperty": "primaryArticleId",
+					"replacement": "includeReferencedEntities=primaryArticleId",
+					"silent": true
+				}
+			],
+			"added": [],
+			"readOnly": []
+		},
+		"variantArticleVariant": {
+			"removed": [
+				{
+					"property": "variantArticleNumber",
+					"kind": "secondary-reference",
+					"idProperty": "variantArticleId",
+					"replacement": "includeReferencedEntities=variantArticleId",
+					"silent": true
+				}
+			],
+			"added": [],
+			"readOnly": []
+		},
+		"variantArticleVariantWithoutReference": {
+			"removed": [
+				{
+					"property": "articleNumber",
+					"kind": "secondary-reference",
+					"idProperty": "articleId",
+					"replacement": "includeReferencedEntities=articleId",
+					"silent": true
+				}
+			],
+			"added": [],
+			"readOnly": []
+		},
+		"warehouse": {
+			"removed": [],
+			"added": [],
+			"readOnly": [
+				"active"
+			]
+		},
+		"warehouseStock": {
+			"removed": [
+				{
+					"property": "articleNumber",
+					"kind": "secondary-reference",
+					"idProperty": "articleId",
+					"replacement": "includeReferencedEntities=articleId",
+					"silent": true
+				},
+				{
+					"property": "batchNumber",
+					"kind": "removed",
+					"silent": true
+				}
+			],
+			"added": [],
+			"readOnly": []
+		},
+		"warehouseStockMovement": {
+			"removed": [
+				{
+					"property": "batchNumber",
+					"kind": "removed",
+					"silent": true
+				}
+			],
+			"added": [],
+			"readOnly": [
+				"userId"
+			]
+		}
+	}
+}

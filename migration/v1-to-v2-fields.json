@@ -24,7 +24,13 @@
 					"kind": "secondary-reference",
 					"idProperty": "articleId",
 					"replacement": "includeReferencedEntities=articleId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 2,
+					"survivingExamples": [
+						"aggregatePackagingUnit",
+						"baseArticle"
+					],
+					"scopeWarning": "this property name still exists on other v2 schemas -- a source-code hit is only relevant if it is really this entity"
 				}
 			],
 			"added": [],
@@ -54,7 +60,16 @@
 				{
 					"property": "title",
 					"kind": "removed",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 9,
+					"survivingExamples": [
+						"apiProblem",
+						"baseRecordItem",
+						"contractCostItem",
+						"notification",
+						"priceDataReductionAdditionItem"
+					],
+					"scopeWarning": "this property name still exists on other v2 schemas -- a source-code hit is only relevant if it is really this entity"
 				}
 			],
 			"added": [],
@@ -67,7 +82,8 @@
 					"kind": "secondary-reference",
 					"idProperty": "currencyId",
 					"replacement": "includeReferencedEntities=currencyId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				}
 			],
 			"added": [],
@@ -80,12 +96,22 @@
 					"kind": "rename-candidate",
 					"renamedTo": "primaryAddress",
 					"confidence": 0.79,
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				},
 				{
 					"property": "title",
 					"kind": "removed",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 9,
+					"survivingExamples": [
+						"apiProblem",
+						"baseRecordItem",
+						"contractCostItem",
+						"notification",
+						"priceDataReductionAdditionItem"
+					],
+					"scopeWarning": "this property name still exists on other v2 schemas -- a source-code hit is only relevant if it is really this entity"
 				}
 			],
 			"added": [
@@ -100,52 +126,66 @@
 					"kind": "secondary-reference",
 					"idProperty": "accountId",
 					"replacement": "includeReferencedEntities=accountId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 3,
+					"survivingExamples": [
+						"bankAccount",
+						"ledgerAccount",
+						"partyBankAccount"
+					],
+					"scopeWarning": "this property name still exists on other v2 schemas -- a source-code hit is only relevant if it is really this entity"
 				},
 				{
 					"property": "customsTariffNumber",
 					"kind": "removed",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				},
 				{
 					"property": "expenseAccountNumber",
 					"kind": "secondary-reference",
 					"idProperty": "expenseAccountId",
 					"replacement": "includeReferencedEntities=expenseAccountId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				},
 				{
 					"property": "manufacturerName",
 					"kind": "secondary-reference",
 					"idProperty": "manufacturerId",
 					"replacement": "includeReferencedEntities=manufacturerId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				},
 				{
 					"property": "priceCalculationParameters",
 					"kind": "removed",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				},
 				{
 					"property": "purchaseCostCenterNumber",
 					"kind": "secondary-reference",
 					"idProperty": "purchaseCostCenterId",
 					"replacement": "includeReferencedEntities=purchaseCostCenterId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				},
 				{
 					"property": "ratingName",
 					"kind": "secondary-reference",
 					"idProperty": "ratingId",
 					"replacement": "includeReferencedEntities=ratingId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				},
 				{
 					"property": "salesCostCenterNumber",
 					"kind": "secondary-reference",
 					"idProperty": "salesCostCenterId",
 					"replacement": "includeReferencedEntities=salesCostCenterId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				}
 			],
 			"added": [],
@@ -160,7 +200,8 @@
 					"kind": "secondary-reference",
 					"idProperty": "warehouseId",
 					"replacement": "includeReferencedEntities=warehouseId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				}
 			],
 			"added": [],
@@ -180,7 +221,13 @@
 					"kind": "secondary-reference",
 					"idProperty": "articleId",
 					"replacement": "includeReferencedEntities=articleId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 2,
+					"survivingExamples": [
+						"aggregatePackagingUnit",
+						"baseArticle"
+					],
+					"scopeWarning": "this property name still exists on other v2 schemas -- a source-code hit is only relevant if it is really this entity"
 				}
 			],
 			"added": [],
@@ -193,7 +240,8 @@
 					"kind": "secondary-reference",
 					"idProperty": "currencyId",
 					"replacement": "includeReferencedEntities=currencyId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				}
 			],
 			"added": [],
@@ -208,7 +256,12 @@
 					"kind": "secondary-reference",
 					"idProperty": "supplierId",
 					"replacement": "includeReferencedEntities=supplierId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 1,
+					"survivingExamples": [
+						"party"
+					],
+					"scopeWarning": "this property name still exists on other v2 schemas -- a source-code hit is only relevant if it is really this entity"
 				}
 			],
 			"added": [],
@@ -244,7 +297,8 @@
 					"kind": "secondary-reference",
 					"idProperty": "unitId",
 					"replacement": "includeReferencedEntities=unitId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				}
 			],
 			"added": [],
@@ -257,7 +311,13 @@
 					"kind": "secondary-reference",
 					"idProperty": "articleId",
 					"replacement": "includeReferencedEntities=articleId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 2,
+					"survivingExamples": [
+						"aggregatePackagingUnit",
+						"baseArticle"
+					],
+					"scopeWarning": "this property name still exists on other v2 schemas -- a source-code hit is only relevant if it is really this entity"
 				}
 			],
 			"added": [],
@@ -277,14 +337,20 @@
 				{
 					"property": "responsibleUserUsername",
 					"kind": "removed",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				},
 				{
 					"property": "supplierNumber",
 					"kind": "secondary-reference",
 					"idProperty": "supplierId",
 					"replacement": "includeReferencedEntities=supplierId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 1,
+					"survivingExamples": [
+						"party"
+					],
+					"scopeWarning": "this property name still exists on other v2 schemas -- a source-code hit is only relevant if it is really this entity"
 				}
 			],
 			"added": [],
@@ -297,7 +363,8 @@
 					"kind": "rename",
 					"renamedTo": "disableRecordEmailingRule",
 					"source": "changelog",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				}
 			],
 			"added": [
@@ -314,7 +381,8 @@
 					"kind": "secondary-reference",
 					"idProperty": "unitId",
 					"replacement": "includeReferencedEntities=unitId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				}
 			],
 			"added": [],
@@ -327,7 +395,8 @@
 					"kind": "secondary-reference",
 					"idProperty": "taxId",
 					"replacement": "includeReferencedEntities=taxId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				}
 			],
 			"added": [],
@@ -348,28 +417,32 @@
 					"kind": "secondary-reference",
 					"idProperty": "nonStandardTaxId",
 					"replacement": "includeReferencedEntities=nonStandardTaxId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				},
 				{
 					"property": "paymentMethodName",
 					"kind": "secondary-reference",
 					"idProperty": "paymentMethodId",
 					"replacement": "includeReferencedEntities=paymentMethodId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				},
 				{
 					"property": "recordCurrencyName",
 					"kind": "secondary-reference",
 					"idProperty": "recordCurrencyId",
 					"replacement": "includeReferencedEntities=recordCurrencyId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				},
 				{
 					"property": "termOfPaymentName",
 					"kind": "secondary-reference",
 					"idProperty": "termOfPaymentId",
 					"replacement": "includeReferencedEntities=termOfPaymentId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				}
 			],
 			"added": [
@@ -390,19 +463,26 @@
 					"kind": "secondary-reference",
 					"idProperty": "customerId",
 					"replacement": "includeReferencedEntities=customerId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 1,
+					"survivingExamples": [
+						"party"
+					],
+					"scopeWarning": "this property name still exists on other v2 schemas -- a source-code hit is only relevant if it is really this entity"
 				},
 				{
 					"property": "responsibleUserUsername",
 					"kind": "removed",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				},
 				{
 					"property": "shipmentMethodName",
 					"kind": "secondary-reference",
 					"idProperty": "shipmentMethodId",
 					"replacement": "includeReferencedEntities=shipmentMethodId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				}
 			],
 			"added": [],
@@ -423,7 +503,8 @@
 					"kind": "secondary-reference",
 					"idProperty": "defaultShippingCarrierId",
 					"replacement": "includeReferencedEntities=defaultShippingCarrierId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				}
 			],
 			"added": [],
@@ -434,12 +515,22 @@
 				{
 					"property": "salesOrderId",
 					"kind": "removed",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 6,
+					"survivingExamples": [
+						"performanceRecord",
+						"purchaseOrder",
+						"purchaseOrderRequest",
+						"salesInvoice",
+						"ticket"
+					],
+					"scopeWarning": "this property name still exists on other v2 schemas -- a source-code hit is only relevant if it is really this entity"
 				},
 				{
 					"property": "salesOrderNumber",
 					"kind": "removed",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				}
 			],
 			"added": [],
@@ -454,14 +545,21 @@
 					"kind": "secondary-reference",
 					"idProperty": "articleId",
 					"replacement": "includeReferencedEntities=articleId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 2,
+					"survivingExamples": [
+						"aggregatePackagingUnit",
+						"baseArticle"
+					],
+					"scopeWarning": "this property name still exists on other v2 schemas -- a source-code hit is only relevant if it is really this entity"
 				},
 				{
 					"property": "taxName",
 					"kind": "secondary-reference",
 					"idProperty": "taxId",
 					"replacement": "includeReferencedEntities=taxId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				}
 			],
 			"added": [],
@@ -481,7 +579,13 @@
 					"kind": "secondary-reference",
 					"idProperty": "articleId",
 					"replacement": "includeReferencedEntities=articleId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 2,
+					"survivingExamples": [
+						"aggregatePackagingUnit",
+						"baseArticle"
+					],
+					"scopeWarning": "this property name still exists on other v2 schemas -- a source-code hit is only relevant if it is really this entity"
 				}
 			],
 			"added": [],
@@ -494,14 +598,22 @@
 					"kind": "rename",
 					"renamedTo": "note",
 					"source": "changelog",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 3,
+					"survivingExamples": [
+						"comment",
+						"documentVersion",
+						"inventoryItem"
+					],
+					"scopeWarning": "this property name still exists on other v2 schemas -- a source-code hit is only relevant if it is really this entity"
 				},
 				{
 					"property": "formSettingsFromDistributionChannel",
 					"kind": "rename-candidate",
 					"renamedTo": "formSettingsFromSalesChannel",
 					"confidence": 0.69,
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				}
 			],
 			"added": [
@@ -584,7 +696,8 @@
 				{
 					"property": "responsibleUserUsername",
 					"kind": "removed",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				}
 			],
 			"added": [],
@@ -599,7 +712,12 @@
 					"kind": "secondary-reference",
 					"idProperty": "campaignId",
 					"replacement": "includeReferencedEntities=campaignId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 1,
+					"survivingExamples": [
+						"campaign"
+					],
+					"scopeWarning": "this property name still exists on other v2 schemas -- a source-code hit is only relevant if it is really this entity"
 				}
 			],
 			"added": [],
@@ -612,7 +730,8 @@
 					"kind": "secondary-reference",
 					"idProperty": "currencyId",
 					"replacement": "includeReferencedEntities=currencyId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				}
 			],
 			"added": [],
@@ -632,7 +751,8 @@
 				{
 					"property": "authorUserUsername",
 					"kind": "removed",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				}
 			],
 			"added": [],
@@ -649,7 +769,8 @@
 					"kind": "secondary-reference",
 					"idProperty": "salesPartnerSupplierId",
 					"replacement": "includeReferencedEntities=salesPartnerSupplierId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				}
 			],
 			"added": [],
@@ -662,7 +783,8 @@
 					"kind": "secondary-reference",
 					"idProperty": "recordCurrencyId",
 					"replacement": "includeReferencedEntities=recordCurrencyId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				}
 			],
 			"added": [],
@@ -694,7 +816,12 @@
 					"kind": "secondary-reference",
 					"idProperty": "costCenterId",
 					"replacement": "includeReferencedEntities=costCenterId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 1,
+					"survivingExamples": [
+						"costCenter"
+					],
+					"scopeWarning": "this property name still exists on other v2 schemas -- a source-code hit is only relevant if it is really this entity"
 				}
 			],
 			"added": [],
@@ -753,26 +880,39 @@
 				{
 					"property": "purchaseOrderId",
 					"kind": "removed",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 2,
+					"survivingExamples": [
+						"purchaseRequisition",
+						"releases"
+					],
+					"scopeWarning": "this property name still exists on other v2 schemas -- a source-code hit is only relevant if it is really this entity"
 				},
 				{
 					"property": "purchaseOrderNumber",
 					"kind": "removed",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 1,
+					"survivingExamples": [
+						"purchaseOrder"
+					],
+					"scopeWarning": "this property name still exists on other v2 schemas -- a source-code hit is only relevant if it is really this entity"
 				},
 				{
 					"property": "sourceWarehouseName",
 					"kind": "secondary-reference",
 					"idProperty": "sourceWarehouseId",
 					"replacement": "includeReferencedEntities=sourceWarehouseId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				},
 				{
 					"property": "warehouseName",
 					"kind": "secondary-reference",
 					"idProperty": "warehouseId",
 					"replacement": "includeReferencedEntities=warehouseId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				}
 			],
 			"added": [],
@@ -792,28 +932,32 @@
 					"kind": "secondary-reference",
 					"idProperty": "returnAssessmentId",
 					"replacement": "includeReferencedEntities=returnAssessmentId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				},
 				{
 					"property": "returnErrorName",
 					"kind": "secondary-reference",
 					"idProperty": "returnErrorId",
 					"replacement": "includeReferencedEntities=returnErrorId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				},
 				{
 					"property": "returnReasonName",
 					"kind": "secondary-reference",
 					"idProperty": "returnReasonId",
 					"replacement": "includeReferencedEntities=returnReasonId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				},
 				{
 					"property": "returnRectificationName",
 					"kind": "secondary-reference",
 					"idProperty": "returnRectificationId",
 					"replacement": "includeReferencedEntities=returnRectificationId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				}
 			],
 			"added": [],
@@ -874,7 +1018,8 @@
 				{
 					"property": "errors",
 					"kind": "removed",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				}
 			],
 			"added": [],
@@ -887,7 +1032,8 @@
 					"kind": "secondary-reference",
 					"idProperty": "parentAccountId",
 					"replacement": "includeReferencedEntities=parentAccountId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				}
 			],
 			"added": [],
@@ -898,12 +1044,30 @@
 				{
 					"property": "description",
 					"kind": "removed",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 48,
+					"survivingExamples": [
+						"accountingTransactionDetail",
+						"articleCategory",
+						"articlePriceWithoutSalesChannel",
+						"bankTransaction",
+						"baseArticle"
+					],
+					"scopeWarning": "this property name still exists on other v2 schemas -- a source-code hit is only relevant if it is really this entity"
 				},
 				{
 					"property": "positionNumber",
 					"kind": "removed",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 23,
+					"survivingExamples": [
+						"abstractBillOfMaterial",
+						"articleItemGroupItem",
+						"baseMinimalRecordItem",
+						"blanketSalesOrderItem",
+						"contractType"
+					],
+					"scopeWarning": "this property name still exists on other v2 schemas -- a source-code hit is only relevant if it is really this entity"
 				}
 			],
 			"added": [],
@@ -923,26 +1087,34 @@
 					"kind": "secondary-reference",
 					"idProperty": "customerId",
 					"replacement": "includeReferencedEntities=customerId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 1,
+					"survivingExamples": [
+						"party"
+					],
+					"scopeWarning": "this property name still exists on other v2 schemas -- a source-code hit is only relevant if it is really this entity"
 				},
 				{
 					"property": "responsibleUserUsername",
 					"kind": "removed",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				},
 				{
 					"property": "salesStageName",
 					"kind": "secondary-reference",
 					"idProperty": "salesStageId",
 					"replacement": "includeReferencedEntities=salesStageId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				},
 				{
 					"property": "winLossReasonName",
 					"kind": "secondary-reference",
 					"idProperty": "winLossReasonId",
 					"replacement": "includeReferencedEntities=winLossReasonId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				}
 			],
 			"added": [],
@@ -958,138 +1130,158 @@
 					"kind": "removed",
 					"source": "changelog",
 					"note": "documented as removed without replacement",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				},
 				{
 					"property": "companySizeName",
 					"kind": "secondary-reference",
 					"idProperty": "companySizeId",
 					"replacement": "includeReferencedEntities=companySizeId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				},
 				{
 					"property": "currencyName",
 					"kind": "secondary-reference",
 					"idProperty": "currencyId",
 					"replacement": "includeReferencedEntities=currencyId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				},
 				{
 					"property": "customerCategoryName",
 					"kind": "secondary-reference",
 					"idProperty": "customerCategoryId",
 					"replacement": "includeReferencedEntities=customerCategoryId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				},
 				{
 					"property": "customerCurrentSalesStageName",
 					"kind": "secondary-reference",
 					"idProperty": "customerCurrentSalesStageId",
 					"replacement": "includeReferencedEntities=customerCurrentSalesStageId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				},
 				{
 					"property": "customerDebtorAccountNumber",
 					"kind": "secondary-reference",
 					"idProperty": "customerDebtorAccountId",
 					"replacement": "includeReferencedEntities=customerDebtorAccountId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				},
 				{
 					"property": "customerLossReasonName",
 					"kind": "secondary-reference",
 					"idProperty": "customerLossReasonId",
 					"replacement": "includeReferencedEntities=customerLossReasonId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				},
 				{
 					"property": "customerPaymentMethodName",
 					"kind": "secondary-reference",
 					"idProperty": "customerPaymentMethodId",
 					"replacement": "includeReferencedEntities=customerPaymentMethodId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				},
 				{
 					"property": "customerShipmentMethodName",
 					"kind": "secondary-reference",
 					"idProperty": "customerShipmentMethodId",
 					"replacement": "includeReferencedEntities=customerShipmentMethodId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				},
 				{
 					"property": "customerTermOfPaymentName",
 					"kind": "secondary-reference",
 					"idProperty": "customerTermOfPaymentId",
 					"replacement": "includeReferencedEntities=customerTermOfPaymentId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				},
 				{
 					"property": "leadRatingName",
 					"kind": "secondary-reference",
 					"idProperty": "leadRatingId",
 					"replacement": "includeReferencedEntities=leadRatingId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				},
 				{
 					"property": "leadSourceName",
 					"kind": "secondary-reference",
 					"idProperty": "leadSourceId",
 					"replacement": "includeReferencedEntities=leadSourceId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				},
 				{
 					"property": "legalFormName",
 					"kind": "secondary-reference",
 					"idProperty": "legalFormId",
 					"replacement": "includeReferencedEntities=legalFormId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				},
 				{
 					"property": "ratingName",
 					"kind": "secondary-reference",
 					"idProperty": "ratingId",
 					"replacement": "includeReferencedEntities=ratingId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				},
 				{
 					"property": "responsibleUserUsername",
 					"kind": "removed",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				},
 				{
 					"property": "sectorName",
 					"kind": "secondary-reference",
 					"idProperty": "sectorId",
 					"replacement": "includeReferencedEntities=sectorId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				},
 				{
 					"property": "supplierCreditorAccountNumber",
 					"kind": "secondary-reference",
 					"idProperty": "supplierCreditorAccountId",
 					"replacement": "includeReferencedEntities=supplierCreditorAccountId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				},
 				{
 					"property": "supplierPaymentMethodName",
 					"kind": "secondary-reference",
 					"idProperty": "supplierPaymentMethodId",
 					"replacement": "includeReferencedEntities=supplierPaymentMethodId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				},
 				{
 					"property": "supplierShipmentMethodName",
 					"kind": "secondary-reference",
 					"idProperty": "supplierShipmentMethodId",
 					"replacement": "includeReferencedEntities=supplierShipmentMethodId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				},
 				{
 					"property": "supplierTermOfPaymentName",
 					"kind": "secondary-reference",
 					"idProperty": "supplierTermOfPaymentId",
 					"replacement": "includeReferencedEntities=supplierTermOfPaymentId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				}
 			],
 			"added": [
@@ -1121,7 +1313,8 @@
 					],
 					"source": "changelog",
 					"note": "the changelog offers several targets -- pick per call site",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				}
 			],
 			"added": [],
@@ -1142,7 +1335,8 @@
 				{
 					"property": "moneyTransaction",
 					"kind": "removed",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				}
 			],
 			"added": [],
@@ -1200,24 +1394,37 @@
 					"kind": "secondary-reference",
 					"idProperty": "articleId",
 					"replacement": "includeReferencedEntities=articleId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 2,
+					"survivingExamples": [
+						"aggregatePackagingUnit",
+						"baseArticle"
+					],
+					"scopeWarning": "this property name still exists on other v2 schemas -- a source-code hit is only relevant if it is really this entity"
 				},
 				{
 					"property": "availability",
 					"kind": "removed",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 1,
+					"survivingExamples": [
+						"itemAvailability"
+					],
+					"scopeWarning": "this property name still exists on other v2 schemas -- a source-code hit is only relevant if it is really this entity"
 				},
 				{
 					"property": "availabilityForAllWarehouses",
 					"kind": "removed",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				},
 				{
 					"property": "warehouseName",
 					"kind": "secondary-reference",
 					"idProperty": "warehouseId",
 					"replacement": "includeReferencedEntities=warehouseId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				}
 			],
 			"added": [],
@@ -1237,12 +1444,18 @@
 				{
 					"property": "availability",
 					"kind": "removed",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 1,
+					"survivingExamples": [
+						"itemAvailability"
+					],
+					"scopeWarning": "this property name still exists on other v2 schemas -- a source-code hit is only relevant if it is really this entity"
 				},
 				{
 					"property": "availabilityForAllWarehouses",
 					"kind": "removed",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				}
 			],
 			"added": [],
@@ -1275,7 +1488,12 @@
 					"kind": "secondary-reference",
 					"idProperty": "costCenterId",
 					"replacement": "includeReferencedEntities=costCenterId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 1,
+					"survivingExamples": [
+						"costCenter"
+					],
+					"scopeWarning": "this property name still exists on other v2 schemas -- a source-code hit is only relevant if it is really this entity"
 				}
 			],
 			"added": [],
@@ -1298,21 +1516,30 @@
 					"kind": "secondary-reference",
 					"idProperty": "accountId",
 					"replacement": "includeReferencedEntities=accountId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 3,
+					"survivingExamples": [
+						"bankAccount",
+						"ledgerAccount",
+						"partyBankAccount"
+					],
+					"scopeWarning": "this property name still exists on other v2 schemas -- a source-code hit is only relevant if it is really this entity"
 				},
 				{
 					"property": "purchaseInvoiceItemRelationship",
 					"kind": "rename-candidate",
 					"renamedTo": "purchaseInvoiceItemRelationships",
 					"confidence": 0.97,
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				},
 				{
 					"property": "supplierArticleId",
 					"kind": "rename",
 					"renamedTo": "articleSupplySourceId",
 					"source": "changelog",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				}
 			],
 			"added": [
@@ -1329,14 +1556,22 @@
 				{
 					"property": "shipmentItemId",
 					"kind": "removed",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 3,
+					"survivingExamples": [
+						"salesInvoiceItemRelationship",
+						"transportPick",
+						"warehouseStockMovement"
+					],
+					"scopeWarning": "this property name still exists on other v2 schemas -- a source-code hit is only relevant if it is really this entity"
 				},
 				{
 					"property": "supplierOrderItemId",
 					"kind": "rename-candidate",
 					"renamedTo": "purchaseOrderItemId",
 					"confidence": 0.63,
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				}
 			],
 			"added": [
@@ -1368,21 +1603,24 @@
 					"kind": "secondary-reference",
 					"idProperty": "salesOrderId",
 					"replacement": "includeReferencedEntities=salesOrderId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				},
 				{
 					"property": "shipmentMethodName",
 					"kind": "secondary-reference",
 					"idProperty": "shipmentMethodId",
 					"replacement": "includeReferencedEntities=shipmentMethodId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				},
 				{
 					"property": "warehouseName",
 					"kind": "secondary-reference",
 					"idProperty": "warehouseId",
 					"replacement": "includeReferencedEntities=warehouseId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				}
 			],
 			"added": [],
@@ -1403,7 +1641,8 @@
 					"kind": "rename",
 					"renamedTo": "articleSupplySourceId",
 					"source": "changelog",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				}
 			],
 			"added": [
@@ -1425,26 +1664,34 @@
 					"kind": "secondary-reference",
 					"idProperty": "quotationId",
 					"replacement": "includeReferencedEntities=quotationId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 1,
+					"survivingExamples": [
+						"quotation"
+					],
+					"scopeWarning": "this property name still exists on other v2 schemas -- a source-code hit is only relevant if it is really this entity"
 				},
 				{
 					"property": "responsibleUserUsername",
 					"kind": "removed",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				},
 				{
 					"property": "salesOrderNumber",
 					"kind": "secondary-reference",
 					"idProperty": "salesOrderId",
 					"replacement": "includeReferencedEntities=salesOrderId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				},
 				{
 					"property": "warehouseName",
 					"kind": "secondary-reference",
 					"idProperty": "warehouseId",
 					"replacement": "includeReferencedEntities=warehouseId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				}
 			],
 			"added": [],
@@ -1464,74 +1711,129 @@
 				{
 					"property": "commercialLanguage",
 					"kind": "removed",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 4,
+					"survivingExamples": [
+						"baseRecord",
+						"blanketPurchaseOrder",
+						"blanketSalesOrder",
+						"ticketAssignmentRule"
+					],
+					"scopeWarning": "this property name still exists on other v2 schemas -- a source-code hit is only relevant if it is really this entity"
 				},
 				{
 					"property": "disableEmailTemplate",
 					"kind": "rename",
 					"renamedTo": "disableRecordEmailingRule",
 					"source": "changelog",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				},
 				{
 					"property": "nonStandardTaxName",
 					"kind": "secondary-reference",
 					"idProperty": "nonStandardTaxId",
 					"replacement": "includeReferencedEntities=nonStandardTaxId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				},
 				{
 					"property": "paymentMethodName",
 					"kind": "secondary-reference",
 					"idProperty": "paymentMethodId",
 					"replacement": "includeReferencedEntities=paymentMethodId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				},
 				{
 					"property": "recordComment",
 					"kind": "removed",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 3,
+					"survivingExamples": [
+						"baseRecord",
+						"blanketPurchaseOrder",
+						"dropshippingDeliveryNoteFormTextBlockData"
+					],
+					"scopeWarning": "this property name still exists on other v2 schemas -- a source-code hit is only relevant if it is really this entity"
 				},
 				{
 					"property": "recordCurrencyName",
 					"kind": "secondary-reference",
 					"idProperty": "recordCurrencyId",
 					"replacement": "includeReferencedEntities=recordCurrencyId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				},
 				{
 					"property": "recordFreeText",
 					"kind": "removed",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 3,
+					"survivingExamples": [
+						"baseRecord",
+						"blanketPurchaseOrder",
+						"dropshippingDeliveryNoteFormTextBlockData"
+					],
+					"scopeWarning": "this property name still exists on other v2 schemas -- a source-code hit is only relevant if it is really this entity"
 				},
 				{
 					"property": "recordOpening",
 					"kind": "removed",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 3,
+					"survivingExamples": [
+						"baseRecord",
+						"blanketPurchaseOrder",
+						"dropshippingDeliveryNoteFormTextBlockData"
+					],
+					"scopeWarning": "this property name still exists on other v2 schemas -- a source-code hit is only relevant if it is really this entity"
 				},
 				{
 					"property": "sentToRecipient",
 					"kind": "removed",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 3,
+					"survivingExamples": [
+						"baseRecord",
+						"blanketPurchaseOrder",
+						"blanketSalesOrder"
+					],
+					"scopeWarning": "this property name still exists on other v2 schemas -- a source-code hit is only relevant if it is really this entity"
 				},
 				{
 					"property": "supplierNumber",
 					"kind": "secondary-reference",
 					"idProperty": "supplierId",
 					"replacement": "includeReferencedEntities=supplierId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 1,
+					"survivingExamples": [
+						"party"
+					],
+					"scopeWarning": "this property name still exists on other v2 schemas -- a source-code hit is only relevant if it is really this entity"
 				},
 				{
 					"property": "tags",
 					"kind": "removed",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 8,
+					"survivingExamples": [
+						"abstractParty",
+						"article",
+						"baseRecord",
+						"blanketPurchaseOrder",
+						"blanketSalesOrder"
+					],
+					"scopeWarning": "this property name still exists on other v2 schemas -- a source-code hit is only relevant if it is really this entity"
 				},
 				{
 					"property": "termOfPaymentName",
 					"kind": "secondary-reference",
 					"idProperty": "termOfPaymentId",
 					"replacement": "includeReferencedEntities=termOfPaymentId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				}
 			],
 			"added": [
@@ -1553,59 +1855,126 @@
 					"kind": "secondary-reference",
 					"idProperty": "articleId",
 					"replacement": "includeReferencedEntities=articleId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 2,
+					"survivingExamples": [
+						"aggregatePackagingUnit",
+						"baseArticle"
+					],
+					"scopeWarning": "this property name still exists on other v2 schemas -- a source-code hit is only relevant if it is really this entity"
 				},
 				{
 					"property": "description",
 					"kind": "removed",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 48,
+					"survivingExamples": [
+						"accountingTransactionDetail",
+						"articleCategory",
+						"articlePriceWithoutSalesChannel",
+						"bankTransaction",
+						"baseArticle"
+					],
+					"scopeWarning": "this property name still exists on other v2 schemas -- a source-code hit is only relevant if it is really this entity"
 				},
 				{
 					"property": "descriptionFixed",
 					"kind": "removed",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 2,
+					"survivingExamples": [
+						"baseRecordItem",
+						"contractCostItem"
+					],
+					"scopeWarning": "this property name still exists on other v2 schemas -- a source-code hit is only relevant if it is really this entity"
 				},
 				{
 					"property": "manualQuantity",
 					"kind": "removed",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 1,
+					"survivingExamples": [
+						"baseRecordItem"
+					],
+					"scopeWarning": "this property name still exists on other v2 schemas -- a source-code hit is only relevant if it is really this entity"
 				},
 				{
 					"property": "manualUnitPrice",
 					"kind": "removed",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 4,
+					"survivingExamples": [
+						"baseRecordItemWithMoney",
+						"baseShippingCostItem",
+						"blanketSalesOrder",
+						"contractCostItem"
+					],
+					"scopeWarning": "this property name still exists on other v2 schemas -- a source-code hit is only relevant if it is really this entity"
 				},
 				{
 					"property": "note",
 					"kind": "removed",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 7,
+					"survivingExamples": [
+						"baseMinimalRecordItem",
+						"blanketPurchaseOrder",
+						"blanketSalesOrder",
+						"contractCostItem",
+						"purchaseOrder"
+					],
+					"scopeWarning": "this property name still exists on other v2 schemas -- a source-code hit is only relevant if it is really this entity"
 				},
 				{
 					"property": "parentItemId",
 					"kind": "removed",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 1,
+					"survivingExamples": [
+						"baseRecordItem"
+					],
+					"scopeWarning": "this property name still exists on other v2 schemas -- a source-code hit is only relevant if it is really this entity"
 				},
 				{
 					"property": "positionNumber",
 					"kind": "removed",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 23,
+					"survivingExamples": [
+						"abstractBillOfMaterial",
+						"articleItemGroupItem",
+						"baseMinimalRecordItem",
+						"blanketSalesOrderItem",
+						"contractType"
+					],
+					"scopeWarning": "this property name still exists on other v2 schemas -- a source-code hit is only relevant if it is really this entity"
 				},
 				{
 					"property": "taxName",
 					"kind": "secondary-reference",
 					"idProperty": "taxId",
 					"replacement": "includeReferencedEntities=taxId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				},
 				{
 					"property": "unitId",
 					"kind": "removed",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 4,
+					"survivingExamples": [
+						"baseArticle",
+						"baseRecordItem",
+						"contractCostItem",
+						"quantityConversion"
+					],
+					"scopeWarning": "this property name still exists on other v2 schemas -- a source-code hit is only relevant if it is really this entity"
 				},
 				{
 					"property": "unitName",
 					"kind": "removed",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				}
 			],
 			"added": [],
@@ -1683,21 +2052,28 @@
 					"kind": "secondary-reference",
 					"idProperty": "opportunityId",
 					"replacement": "includeReferencedEntities=opportunityId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 1,
+					"survivingExamples": [
+						"opportunity"
+					],
+					"scopeWarning": "this property name still exists on other v2 schemas -- a source-code hit is only relevant if it is really this entity"
 				},
 				{
 					"property": "salesStageName",
 					"kind": "secondary-reference",
 					"idProperty": "salesStageId",
 					"replacement": "includeReferencedEntities=salesStageId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				},
 				{
 					"property": "warehouseName",
 					"kind": "secondary-reference",
 					"idProperty": "warehouseId",
 					"replacement": "includeReferencedEntities=warehouseId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				}
 			],
 			"added": [],
@@ -1749,7 +2125,16 @@
 				{
 					"property": "title",
 					"kind": "removed",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 9,
+					"survivingExamples": [
+						"apiProblem",
+						"baseRecordItem",
+						"contractCostItem",
+						"notification",
+						"priceDataReductionAdditionItem"
+					],
+					"scopeWarning": "this property name still exists on other v2 schemas -- a source-code hit is only relevant if it is really this entity"
 				}
 			],
 			"added": [],
@@ -1762,7 +2147,8 @@
 					"kind": "rename-candidate",
 					"renamedTo": "paymentMethods",
 					"confidence": 0.78,
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				}
 			],
 			"added": [
@@ -1811,7 +2197,8 @@
 					"kind": "secondary-reference",
 					"idProperty": "salesOrderId",
 					"replacement": "includeReferencedEntities=salesOrderId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				}
 			],
 			"added": [],
@@ -1838,14 +2225,22 @@
 					"kind": "secondary-reference",
 					"idProperty": "accountId",
 					"replacement": "includeReferencedEntities=accountId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 3,
+					"survivingExamples": [
+						"bankAccount",
+						"ledgerAccount",
+						"partyBankAccount"
+					],
+					"scopeWarning": "this property name still exists on other v2 schemas -- a source-code hit is only relevant if it is really this entity"
 				},
 				{
 					"property": "salesInvoiceItemRelationship",
 					"kind": "rename-candidate",
 					"renamedTo": "salesInvoiceItemRelationships",
 					"confidence": 0.97,
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				}
 			],
 			"added": [
@@ -1862,7 +2257,12 @@
 				{
 					"property": "salesInvoiceItemId",
 					"kind": "removed",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 1,
+					"survivingExamples": [
+						"quotationItemRelationship"
+					],
+					"scopeWarning": "this property name still exists on other v2 schemas -- a source-code hit is only relevant if it is really this entity"
 				}
 			],
 			"added": [],
@@ -1894,33 +2294,46 @@
 				{
 					"property": "availability",
 					"kind": "removed",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 1,
+					"survivingExamples": [
+						"itemAvailability"
+					],
+					"scopeWarning": "this property name still exists on other v2 schemas -- a source-code hit is only relevant if it is really this entity"
 				},
 				{
 					"property": "availabilityForAllWarehouses",
 					"kind": "removed",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				},
 				{
 					"property": "defaultShippingReturnCarrierName",
 					"kind": "secondary-reference",
 					"idProperty": "defaultShippingReturnCarrierId",
 					"replacement": "includeReferencedEntities=defaultShippingReturnCarrierId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				},
 				{
 					"property": "quotationNumber",
 					"kind": "secondary-reference",
 					"idProperty": "quotationId",
 					"replacement": "includeReferencedEntities=quotationId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 1,
+					"survivingExamples": [
+						"quotation"
+					],
+					"scopeWarning": "this property name still exists on other v2 schemas -- a source-code hit is only relevant if it is really this entity"
 				},
 				{
 					"property": "warehouseName",
 					"kind": "secondary-reference",
 					"idProperty": "warehouseId",
 					"replacement": "includeReferencedEntities=warehouseId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				}
 			],
 			"added": [],
@@ -1938,12 +2351,18 @@
 				{
 					"property": "availability",
 					"kind": "removed",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 1,
+					"survivingExamples": [
+						"itemAvailability"
+					],
+					"scopeWarning": "this property name still exists on other v2 schemas -- a source-code hit is only relevant if it is really this entity"
 				},
 				{
 					"property": "availabilityForAllWarehouses",
 					"kind": "removed",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				}
 			],
 			"added": [],
@@ -1990,7 +2409,8 @@
 					"kind": "secondary-reference",
 					"idProperty": "salesStageId",
 					"replacement": "includeReferencedEntities=salesStageId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				}
 			],
 			"added": [],
@@ -2006,7 +2426,13 @@
 					"kind": "secondary-reference",
 					"idProperty": "articleId",
 					"replacement": "includeReferencedEntities=articleId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 2,
+					"survivingExamples": [
+						"aggregatePackagingUnit",
+						"baseArticle"
+					],
+					"scopeWarning": "this property name still exists on other v2 schemas -- a source-code hit is only relevant if it is really this entity"
 				}
 			],
 			"added": [],
@@ -2060,54 +2486,66 @@
 				{
 					"property": "availability",
 					"kind": "removed",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 1,
+					"survivingExamples": [
+						"itemAvailability"
+					],
+					"scopeWarning": "this property name still exists on other v2 schemas -- a source-code hit is only relevant if it is really this entity"
 				},
 				{
 					"property": "availabilityForAllWarehouses",
 					"kind": "removed",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				},
 				{
 					"property": "declaredValueAmountCurrencyName",
 					"kind": "secondary-reference",
 					"idProperty": "declaredValueAmountCurrencyId",
 					"replacement": "includeReferencedEntities=declaredValueAmountCurrencyId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				},
 				{
 					"property": "destinationWarehouseName",
 					"kind": "secondary-reference",
 					"idProperty": "destinationWarehouseId",
 					"replacement": "includeReferencedEntities=destinationWarehouseId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				},
 				{
 					"property": "shipmentMethodName",
 					"kind": "secondary-reference",
 					"idProperty": "shipmentMethodId",
 					"replacement": "includeReferencedEntities=shipmentMethodId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				},
 				{
 					"property": "shippingCarrierName",
 					"kind": "secondary-reference",
 					"idProperty": "shippingCarrierId",
 					"replacement": "includeReferencedEntities=shippingCarrierId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				},
 				{
 					"property": "shippingReturnCarrierName",
 					"kind": "secondary-reference",
 					"idProperty": "shippingReturnCarrierId",
 					"replacement": "includeReferencedEntities=shippingReturnCarrierId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				},
 				{
 					"property": "warehouseName",
 					"kind": "secondary-reference",
 					"idProperty": "warehouseId",
 					"replacement": "includeReferencedEntities=warehouseId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				}
 			],
 			"added": [
@@ -2126,40 +2564,50 @@
 				{
 					"property": "availability",
 					"kind": "removed",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 1,
+					"survivingExamples": [
+						"itemAvailability"
+					],
+					"scopeWarning": "this property name still exists on other v2 schemas -- a source-code hit is only relevant if it is really this entity"
 				},
 				{
 					"property": "availabilityForAllWarehouses",
 					"kind": "removed",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				},
 				{
 					"property": "returnAssessmentName",
 					"kind": "secondary-reference",
 					"idProperty": "returnAssessmentId",
 					"replacement": "includeReferencedEntities=returnAssessmentId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				},
 				{
 					"property": "returnErrorName",
 					"kind": "secondary-reference",
 					"idProperty": "returnErrorId",
 					"replacement": "includeReferencedEntities=returnErrorId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				},
 				{
 					"property": "returnReasonName",
 					"kind": "secondary-reference",
 					"idProperty": "returnReasonId",
 					"replacement": "includeReferencedEntities=returnReasonId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				},
 				{
 					"property": "returnRectificationName",
 					"kind": "secondary-reference",
 					"idProperty": "returnRectificationId",
 					"replacement": "includeReferencedEntities=returnRectificationId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				}
 			],
 			"added": [
@@ -2239,28 +2687,38 @@
 					"kind": "secondary-reference",
 					"idProperty": "accountId",
 					"replacement": "includeReferencedEntities=accountId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 3,
+					"survivingExamples": [
+						"bankAccount",
+						"ledgerAccount",
+						"partyBankAccount"
+					],
+					"scopeWarning": "this property name still exists on other v2 schemas -- a source-code hit is only relevant if it is really this entity"
 				},
 				{
 					"property": "contraAccountNumber",
 					"kind": "secondary-reference",
 					"idProperty": "contraAccountId",
 					"replacement": "includeReferencedEntities=contraAccountId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				},
 				{
 					"property": "defaultDiscountAccountNumber",
 					"kind": "secondary-reference",
 					"idProperty": "defaultDiscountAccountId",
 					"replacement": "includeReferencedEntities=defaultDiscountAccountId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				},
 				{
 					"property": "defaultNominalAccountNumber",
 					"kind": "secondary-reference",
 					"idProperty": "defaultNominalAccountId",
 					"replacement": "includeReferencedEntities=defaultNominalAccountId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				}
 			],
 			"added": [],
@@ -2296,7 +2754,8 @@
 				{
 					"property": "userUsername",
 					"kind": "removed",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				}
 			],
 			"added": [],
@@ -2359,7 +2818,8 @@
 					"kind": "secondary-reference",
 					"idProperty": "primaryArticleId",
 					"replacement": "includeReferencedEntities=primaryArticleId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 0
 				}
 			],
 			"added": [],
@@ -2372,7 +2832,12 @@
 					"kind": "secondary-reference",
 					"idProperty": "variantArticleId",
 					"replacement": "includeReferencedEntities=variantArticleId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 1,
+					"survivingExamples": [
+						"variantArticle"
+					],
+					"scopeWarning": "this property name still exists on other v2 schemas -- a source-code hit is only relevant if it is really this entity"
 				}
 			],
 			"added": [],
@@ -2385,7 +2850,13 @@
 					"kind": "secondary-reference",
 					"idProperty": "articleId",
 					"replacement": "includeReferencedEntities=articleId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 2,
+					"survivingExamples": [
+						"aggregatePackagingUnit",
+						"baseArticle"
+					],
+					"scopeWarning": "this property name still exists on other v2 schemas -- a source-code hit is only relevant if it is really this entity"
 				}
 			],
 			"added": [],
@@ -2405,12 +2876,26 @@
 					"kind": "secondary-reference",
 					"idProperty": "articleId",
 					"replacement": "includeReferencedEntities=articleId",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 2,
+					"survivingExamples": [
+						"aggregatePackagingUnit",
+						"baseArticle"
+					],
+					"scopeWarning": "this property name still exists on other v2 schemas -- a source-code hit is only relevant if it is really this entity"
 				},
 				{
 					"property": "batchNumber",
 					"kind": "removed",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 4,
+					"survivingExamples": [
+						"abstractBookRecord",
+						"batchNumber",
+						"batchSerialNumber",
+						"inventoryItem"
+					],
+					"scopeWarning": "this property name still exists on other v2 schemas -- a source-code hit is only relevant if it is really this entity"
 				}
 			],
 			"added": [],
@@ -2421,7 +2906,15 @@
 				{
 					"property": "batchNumber",
 					"kind": "removed",
-					"silent": true
+					"silent": true,
+					"nameSurvivesInV2": 4,
+					"survivingExamples": [
+						"abstractBookRecord",
+						"batchNumber",
+						"batchSerialNumber",
+						"inventoryItem"
+					],
+					"scopeWarning": "this property name still exists on other v2 schemas -- a source-code hit is only relevant if it is really this entity"
 				}
 			],
 			"added": [],

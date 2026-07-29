@@ -600,6 +600,20 @@ function buildFieldMap(specV1, specV2) {
 	const schemasV1 = specV1.components.schemas
 	const schemasV2 = specV2.components.schemas
 
+	// A property removed from one schema often still exists on others (`comment` is renamed only
+	// on blanketPurchaseOrder; `batchNumber` survives elsewhere). A consumer scanning source code
+	// sees only the property name, not which entity it belongs to, so record where the name still
+	// exists in v2 -- without that, a schema-specific change looks like a global one and buries
+	// the real hits in false positives.
+	const survivingNames = new Map()
+	for (const [schemaName, schema] of Object.entries(schemasV2)) {
+		for (const property of flattenProperties(schema).keys()) {
+			const leaf = property.split('.').pop()
+			if (!survivingNames.has(leaf)) survivingNames.set(leaf, [])
+			survivingNames.get(leaf).push(schemaName)
+		}
+	}
+
 	const schemas = {}
 	let removedTotal = 0
 
@@ -688,6 +702,17 @@ function buildFieldMap(specV1, specV2) {
 
 			return {property: prop, kind: 'removed', silent: true}
 		})
+
+		// Annotate each removal with whether the bare property name still occurs in v2 elsewhere.
+		for (const entry of entries) {
+			const leaf = entry.property.split('.').pop()
+			const surviving = (survivingNames.get(leaf) || []).filter(schemaName => schemaName !== name)
+			entry.nameSurvivesInV2 = surviving.length
+			if (surviving.length) {
+				entry.survivingExamples = surviving.slice(0, 5)
+				entry.scopeWarning = 'this property name still exists on other v2 schemas -- a source-code hit is only relevant if it is really this entity'
+			}
+		}
 
 		removedTotal += entries.length
 		schemas[name] = {removed: entries, added, readOnly}

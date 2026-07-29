@@ -5,7 +5,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Commands
 
 ```bash
-# Run all tests (requires real weclapp credentials in test/test.js)
+# Run all tests — works without credentials
 npm test
 
 # Lint source files
@@ -15,9 +15,19 @@ npm run lint
 npm run lint:fix
 ```
 
-Tests use **mocha** (5s timeout) and **chai**. To run a single test, use mocha's `--grep` flag:
+Tests use **mocha** (5s timeout) and **chai**, and fall into two groups:
+
+- **Offline** (`test/version.test.js`) — mocks `axios` via `Module._load` to assert URL
+  construction, version routing, and the endpoint surface of each version. Always runs.
+- **Smoke** (`test/test.js`) — hits a real tenant, reading `WECLAPP_TENANT` and
+  `WECLAPP_APIKEY` from the environment. **Skips itself** when either is unset, so a clean
+  checkout is green (11 passing, 2 pending). Never hard-code a token here.
+
+To run a single suite, use mocha's `--grep` flag with one of the suite names —
+`version routing`, `endpoint surface`, `binary responses`, or `smoke`:
+
 ```bash
-npx mocha --timeout 5000 --grep "connect.auth"
+npx mocha --timeout 5000 --grep "version routing"
 ```
 
 ## Architecture

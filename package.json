@@ -1,14 +1,20 @@
 {
 	"name": "@icosense/connect",
-	"version": "2.0.0",
+	"version": "2.0.0-beta.1",
 	"description": "weclapp REST API client for nodejs",
 	"main": "src/app.js",
+	"files": [
+		"src",
+		"README.md",
+		"LICENSE"
+	],
 	"scripts": {
 		"test": "mocha --timeout 5000",
 		"lint": "eslint src/app.js src/utils.js scripts src/endpoints/v2",
 		"lint:fix": "eslint --fix src/app.js src/utils.js scripts src/endpoints/v2",
 		"generate:v2": "node scripts/generate-v2.js",
-		"generate:migration-map": "node scripts/generate-migration-map.js"
+		"generate:migration-map": "node scripts/generate-migration-map.js",
+		"prepublishOnly": "npm run lint && npm test"
 	},
 	"author": "weclapp",
 	"license": "MIT",

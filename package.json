@@ -35,7 +35,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/icosense/weclapp-connect.git"
+		"url": "git+https://github.com/IcoSense/weclapp-connect.git"
 	},
 	"keywords": [
 		"weclapp",
@@ -43,7 +43,7 @@
 		"partner portal connect"
 	],
 	"bugs": {
-		"url": "https://github.com/icosense/weclapp-connect/issues"
+		"url": "https://github.com/IcoSense/weclapp-connect/issues"
 	},
-	"homepage": "https://github.com/icosense/weclapp-connect#readme"
+	"homepage": "https://github.com/IcoSense/weclapp-connect#readme"
 }

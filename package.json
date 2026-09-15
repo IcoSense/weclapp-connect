@@ -14,6 +14,7 @@
 		"lint:fix": "eslint --fix src/app.js src/utils.js scripts src/endpoints/v2",
 		"generate:v2": "node scripts/generate-v2.js",
 		"generate:migration-map": "node scripts/generate-migration-map.js",
+		"update:v2-fixture": "node scripts/update-v2-fixture.js",
 		"prepublishOnly": "npm run lint && npm test"
 	},
 	"author": "weclapp",

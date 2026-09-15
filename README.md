@@ -714,6 +714,9 @@ npm run generate:v2
 
 # Regenerate the migration maps from both specs + the endpoint modules
 npm run generate:migration-map
+
+# Re-record the v2 method-name fixture (only after a reviewed regeneration)
+npm run update:v2-fixture
 ```
 
 ### Regenerating
@@ -723,18 +726,34 @@ changes, refresh `apidoc/weclapp-openapi-v1.yaml` / `apidoc/weclapp-openapi-v2.y
 both generators. `scripts/generate-migration-map.js` also validates its hand-curated rename and
 rewrite tables against the specs on every run and fails loudly if one has gone stale.
 
+A regeneration can rename or drop a v2 method without anything here failing to load — the
+breakage would first appear as a `TypeError` at a call site in a consuming project. To make
+that visible, `test/fixtures/v2-method-names.json` records the 1048 generated names, and
+`test/v2-method-names.test.js` fails and lists them by name if any goes missing. Names that are
+new are reported but do not fail, since adding methods is additive.
+
+So after a deliberate regeneration: review the `src/endpoints/v2/` diff, then run
+
+```bash
+npm run update:v2-fixture
+```
+
+and commit the fixture in the same change. Recording it to turn a red test green, without that
+review, defeats the point of having it.
+
 ### Tests
 
 Tests use mocha (5s timeout) and chai, in two groups:
 
-- **Offline** (`test/version.test.js`) — mocks `axios` to assert URL construction, version
-  routing, the endpoint surface of each version, and binary handling. Always runs.
+- **Offline** (`test/version.test.js`, `test/v2-method-names.test.js`) — mocks `axios` to assert
+  URL construction, version routing, the endpoint surface of each version, binary handling, and
+  the generated v2 method names against a recorded fixture. Always runs.
 - **Smoke** (`test/test.js`) — hits a real tenant using `WECLAPP_TENANT` and `WECLAPP_APIKEY`
   from the environment, exercising both v1 and v2. Skips itself when either is unset, so a
-  clean checkout is green (11 passing, 2 pending).
+  clean checkout is green (14 passing, 2 pending).
 
 Run a single suite with mocha's `--grep`, using one of `version routing`, `endpoint surface`,
-`binary responses` or `smoke`:
+`binary responses`, `v2 method names` or `smoke`:
 
 ```bash
 npx mocha --timeout 5000 --grep "version routing"

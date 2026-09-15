@@ -35,8 +35,7 @@ module.exports = [
 			'no-labels': ['error', {'allowLoop': true}],
 			'no-constant-condition': ['error', {'checkLoops': false}],
 			'@stylistic/indent': ['error', 'tab'],
-			'@stylistic/quotes': ['error', 'single'],
-			'@stylistic/linebreak-style': ['error', 'windows']
+			'@stylistic/quotes': ['error', 'single']
 		}
 	}
 ]

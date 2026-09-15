@@ -1,0 +1,10 @@
+# Normalise every text file to LF in the repository and let each platform check out what it
+# uses natively. Git was already doing this via core.autocrlf on the maintainers' machines;
+# stating it here makes it a property of the repo rather than of each developer's global
+# git config.
+#
+# Working-tree line endings are deliberately NOT enforced by ESLint. With LF stored in the
+# repo, a Windows checkout has CRLF and a Linux checkout has LF, so a linebreak-style rule
+# can only ever pass on one platform -- the previous 'windows' setting made npm run lint
+# fail on every Linux checkout, CI included.
+* text=auto

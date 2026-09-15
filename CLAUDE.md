@@ -79,6 +79,6 @@ Authentication is via the `AuthenticationToken` header. Errors are not wrapped: 
 ## Code Style
 
 - **Indentation**: tabs (enforced by ESLint and `.editorconfig`)
-- **Line endings**: Windows (`\r\n`) — enforced by the `linebreak-style: windows` rule, which covers `src/app.js`, `src/utils.js`, `scripts/` and `src/endpoints/v2/`. Everything outside that set, including `test/` and the generated JSON under `migration/`, is LF — match the file next to yours
+- **Line endings**: not enforced by ESLint — do not add a rule for it. `.gitattributes` sets `* text=auto`, so the repo stores LF and every platform checks out natively (CRLF on Windows, LF in CI). A `linebreak-style` rule can only ever pass on one of those; the previous `windows` setting made `npm run lint` fail on every Linux checkout, CI included.
 - **ES version**: ES2018 (async/await, object spread)
 - **Modules**: CommonJS (`require`/`module.exports`)

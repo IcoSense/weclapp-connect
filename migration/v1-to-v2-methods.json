@@ -1,0 +1,3357 @@
+{
+	"generatedBy": "scripts/generate-migration-map.js",
+	"generatedAt": "2026-07-29",
+	"sourceSpecs": [
+		"apidoc/weclapp-openapi-v1.yaml",
+		"apidoc/weclapp-openapi-v2.yaml"
+	],
+	"note": "Generated file -- do not edit by hand. Regenerate with: npm run generate:migration-map",
+	"contract": {
+		"mapped": "safe to apply mechanically -- same request, and every existing call site keeps working",
+		"decisions": "never apply automatically; each entry needs a human decision, even where a suggestedV2 is given",
+		"rewrite": "where present, the argument transformation for that call site; rewriteMechanical means it needs no judgement beyond applying it",
+		"rewriteProblems": "must be empty -- a non-empty list means a curated rewrite rule no longer matches the sources"
+	},
+	"v1MethodCount": 340,
+	"v2MethodCount": 1048,
+	"rewriteProblems": [],
+	"mapped": [
+		{
+			"v1": "acceptQuotation",
+			"module": "quotation",
+			"request": "POST quotation/id/{id}/accept",
+			"v1Signature": "id+body",
+			"v2": "acceptQuotationById",
+			"v2Signature": "id+body",
+			"callCompatible": true
+		},
+		{
+			"v1": "bookDirectStockTransfer",
+			"module": "warehouseStockMovement",
+			"request": "POST warehouseStockMovement/bookDirectStockTransfer",
+			"v1Signature": "body",
+			"v2": "bookDirectStockTransferWarehouseStockMovement",
+			"v2Signature": "body",
+			"callCompatible": true
+		},
+		{
+			"v1": "createAdvancePaymentRequestSalesOrderForId",
+			"module": "salesOrder",
+			"request": "POST salesOrder/id/{id}/createAdvancePaymentRequest",
+			"v1Signature": "id+body",
+			"v2": "createAdvancePaymentRequestSalesOrderById",
+			"v2Signature": "id+body",
+			"callCompatible": true
+		},
+		{
+			"v1": "createArticle",
+			"module": "article",
+			"request": "POST article",
+			"v1Signature": "body",
+			"v2": "createArticle",
+			"v2Signature": "body+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "createArticleCategory",
+			"module": "articleCategory",
+			"request": "POST articleCategory",
+			"v1Signature": "body",
+			"v2": "createArticleCategory",
+			"v2Signature": "body+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "createArticleSupplySource",
+			"module": "articleSupplySource",
+			"request": "POST articleSupplySource",
+			"v1Signature": "body",
+			"v2": "createArticleSupplySource",
+			"v2Signature": "body+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "createBookIncomingMovement",
+			"module": "warehouseStockMovement",
+			"request": "POST warehouseStockMovement/bookIncomingMovement",
+			"v1Signature": "body",
+			"v2": "bookIncomingMovementWarehouseStockMovement",
+			"v2Signature": "body",
+			"callCompatible": true
+		},
+		{
+			"v1": "createBookOutgoingMovement",
+			"module": "warehouseStockMovement",
+			"request": "POST warehouseStockMovement/bookOutgoingMovement",
+			"v1Signature": "body",
+			"v2": "bookOutgoingMovementWarehouseStockMovement",
+			"v2Signature": "body",
+			"callCompatible": true
+		},
+		{
+			"v1": "createCampaign",
+			"module": "campaign",
+			"request": "POST campaign",
+			"v1Signature": "body",
+			"v2": "createCampaign",
+			"v2Signature": "body+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "createCampaignParticipant",
+			"module": "campaignParticipant",
+			"request": "POST campaignParticipant",
+			"v1Signature": "body",
+			"v2": "createCampaignParticipant",
+			"v2Signature": "body+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "createCancelOrManualSalesOrderForId",
+			"module": "salesOrder",
+			"request": "POST salesOrder/id/{id}/cancelOrManuallyClose",
+			"v1Signature": "id+body",
+			"v2": "cancelOrManuallyCloseSalesOrderById",
+			"v2Signature": "id+body",
+			"callCompatible": true
+		},
+		{
+			"v1": "createComment",
+			"module": "comment",
+			"request": "POST comment",
+			"v1Signature": "body",
+			"v2": "createComment",
+			"v2Signature": "body+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "createCompanySize",
+			"module": "companySize",
+			"request": "POST companySize",
+			"v1Signature": "body",
+			"v2": "createCompanySize",
+			"v2Signature": "body+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "createCompensationShipmentForIncomingGood",
+			"module": "incomingGoods",
+			"request": "POST incomingGoods/id/{id}/createCompensationShipment",
+			"v1Signature": "id+body",
+			"v2": "createCompensationShipmentIncomingGoodsById",
+			"v2Signature": "id+body",
+			"callCompatible": true
+		},
+		{
+			"v1": "createContract",
+			"module": "contract",
+			"request": "POST contract",
+			"v1Signature": "body",
+			"v2": "createContract",
+			"v2Signature": "body+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "createCreditNoteForIncomingGood",
+			"module": "incomingGoods",
+			"request": "POST incomingGoods/id/{id}/createCreditNote",
+			"v1Signature": "id+body",
+			"v2": "createCreditNoteIncomingGoodsById",
+			"v2Signature": "id+body",
+			"callCompatible": true
+		},
+		{
+			"v1": "createCustomerCategory",
+			"module": "customerCategory",
+			"request": "POST customerCategory",
+			"v1Signature": "body",
+			"v2": "createCustomerCategory",
+			"v2Signature": "body+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "createCustomerLeadLossReason",
+			"module": "customerLeadLossReason",
+			"request": "POST customerLeadLossReason",
+			"v1Signature": "body",
+			"v2": "createCustomerLeadLossReason",
+			"v2Signature": "body+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "createCustomerReturnForId",
+			"module": "salesOrder",
+			"request": "POST salesOrder/id/{id}/createCustomerReturn",
+			"v1Signature": "id+body",
+			"v2": "createCustomerReturnSalesOrderById",
+			"v2Signature": "id+body",
+			"callCompatible": true
+		},
+		{
+			"v1": "createCustomerTopic",
+			"module": "customerTopic",
+			"request": "POST customerTopic",
+			"v1Signature": "body",
+			"v2": "createCustomerTopic",
+			"v2Signature": "body+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "createCustomsTariffNumber",
+			"module": "customsTariffNumber",
+			"request": "POST customsTariffNumber",
+			"v1Signature": "body",
+			"v2": "createCustomsTariffNumber",
+			"v2Signature": "body+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "createIncomingGoods",
+			"module": "incomingGoods",
+			"request": "POST incomingGoods",
+			"v1Signature": "body",
+			"v2": "createIncomingGoods",
+			"v2Signature": "body+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "createIncomingGoodsForPurchaseOrder",
+			"module": "purchaseOrder",
+			"request": "POST purchaseOrder/id/{id}/createIncomingGoods",
+			"v1Signature": "id+body",
+			"v2": "createIncomingGoodsPurchaseOrderById",
+			"v2Signature": "id+body",
+			"callCompatible": true
+		},
+		{
+			"v1": "createLeadSource",
+			"module": "leadSource",
+			"request": "POST leadSource",
+			"v1Signature": "body",
+			"v2": "createLeadSource",
+			"v2Signature": "body+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "createManualCloseSalesOrderForId",
+			"module": "salesOrder",
+			"request": "POST salesOrder/id/{id}/manuallyClose",
+			"v1Signature": "id+body",
+			"v2": "manuallyCloseSalesOrderById",
+			"v2Signature": "id+body",
+			"callCompatible": true
+		},
+		{
+			"v1": "createManufacturer",
+			"module": "manufacturer",
+			"request": "POST manufacturer",
+			"v1Signature": "body",
+			"v2": "createManufacturer",
+			"v2Signature": "body+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "createOpportunity",
+			"module": "opportunity",
+			"request": "POST opportunity",
+			"v1Signature": "body",
+			"v2": "createOpportunity",
+			"v2Signature": "body+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "createOpportunityWinLossReason",
+			"module": "opportunityWinLossReason",
+			"request": "POST opportunityWinLossReason",
+			"v1Signature": "body",
+			"v2": "createOpportunityWinLossReason",
+			"v2Signature": "body+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "createPartPaymentInvoiceForId",
+			"module": "salesOrder",
+			"request": "POST salesOrder/id/{id}/createPartPaymentInvoice",
+			"v1Signature": "id+body",
+			"v2": "createPartPaymentInvoiceSalesOrderById",
+			"v2Signature": "id+body",
+			"callCompatible": true
+		},
+		{
+			"v1": "createPaymentMethod",
+			"module": "paymentMethod",
+			"request": "POST paymentMethod",
+			"v1Signature": "body",
+			"v2": "createPaymentMethod",
+			"v2Signature": "body+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "createProductionOrder",
+			"module": "productionOrder",
+			"request": "POST productionOrder",
+			"v1Signature": "body",
+			"v2": "createProductionOrder",
+			"v2Signature": "body+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "createPurchaseInvoice",
+			"module": "purchaseInvoice",
+			"request": "POST purchaseInvoice",
+			"v1Signature": "body",
+			"v2": "createPurchaseInvoice",
+			"v2Signature": "body+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "createPurchaseInvoiceForPurchaseOrder",
+			"module": "purchaseOrder",
+			"request": "POST purchaseOrder/id/{id}/createPurchaseInvoice",
+			"v1Signature": "id+body",
+			"v2": "createPurchaseInvoicePurchaseOrderById",
+			"v2Signature": "id+body",
+			"callCompatible": true
+		},
+		{
+			"v1": "createPurchaseOrder",
+			"module": "purchaseOrder",
+			"request": "POST purchaseOrder",
+			"v1Signature": "body",
+			"v2": "createPurchaseOrder",
+			"v2Signature": "body+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "createQuotation",
+			"module": "quotation",
+			"request": "POST quotation",
+			"v1Signature": "body",
+			"v2": "createQuotation",
+			"v2Signature": "body+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "createSalesInvoice",
+			"module": "salesInvoice",
+			"request": "POST salesInvoice",
+			"v1Signature": "body",
+			"v2": "createSalesInvoice",
+			"v2Signature": "body+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "createSalesInvoiceForId",
+			"module": "salesOrder",
+			"request": "POST salesOrder/id/{id}/createSalesInvoice",
+			"v1Signature": "id+body",
+			"v2": "createSalesInvoiceSalesOrderById",
+			"v2Signature": "id+body",
+			"callCompatible": true
+		},
+		{
+			"v1": "createSalesOrder",
+			"module": "salesOrder",
+			"request": "POST salesOrder",
+			"v1Signature": "body",
+			"v2": "createSalesOrder",
+			"v2Signature": "body+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "createSalesStage",
+			"module": "salesStage",
+			"request": "POST salesStage",
+			"v1Signature": "body",
+			"v2": "createSalesStage",
+			"v2Signature": "body+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "createSector",
+			"module": "sector",
+			"request": "POST sector",
+			"v1Signature": "body",
+			"v2": "createSector",
+			"v2Signature": "body+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "createShipment",
+			"module": "shipment",
+			"request": "POST shipment",
+			"v1Signature": "body",
+			"v2": "createShipment",
+			"v2Signature": "body+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "createShipmentForId",
+			"module": "salesOrder",
+			"request": "POST salesOrder/id/{id}/createShipment",
+			"v1Signature": "id+body",
+			"v2": "createShipmentSalesOrderById",
+			"v2Signature": "id+body",
+			"callCompatible": true
+		},
+		{
+			"v1": "createShipmentMethod",
+			"module": "shipmentMethod",
+			"request": "POST shipmentMethod",
+			"v1Signature": "body",
+			"v2": "createShipmentMethod",
+			"v2Signature": "body+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "createTax",
+			"module": "tax",
+			"request": "POST tax",
+			"v1Signature": "body",
+			"v2": "createTax",
+			"v2Signature": "body+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "createTermOfPayment",
+			"module": "termOfPayment",
+			"request": "POST termOfPayment",
+			"v1Signature": "body",
+			"v2": "createTermOfPayment",
+			"v2Signature": "body+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "createTicket",
+			"module": "ticket",
+			"request": "POST ticket",
+			"v1Signature": "body",
+			"v2": "createTicket",
+			"v2Signature": "body+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "createUnit",
+			"module": "unit",
+			"request": "POST unit",
+			"v1Signature": "body",
+			"v2": "createUnit",
+			"v2Signature": "body+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "createVariantArticle",
+			"module": "variantArticle",
+			"request": "POST variantArticle",
+			"v1Signature": "body",
+			"v2": "createVariantArticle",
+			"v2Signature": "body+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "createVariantArticleAttribute",
+			"module": "variantArticleAttribute",
+			"request": "POST variantArticleAttribute",
+			"v1Signature": "body",
+			"v2": "createVariantArticleAttribute",
+			"v2Signature": "body+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "deleteArticleById",
+			"module": "article",
+			"request": "DELETE article/id/{id}",
+			"v1Signature": "id",
+			"v2": "deleteArticleById",
+			"v2Signature": "id+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "deleteArticleCategoryById",
+			"module": "articleCategory",
+			"request": "DELETE articleCategory/id/{id}",
+			"v1Signature": "id",
+			"v2": "deleteArticleCategoryById",
+			"v2Signature": "id+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "deleteCampaignById",
+			"module": "campaign",
+			"request": "DELETE campaign/id/{id}",
+			"v1Signature": "id",
+			"v2": "deleteCampaignById",
+			"v2Signature": "id+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "deleteCampaignParticipantById",
+			"module": "campaignParticipant",
+			"request": "DELETE campaignParticipant/id/{id}",
+			"v1Signature": "id",
+			"v2": "deleteCampaignParticipantById",
+			"v2Signature": "id+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "deleteCommentById",
+			"module": "comment",
+			"request": "DELETE comment/id/{id}",
+			"v1Signature": "id",
+			"v2": "deleteCommentById",
+			"v2Signature": "id+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "deleteCompanySizeById",
+			"module": "companySize",
+			"request": "DELETE companySize/id/{id}",
+			"v1Signature": "id",
+			"v2": "deleteCompanySizeById",
+			"v2Signature": "id+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "deleteContractById",
+			"module": "contract",
+			"request": "DELETE contract/id/{id}",
+			"v1Signature": "id",
+			"v2": "deleteContractById",
+			"v2Signature": "id+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "deleteCustomerCategoryById",
+			"module": "customerCategory",
+			"request": "DELETE customerCategory/id/{id}",
+			"v1Signature": "id",
+			"v2": "deleteCustomerCategoryById",
+			"v2Signature": "id+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "deleteCustomerLeadLossReasonById",
+			"module": "customerLeadLossReason",
+			"request": "DELETE customerLeadLossReason/id/{id}",
+			"v1Signature": "id",
+			"v2": "deleteCustomerLeadLossReasonById",
+			"v2Signature": "id+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "deleteCustomerTopicById",
+			"module": "customerTopic",
+			"request": "DELETE customerTopic/id/{id}",
+			"v1Signature": "id",
+			"v2": "deleteCustomerTopicById",
+			"v2Signature": "id+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "deleteCustomsTariffNumberById",
+			"module": "customsTariffNumber",
+			"request": "DELETE customsTariffNumber/id/{id}",
+			"v1Signature": "id",
+			"v2": "deleteCustomsTariffNumberById",
+			"v2Signature": "id+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "deleteDocumentById",
+			"module": "document",
+			"request": "DELETE document/id/{id}",
+			"v1Signature": "id",
+			"v2": "deleteDocumentById",
+			"v2Signature": "id+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "deleteLeadSourceById",
+			"module": "leadSource",
+			"request": "DELETE leadSource/id/{id}",
+			"v1Signature": "id",
+			"v2": "deleteLeadSourceById",
+			"v2Signature": "id+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "deleteManufacturerById",
+			"module": "manufacturer",
+			"request": "DELETE manufacturer/id/{id}",
+			"v1Signature": "id",
+			"v2": "deleteManufacturerById",
+			"v2Signature": "id+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "deleteOpportunityById",
+			"module": "opportunity",
+			"request": "DELETE opportunity/id/{id}",
+			"v1Signature": "id",
+			"v2": "deleteOpportunityById",
+			"v2Signature": "id+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "deleteOpportunityWinLossReasonById",
+			"module": "opportunityWinLossReason",
+			"request": "DELETE opportunityWinLossReason/id/{id}",
+			"v1Signature": "id",
+			"v2": "deleteOpportunityWinLossReasonById",
+			"v2Signature": "id+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "deletePaymentMethodById",
+			"module": "paymentMethod",
+			"request": "DELETE paymentMethod/id/{id}",
+			"v1Signature": "id",
+			"v2": "deletePaymentMethodById",
+			"v2Signature": "id+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "deleteProductionOrderById",
+			"module": "productionOrder",
+			"request": "DELETE productionOrder/id/{id}",
+			"v1Signature": "id",
+			"v2": "deleteProductionOrderById",
+			"v2Signature": "id+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "deleteQuotationById",
+			"module": "quotation",
+			"request": "DELETE quotation/id/{id}",
+			"v1Signature": "id",
+			"v2": "deleteQuotationById",
+			"v2Signature": "id+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "deleteSalesStageById",
+			"module": "salesStage",
+			"request": "DELETE salesStage/id/{id}",
+			"v1Signature": "id",
+			"v2": "deleteSalesStageById",
+			"v2Signature": "id+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "deleteSectorById",
+			"module": "sector",
+			"request": "DELETE sector/id/{id}",
+			"v1Signature": "id",
+			"v2": "deleteSectorById",
+			"v2Signature": "id+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "deleteShipmentMethodById",
+			"module": "shipmentMethod",
+			"request": "DELETE shipmentMethod/id/{id}",
+			"v1Signature": "id",
+			"v2": "deleteShipmentMethodById",
+			"v2Signature": "id+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "deleteTaxById",
+			"module": "tax",
+			"request": "DELETE tax/id/{id}",
+			"v1Signature": "id",
+			"v2": "deleteTaxById",
+			"v2Signature": "id+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "deleteTermOfPaymentById",
+			"module": "termOfPayment",
+			"request": "DELETE termOfPayment/id/{id}",
+			"v1Signature": "id",
+			"v2": "deleteTermOfPaymentById",
+			"v2Signature": "id+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "deleteUnitById",
+			"module": "unit",
+			"request": "DELETE unit/id/{id}",
+			"v1Signature": "id",
+			"v2": "deleteUnitById",
+			"v2Signature": "id+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "deleteVariantArticleAttributeById",
+			"module": "variantArticleAttribute",
+			"request": "DELETE variantArticleAttribute/id/{id}",
+			"v1Signature": "id",
+			"v2": "deleteVariantArticleAttributeById",
+			"v2Signature": "id+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "deleteVariantArticleById",
+			"module": "variantArticle",
+			"request": "DELETE variantArticle/id/{id}",
+			"v1Signature": "id",
+			"v2": "deleteVariantArticleById",
+			"v2Signature": "id+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "fastProductionBooking",
+			"module": "productionOrder",
+			"request": "POST productionOrder/fastProductionBooking",
+			"v1Signature": "body",
+			"v2": "fastProductionBookingProductionOrder",
+			"v2Signature": "body",
+			"callCompatible": true
+		},
+		{
+			"v1": "getArchievedEmailById",
+			"module": "archivedEmail",
+			"request": "GET archivedEmail/id/{id}",
+			"v1Signature": "id",
+			"v2": "getArchivedEmailById",
+			"v2Signature": "id",
+			"callCompatible": true
+		},
+		{
+			"v1": "getArchievedEmailCount",
+			"module": "archivedEmail",
+			"request": "GET archivedEmail/count",
+			"v1Signature": "none",
+			"v2": "countArchivedEmail",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getArchievedEmails",
+			"module": "archivedEmail",
+			"request": "GET archivedEmail",
+			"v1Signature": "none",
+			"v2": "queryArchivedEmail",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getArticleById",
+			"module": "article",
+			"request": "GET article/id/{id}",
+			"v1Signature": "id",
+			"v2": "getArticleById",
+			"v2Signature": "id",
+			"callCompatible": true
+		},
+		{
+			"v1": "getArticleCategories",
+			"module": "articleCategory",
+			"request": "GET articleCategory",
+			"v1Signature": "query",
+			"v2": "queryArticleCategory",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getArticleCategoryById",
+			"module": "articleCategory",
+			"request": "GET articleCategory/id/{id}",
+			"v1Signature": "id",
+			"v2": "getArticleCategoryById",
+			"v2Signature": "id",
+			"callCompatible": true
+		},
+		{
+			"v1": "getArticleCategoryCount",
+			"module": "articleCategory",
+			"request": "GET articleCategory/count",
+			"v1Signature": "none",
+			"v2": "countArticleCategory",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getArticleCount",
+			"module": "article",
+			"request": "GET article/count",
+			"v1Signature": "query",
+			"v2": "countArticle",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getArticlePriceById",
+			"module": "articlePrice",
+			"request": "GET articlePrice/id/{id}",
+			"v1Signature": "id",
+			"v2": "getArticlePriceById",
+			"v2Signature": "id",
+			"callCompatible": true
+		},
+		{
+			"v1": "getArticlePriceCount",
+			"module": "articlePrice",
+			"request": "GET articlePrice/count",
+			"v1Signature": "none",
+			"v2": "countArticlePrice",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getArticlePrices",
+			"module": "articlePrice",
+			"request": "GET articlePrice",
+			"v1Signature": "query",
+			"v2": "queryArticlePrice",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getArticles",
+			"module": "article",
+			"request": "GET article",
+			"v1Signature": "query",
+			"v2": "queryArticle",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getArticleSupplySourceById",
+			"module": "articleSupplySource",
+			"request": "GET articleSupplySource/id/{id}",
+			"v1Signature": "id",
+			"v2": "getArticleSupplySourceById",
+			"v2Signature": "id",
+			"callCompatible": true
+		},
+		{
+			"v1": "getArticleSupplySourceCount",
+			"module": "articleSupplySource",
+			"request": "GET articleSupplySource/count",
+			"v1Signature": "none",
+			"v2": "countArticleSupplySource",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getArticleSupplySources",
+			"module": "articleSupplySource",
+			"request": "GET articleSupplySource",
+			"v1Signature": "query",
+			"v2": "queryArticleSupplySource",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getBatchNumberById",
+			"module": "batchNumber",
+			"request": "GET batchNumber/id/{id}",
+			"v1Signature": "id",
+			"v2": "getBatchNumberById",
+			"v2Signature": "id",
+			"callCompatible": true
+		},
+		{
+			"v1": "getBatchNumberCount",
+			"module": "batchNumber",
+			"request": "GET batchNumber/count",
+			"v1Signature": "none",
+			"v2": "countBatchNumber",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getBatchNumbers",
+			"module": "batchNumber",
+			"request": "GET batchNumber",
+			"v1Signature": "query",
+			"v2": "queryBatchNumber",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getCampaignById",
+			"module": "campaign",
+			"request": "GET campaign/id/{id}",
+			"v1Signature": "id",
+			"v2": "getCampaignById",
+			"v2Signature": "id",
+			"callCompatible": true
+		},
+		{
+			"v1": "getCampaignParticipantById",
+			"module": "campaignParticipant",
+			"request": "GET campaignParticipant/id/{id}",
+			"v1Signature": "id",
+			"v2": "getCampaignParticipantById",
+			"v2Signature": "id",
+			"callCompatible": true
+		},
+		{
+			"v1": "getCampaignParticipantCount",
+			"module": "campaignParticipant",
+			"request": "GET campaignParticipant/count",
+			"v1Signature": "none",
+			"v2": "countCampaignParticipant",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getCampaignParticipants",
+			"module": "campaignParticipant",
+			"request": "GET campaignParticipant",
+			"v1Signature": "query",
+			"v2": "queryCampaignParticipant",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getCampaigns",
+			"module": "campaign",
+			"request": "GET campaign",
+			"v1Signature": "query",
+			"v2": "queryCampaign",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getCampaignsCount",
+			"module": "campaign",
+			"request": "GET campaign/count",
+			"v1Signature": "none",
+			"v2": "countCampaign",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getCommentById",
+			"module": "comment",
+			"request": "GET comment/id/{id}",
+			"v1Signature": "id",
+			"v2": "getCommentById",
+			"v2Signature": "id",
+			"callCompatible": true
+		},
+		{
+			"v1": "getCommentCount",
+			"module": "comment",
+			"request": "GET comment/count",
+			"v1Signature": "none",
+			"v2": "countComment",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getComments",
+			"module": "comment",
+			"request": "GET comment",
+			"v1Signature": "query",
+			"v2": "queryComment",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getCommercialLanguageById",
+			"module": "commercialLanguage",
+			"request": "GET commercialLanguage/id/{id}",
+			"v1Signature": "id",
+			"v2": "getCommercialLanguageById",
+			"v2Signature": "id",
+			"callCompatible": true
+		},
+		{
+			"v1": "getCommercialLanguageCount",
+			"module": "commercialLanguage",
+			"request": "GET commercialLanguage/count",
+			"v1Signature": "none",
+			"v2": "countCommercialLanguage",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getCommercialLanguages",
+			"module": "commercialLanguage",
+			"request": "GET commercialLanguage",
+			"v1Signature": "query",
+			"v2": "queryCommercialLanguage",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getCompanyCurrency",
+			"module": "currency",
+			"request": "GET currency/companyCurrency",
+			"v1Signature": "none",
+			"v2": "companyCurrency",
+			"v2Signature": "none",
+			"callCompatible": true
+		},
+		{
+			"v1": "getCompanySizeById",
+			"module": "companySize",
+			"request": "GET companySize/id/{id}",
+			"v1Signature": "id",
+			"v2": "getCompanySizeById",
+			"v2Signature": "id",
+			"callCompatible": true
+		},
+		{
+			"v1": "getCompanySizeCount",
+			"module": "companySize",
+			"request": "GET companySize/count",
+			"v1Signature": "none",
+			"v2": "countCompanySize",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getCompanySizes",
+			"module": "companySize",
+			"request": "GET companySize",
+			"v1Signature": "query",
+			"v2": "queryCompanySize",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getContractById",
+			"module": "contract",
+			"request": "GET contract/id/{id}",
+			"v1Signature": "id",
+			"v2": "getContractById",
+			"v2Signature": "id",
+			"callCompatible": true
+		},
+		{
+			"v1": "getContractCount",
+			"module": "contract",
+			"request": "GET contract/count",
+			"v1Signature": "query",
+			"v2": "countContract",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getContracts",
+			"module": "contract",
+			"request": "GET contract",
+			"v1Signature": "query",
+			"v2": "queryContract",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getCostCenter",
+			"module": "costCenter",
+			"request": "GET costCenter",
+			"v1Signature": "query",
+			"v2": "queryCostCenter",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getCostCenterGroup",
+			"module": "costCenter",
+			"request": "GET costCenterGroup",
+			"v1Signature": "query",
+			"v2": "queryCostCenterGroup",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getCostType",
+			"module": "costCenter",
+			"request": "GET costType",
+			"v1Signature": "query",
+			"v2": "queryCostType",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getCurrencies",
+			"module": "currency",
+			"request": "GET currency",
+			"v1Signature": "query",
+			"v2": "queryCurrency",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getCurrencyById",
+			"module": "currency",
+			"request": "GET currency/id/{id}",
+			"v1Signature": "id",
+			"v2": "getCurrencyById",
+			"v2Signature": "id",
+			"callCompatible": true
+		},
+		{
+			"v1": "getCurrencyCount",
+			"module": "currency",
+			"request": "GET currency/count",
+			"v1Signature": "none",
+			"v2": "countCurrency",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getCustomAttributeDefinitionById",
+			"module": "customAttributeDefinition",
+			"request": "GET customAttributeDefinition/id/{id}",
+			"v1Signature": "id",
+			"v2": "getCustomAttributeDefinitionById",
+			"v2Signature": "id",
+			"callCompatible": true
+		},
+		{
+			"v1": "getCustomAttributeDefinitionCount",
+			"module": "customAttributeDefinition",
+			"request": "GET customAttributeDefinition/count",
+			"v1Signature": "none",
+			"v2": "countCustomAttributeDefinition",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getCustomAttributeDefinitions",
+			"module": "customAttributeDefinition",
+			"request": "GET customAttributeDefinition",
+			"v1Signature": "query",
+			"v2": "queryCustomAttributeDefinition",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getCustomerCategories",
+			"module": "customerCategory",
+			"request": "GET customerCategory",
+			"v1Signature": "query",
+			"v2": "queryCustomerCategory",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getCustomerCategoryById",
+			"module": "customerCategory",
+			"request": "GET customerCategory/id/{id}",
+			"v1Signature": "id",
+			"v2": "getCustomerCategoryById",
+			"v2Signature": "id",
+			"callCompatible": true
+		},
+		{
+			"v1": "getCustomerCategoryCount",
+			"module": "customerCategory",
+			"request": "GET customerCategory/count",
+			"v1Signature": "none",
+			"v2": "countCustomerCategory",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getCustomerLeadLossReasonById",
+			"module": "customerLeadLossReason",
+			"request": "GET customerLeadLossReason/id/{id}",
+			"v1Signature": "id",
+			"v2": "getCustomerLeadLossReasonById",
+			"v2Signature": "id",
+			"callCompatible": true
+		},
+		{
+			"v1": "getCustomerLeadLossReasonCount",
+			"module": "customerLeadLossReason",
+			"request": "GET customerLeadLossReason/count",
+			"v1Signature": "none",
+			"v2": "countCustomerLeadLossReason",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getCustomerLeadLossReasons",
+			"module": "customerLeadLossReason",
+			"request": "GET customerLeadLossReason",
+			"v1Signature": "query",
+			"v2": "queryCustomerLeadLossReason",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getCustomerTopicById",
+			"module": "customerTopic",
+			"request": "GET customerTopic/id/{id}",
+			"v1Signature": "id",
+			"v2": "getCustomerTopicById",
+			"v2Signature": "id",
+			"callCompatible": true
+		},
+		{
+			"v1": "getCustomerTopicCount",
+			"module": "customerTopic",
+			"request": "GET customerTopic/count",
+			"v1Signature": "none",
+			"v2": "countCustomerTopic",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getCustomerTopics",
+			"module": "customerTopic",
+			"request": "GET customerTopic",
+			"v1Signature": "query",
+			"v2": "queryCustomerTopic",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getCustomsTariffNumberById",
+			"module": "customsTariffNumber",
+			"request": "GET customsTariffNumber/id/{id}",
+			"v1Signature": "id",
+			"v2": "getCustomsTariffNumberById",
+			"v2Signature": "id",
+			"callCompatible": true
+		},
+		{
+			"v1": "getCustomsTariffNumberCount",
+			"module": "customsTariffNumber",
+			"request": "GET customsTariffNumber/count",
+			"v1Signature": "none",
+			"v2": "countCustomsTariffNumber",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getCustomsTariffNumbers",
+			"module": "customsTariffNumber",
+			"request": "GET customsTariffNumber",
+			"v1Signature": "query",
+			"v2": "queryCustomsTariffNumber",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getDocument",
+			"module": "document",
+			"request": "GET document",
+			"v1Signature": "query",
+			"v2": "queryDocument",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getDocumentAsDownloadById",
+			"module": "document",
+			"request": "GET document/id/{id}/download",
+			"v1Signature": "id",
+			"v2": "downloadDocumentById",
+			"v2Signature": "id",
+			"callCompatible": true
+		},
+		{
+			"v1": "getDocumentById",
+			"module": "document",
+			"request": "GET document/id/{id}",
+			"v1Signature": "id",
+			"v2": "getDocumentById",
+			"v2Signature": "id",
+			"callCompatible": true
+		},
+		{
+			"v1": "getDocumentCount",
+			"module": "document",
+			"request": "GET document/count",
+			"v1Signature": "none",
+			"v2": "countDocument",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getDocumentVersion",
+			"module": "document",
+			"request": "GET document/id/{id}/downloadDocumentVersion",
+			"v1Signature": "id",
+			"v2": "downloadDocumentVersionById",
+			"v2Signature": "id+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getFulfillmentProviderById",
+			"module": "fulfillmentProvider",
+			"request": "GET fulfillmentProvider/id/{id}",
+			"v1Signature": "id",
+			"v2": "getFulfillmentProviderById",
+			"v2Signature": "id",
+			"callCompatible": true
+		},
+		{
+			"v1": "getFulfillmentProviderCount",
+			"module": "fulfillmentProvider",
+			"request": "GET fulfillmentProvider/count",
+			"v1Signature": "none",
+			"v2": "countFulfillmentProvider",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getFulfillmentProviders",
+			"module": "fulfillmentProvider",
+			"request": "GET fulfillmentProvider",
+			"v1Signature": "query",
+			"v2": "queryFulfillmentProvider",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getIncomingGoods",
+			"module": "incomingGoods",
+			"request": "GET incomingGoods",
+			"v1Signature": "query",
+			"v2": "queryIncomingGoods",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getIncomingGoodsById",
+			"module": "incomingGoods",
+			"request": "GET incomingGoods/id/{id}",
+			"v1Signature": "id",
+			"v2": "getIncomingGoodsById",
+			"v2Signature": "id",
+			"callCompatible": true
+		},
+		{
+			"v1": "getIncomingGoodsCount",
+			"module": "incomingGoods",
+			"request": "GET incomingGoods/count",
+			"v1Signature": "none",
+			"v2": "countIncomingGoods",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getLatestDeliveryNotePdfId",
+			"module": "shipment",
+			"request": "GET shipment/id/{id}/downloadLatestDeliveryNotePdf",
+			"v1Signature": "id",
+			"v2": "downloadLatestDeliveryNotePdfShipmentById",
+			"v2Signature": "id",
+			"callCompatible": true
+		},
+		{
+			"v1": "getLatestOrderConfirmationPdfId",
+			"module": "salesOrder",
+			"request": "GET salesOrder/id/{id}/downloadLatestOrderConfirmationPdf",
+			"v1Signature": "id",
+			"v2": "downloadLatestOrderConfirmationPdfSalesOrderById",
+			"v2Signature": "id",
+			"callCompatible": true
+		},
+		{
+			"v1": "getLatestPickingListPdfById",
+			"module": "shipment",
+			"request": "GET shipment/id/{id}/downloadLatestPickingListPdf",
+			"v1Signature": "id",
+			"v2": "downloadLatestPickingListPdfShipmentById",
+			"v2Signature": "id",
+			"callCompatible": true
+		},
+		{
+			"v1": "getLatestProductionOrderPdfProductionOrderById",
+			"module": "productionOrder",
+			"request": "GET productionOrder/id/{id}/downloadLatestProductionOrderPdf",
+			"v1Signature": "id",
+			"v2": "downloadLatestProductionOrderPdfById",
+			"v2Signature": "id",
+			"callCompatible": true
+		},
+		{
+			"v1": "getLatestQuotationPdfById",
+			"module": "quotation",
+			"request": "GET quotation/id/{id}/downloadLatestQuotationPdf",
+			"v1Signature": "id",
+			"v2": "downloadLatestQuotationPdfById",
+			"v2Signature": "id",
+			"callCompatible": true
+		},
+		{
+			"v1": "getLatestSalesInvoicePdfById",
+			"module": "salesInvoice",
+			"request": "GET salesInvoice/id/{id}/downloadLatestSalesInvoicePdf",
+			"v1Signature": "id",
+			"v2": "downloadLatestSalesInvoicePdfById",
+			"v2Signature": "id",
+			"callCompatible": true
+		},
+		{
+			"v1": "getLatestShippingLabelPdfById",
+			"module": "shipment",
+			"request": "GET shipment/id/{id}/downloadLatestShippingLabelPdf",
+			"v1Signature": "id",
+			"v2": "downloadLatestShippingLabelPdfShipmentById",
+			"v2Signature": "id",
+			"callCompatible": true
+		},
+		{
+			"v1": "getLeadSourceById",
+			"module": "leadSource",
+			"request": "GET leadSource/id/{id}",
+			"v1Signature": "id",
+			"v2": "getLeadSourceById",
+			"v2Signature": "id",
+			"callCompatible": true
+		},
+		{
+			"v1": "getLeadSourceCount",
+			"module": "leadSource",
+			"request": "GET leadSource/count",
+			"v1Signature": "none",
+			"v2": "countLeadSource",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getLeadSources",
+			"module": "leadSource",
+			"request": "GET leadSource",
+			"v1Signature": "query",
+			"v2": "queryLeadSource",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getManufacturerById",
+			"module": "manufacturer",
+			"request": "GET manufacturer/id/{id}",
+			"v1Signature": "id",
+			"v2": "getManufacturerById",
+			"v2Signature": "id",
+			"callCompatible": true
+		},
+		{
+			"v1": "getManufacturerCount",
+			"module": "manufacturer",
+			"request": "GET manufacturer/count",
+			"v1Signature": "none",
+			"v2": "countManufacturer",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getManufacturers",
+			"module": "manufacturer",
+			"request": "GET manufacturer",
+			"v1Signature": "query",
+			"v2": "queryManufacturer",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getMetaRessources",
+			"module": "meta",
+			"request": "GET meta/resources",
+			"v1Signature": "none",
+			"v2": "resourcesMeta",
+			"v2Signature": "none",
+			"callCompatible": true
+		},
+		{
+			"v1": "getOpportunity",
+			"module": "opportunity",
+			"request": "GET opportunity",
+			"v1Signature": "query",
+			"v2": "queryOpportunity",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getOpportunityById",
+			"module": "opportunity",
+			"request": "GET opportunity/id/{id}",
+			"v1Signature": "id",
+			"v2": "getOpportunityById",
+			"v2Signature": "id",
+			"callCompatible": true
+		},
+		{
+			"v1": "getOpportunityCount",
+			"module": "opportunity",
+			"request": "GET opportunity/count",
+			"v1Signature": "query",
+			"v2": "countOpportunity",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getOpportunityWinLossReasonById",
+			"module": "opportunityWinLossReason",
+			"request": "GET opportunityWinLossReason/id/{id}",
+			"v1Signature": "id",
+			"v2": "getOpportunityWinLossReasonById",
+			"v2Signature": "id",
+			"callCompatible": true
+		},
+		{
+			"v1": "getOpportunityWinLossReasonCount",
+			"module": "opportunityWinLossReason",
+			"request": "GET opportunityWinLossReason/count",
+			"v1Signature": "none",
+			"v2": "countOpportunityWinLossReason",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getOpportunityWinLossReasons",
+			"module": "opportunityWinLossReason",
+			"request": "GET opportunityWinLossReason",
+			"v1Signature": "query",
+			"v2": "queryOpportunityWinLossReason",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getParties",
+			"module": "party",
+			"request": "GET party",
+			"v1Signature": "query",
+			"v2": "queryParty",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getPartyById",
+			"module": "party",
+			"request": "GET party/id/{id}",
+			"v1Signature": "id",
+			"v2": "getPartyById",
+			"v2Signature": "id",
+			"callCompatible": true
+		},
+		{
+			"v1": "getPartyCount",
+			"module": "party",
+			"request": "GET party/count",
+			"v1Signature": "none",
+			"v2": "countParty",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getPaymentMethodById",
+			"module": "paymentMethod",
+			"request": "GET paymentMethod/id/{id}",
+			"v1Signature": "id",
+			"v2": "getPaymentMethodById",
+			"v2Signature": "id",
+			"callCompatible": true
+		},
+		{
+			"v1": "getPaymentMethodCount",
+			"module": "paymentMethod",
+			"request": "GET paymentMethod/count",
+			"v1Signature": "none",
+			"v2": "countPaymentMethod",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getPaymentMethods",
+			"module": "paymentMethod",
+			"request": "GET paymentMethod",
+			"v1Signature": "query",
+			"v2": "queryPaymentMethod",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getPickCount",
+			"module": "pick",
+			"request": "GET pick/count",
+			"v1Signature": "query",
+			"v2": "countPick",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getPicks",
+			"module": "pick",
+			"request": "GET pick",
+			"v1Signature": "query",
+			"v2": "queryPick",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getProductionOrderById",
+			"module": "productionOrder",
+			"request": "GET productionOrder/id/{id}",
+			"v1Signature": "id",
+			"v2": "getProductionOrderById",
+			"v2Signature": "id",
+			"callCompatible": true
+		},
+		{
+			"v1": "getProductionOrderCount",
+			"module": "productionOrder",
+			"request": "GET productionOrder/count",
+			"v1Signature": "none",
+			"v2": "countProductionOrder",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getProductionOrders",
+			"module": "productionOrder",
+			"request": "GET productionOrder",
+			"v1Signature": "query",
+			"v2": "queryProductionOrder",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getPurchaseInvoiceById",
+			"module": "purchaseInvoice",
+			"request": "GET purchaseInvoice/id/{id}",
+			"v1Signature": "id",
+			"v2": "getPurchaseInvoiceById",
+			"v2Signature": "id",
+			"callCompatible": true
+		},
+		{
+			"v1": "getPurchaseInvoiceCount",
+			"module": "purchaseInvoice",
+			"request": "GET purchaseInvoice/count",
+			"v1Signature": "none",
+			"v2": "countPurchaseInvoice",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getPurchaseInvoices",
+			"module": "purchaseInvoice",
+			"request": "GET purchaseInvoice",
+			"v1Signature": "query",
+			"v2": "queryPurchaseInvoice",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getPurchaseOrderById",
+			"module": "purchaseOrder",
+			"request": "GET purchaseOrder/id/{id}",
+			"v1Signature": "id",
+			"v2": "getPurchaseOrderById",
+			"v2Signature": "id",
+			"callCompatible": true
+		},
+		{
+			"v1": "getPurchaseOrderCount",
+			"module": "purchaseOrder",
+			"request": "GET purchaseOrder/count",
+			"v1Signature": "none",
+			"v2": "countPurchaseOrder",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getPurchaseOrders",
+			"module": "purchaseOrder",
+			"request": "GET purchaseOrder",
+			"v1Signature": "query",
+			"v2": "queryPurchaseOrder",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getQuotationById",
+			"module": "quotation",
+			"request": "GET quotation/id/{id}",
+			"v1Signature": "id",
+			"v2": "getQuotationById",
+			"v2Signature": "id",
+			"callCompatible": true
+		},
+		{
+			"v1": "getQuotationCount",
+			"module": "quotation",
+			"request": "GET quotation/count",
+			"v1Signature": "none",
+			"v2": "countQuotation",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getQuotations",
+			"module": "quotation",
+			"request": "GET quotation",
+			"v1Signature": "query",
+			"v2": "queryQuotation",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getSalesChannel",
+			"module": "salesChannel",
+			"request": "GET salesChannel/activeSalesChannels",
+			"v1Signature": "none",
+			"v2": "activeSalesChannels",
+			"v2Signature": "none",
+			"callCompatible": true
+		},
+		{
+			"v1": "getSalesInvoiceById",
+			"module": "salesInvoice",
+			"request": "GET salesInvoice/id/{id}",
+			"v1Signature": "id",
+			"v2": "getSalesInvoiceById",
+			"v2Signature": "id",
+			"callCompatible": true
+		},
+		{
+			"v1": "getSalesInvoiceCount",
+			"module": "salesInvoice",
+			"request": "GET salesInvoice/count",
+			"v1Signature": "query",
+			"v2": "countSalesInvoice",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getSalesInvoices",
+			"module": "salesInvoice",
+			"request": "GET salesInvoice",
+			"v1Signature": "query",
+			"v2": "querySalesInvoice",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getSalesOrderById",
+			"module": "salesOrder",
+			"request": "GET salesOrder/id/{id}",
+			"v1Signature": "id",
+			"v2": "getSalesOrderById",
+			"v2Signature": "id",
+			"callCompatible": true
+		},
+		{
+			"v1": "getSalesOrderCount",
+			"module": "salesOrder",
+			"request": "GET salesOrder/count",
+			"v1Signature": "none",
+			"v2": "countSalesOrder",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getSalesOrderForCustomer",
+			"module": "salesOrder",
+			"request": "GET salesOrder/defaultValuesForCreate",
+			"v1Signature": "query",
+			"v2": "defaultValuesForCreateSalesOrder",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getSalesOrders",
+			"module": "salesOrder",
+			"request": "GET salesOrder",
+			"v1Signature": "query",
+			"v2": "querySalesOrder",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getSalesStageById",
+			"module": "salesStage",
+			"request": "GET salesStage/id/{id}",
+			"v1Signature": "id",
+			"v2": "getSalesStageById",
+			"v2Signature": "id",
+			"callCompatible": true
+		},
+		{
+			"v1": "getSalesStageCount",
+			"module": "salesStage",
+			"request": "GET salesStage/count",
+			"v1Signature": "none",
+			"v2": "countSalesStage",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getSalesStages",
+			"module": "salesStage",
+			"request": "GET salesStage",
+			"v1Signature": "query",
+			"v2": "querySalesStage",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getSectorById",
+			"module": "sector",
+			"request": "GET sector/id/{id}",
+			"v1Signature": "id",
+			"v2": "getSectorById",
+			"v2Signature": "id",
+			"callCompatible": true
+		},
+		{
+			"v1": "getSectorCount",
+			"module": "sector",
+			"request": "GET sector/count",
+			"v1Signature": "none",
+			"v2": "countSector",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getSectors",
+			"module": "sector",
+			"request": "GET sector",
+			"v1Signature": "query",
+			"v2": "querySector",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getSerialNumberById",
+			"module": "serialNumber",
+			"request": "GET serialNumber/id/{id}",
+			"v1Signature": "id",
+			"v2": "getSerialNumberById",
+			"v2Signature": "id",
+			"callCompatible": true
+		},
+		{
+			"v1": "getSerialNumberCount",
+			"module": "serialNumber",
+			"request": "GET serialNumber/count",
+			"v1Signature": "none",
+			"v2": "countSerialNumber",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getSerialNumbers",
+			"module": "serialNumber",
+			"request": "GET serialNumber",
+			"v1Signature": "query",
+			"v2": "querySerialNumber",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getShipmentById",
+			"module": "shipment",
+			"request": "GET shipment/id/{id}",
+			"v1Signature": "id",
+			"v2": "getShipmentById",
+			"v2Signature": "id",
+			"callCompatible": true
+		},
+		{
+			"v1": "getShipmentCount",
+			"module": "shipment",
+			"request": "GET shipment/count",
+			"v1Signature": "none",
+			"v2": "countShipment",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getShipmentMethodById",
+			"module": "shipmentMethod",
+			"request": "GET shipmentMethod/id/{id}",
+			"v1Signature": "id",
+			"v2": "getShipmentMethodById",
+			"v2Signature": "id",
+			"callCompatible": true
+		},
+		{
+			"v1": "getShipmentMethodCount",
+			"module": "shipmentMethod",
+			"request": "GET shipmentMethod/count",
+			"v1Signature": "none",
+			"v2": "countShipmentMethod",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getShipmentMethods",
+			"module": "shipmentMethod",
+			"request": "GET shipmentMethod",
+			"v1Signature": "query",
+			"v2": "queryShipmentMethod",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getShipments",
+			"module": "shipment",
+			"request": "GET shipment",
+			"v1Signature": "query",
+			"v2": "queryShipment",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getStoragePlaceById",
+			"module": "storagePlace",
+			"request": "GET storagePlace/id/{id}",
+			"v1Signature": "id",
+			"v2": "getStoragePlaceById",
+			"v2Signature": "id",
+			"callCompatible": true
+		},
+		{
+			"v1": "getStoragePlaceCount",
+			"module": "storagePlace",
+			"request": "GET storagePlace/count",
+			"v1Signature": "none",
+			"v2": "countStoragePlace",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getStoragePlaces",
+			"module": "storagePlace",
+			"request": "GET storagePlace",
+			"v1Signature": "query",
+			"v2": "queryStoragePlace",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getTaxById",
+			"module": "tax",
+			"request": "GET tax/id/{id}",
+			"v1Signature": "id",
+			"v2": "getTaxById",
+			"v2Signature": "id",
+			"callCompatible": true
+		},
+		{
+			"v1": "getTaxCount",
+			"module": "tax",
+			"request": "GET tax/count",
+			"v1Signature": "none",
+			"v2": "countTax",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getTaxes",
+			"module": "tax",
+			"request": "GET tax",
+			"v1Signature": "query",
+			"v2": "queryTax",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getTaxFor",
+			"module": "tax",
+			"request": "GET tax/findSalesTax",
+			"v1Signature": "query",
+			"v2": "findSalesTax",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getTermOfPaymentById",
+			"module": "termOfPayment",
+			"request": "GET termOfPayment/id/{id}",
+			"v1Signature": "id",
+			"v2": "getTermOfPaymentById",
+			"v2Signature": "id",
+			"callCompatible": true
+		},
+		{
+			"v1": "getTermOfPaymentCount",
+			"module": "termOfPayment",
+			"request": "GET termOfPayment/count",
+			"v1Signature": "none",
+			"v2": "countTermOfPayment",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getTermsOfPayment",
+			"module": "termOfPayment",
+			"request": "GET termOfPayment",
+			"v1Signature": "query",
+			"v2": "queryTermOfPayment",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getTicketById",
+			"module": "ticket",
+			"request": "GET ticket/id/{id}",
+			"v1Signature": "id",
+			"v2": "getTicketById",
+			"v2Signature": "id",
+			"callCompatible": true
+		},
+		{
+			"v1": "getTicketCount",
+			"module": "ticket",
+			"request": "GET ticket/count",
+			"v1Signature": "query",
+			"v2": "countTicket",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getTicketPriorities",
+			"module": "ticket",
+			"request": "GET ticketPriority",
+			"v1Signature": "query",
+			"v2": "queryTicketPriority",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getTickets",
+			"module": "ticket",
+			"request": "GET ticket",
+			"v1Signature": "query",
+			"v2": "queryTicket",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getUnitById",
+			"module": "unit",
+			"request": "GET unit/id/{id}",
+			"v1Signature": "id",
+			"v2": "getUnitById",
+			"v2Signature": "id",
+			"callCompatible": true
+		},
+		{
+			"v1": "getUnitCount",
+			"module": "unit",
+			"request": "GET unit/count",
+			"v1Signature": "none",
+			"v2": "countUnit",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getUnits",
+			"module": "unit",
+			"request": "GET unit",
+			"v1Signature": "query",
+			"v2": "queryUnit",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getUser",
+			"module": "user",
+			"request": "GET user/currentUser",
+			"v1Signature": "none",
+			"v2": "currentUser",
+			"v2Signature": "none",
+			"callCompatible": true
+		},
+		{
+			"v1": "getUserById",
+			"module": "user",
+			"request": "GET user/id/{id}",
+			"v1Signature": "id",
+			"v2": "getUserById",
+			"v2Signature": "id",
+			"callCompatible": true
+		},
+		{
+			"v1": "getUserCount",
+			"module": "user",
+			"request": "GET user/count",
+			"v1Signature": "none",
+			"v2": "countUser",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getUserImageById",
+			"module": "user",
+			"request": "GET user/id/{id}/userImage",
+			"v1Signature": "id",
+			"v2": "userImageById",
+			"v2Signature": "id+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getUserImageThumbnailById",
+			"module": "user",
+			"request": "GET user/id/{id}/userImageThumbnail",
+			"v1Signature": "id",
+			"v2": "userImageThumbnailById",
+			"v2Signature": "id+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getUsers",
+			"module": "user",
+			"request": "GET user",
+			"v1Signature": "query",
+			"v2": "queryUser",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getVariantArticleAttributeById",
+			"module": "variantArticleAttribute",
+			"request": "GET variantArticleAttribute/id/{id}",
+			"v1Signature": "id",
+			"v2": "getVariantArticleAttributeById",
+			"v2Signature": "id",
+			"callCompatible": true
+		},
+		{
+			"v1": "getVariantArticleAttributeCount",
+			"module": "variantArticleAttribute",
+			"request": "GET variantArticleAttribute/count",
+			"v1Signature": "none",
+			"v2": "countVariantArticleAttribute",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getVariantArticleAttributes",
+			"module": "variantArticleAttribute",
+			"request": "GET variantArticleAttribute",
+			"v1Signature": "query",
+			"v2": "queryVariantArticleAttribute",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getVariantArticleById",
+			"module": "variantArticle",
+			"request": "GET variantArticle/id/{id}",
+			"v1Signature": "id",
+			"v2": "getVariantArticleById",
+			"v2Signature": "id",
+			"callCompatible": true
+		},
+		{
+			"v1": "getVariantArticleCount",
+			"module": "variantArticle",
+			"request": "GET variantArticle/count",
+			"v1Signature": "none",
+			"v2": "countVariantArticle",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getVariantArticles",
+			"module": "variantArticle",
+			"request": "GET variantArticle",
+			"v1Signature": "query",
+			"v2": "queryVariantArticle",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getVariantArticleVariantById",
+			"module": "variantArticleVariant",
+			"request": "GET variantArticleVariant/id/{id}",
+			"v1Signature": "id",
+			"v2": "getVariantArticleVariantById",
+			"v2Signature": "id",
+			"callCompatible": true
+		},
+		{
+			"v1": "getVariantArticleVariantCount",
+			"module": "variantArticleVariant",
+			"request": "GET variantArticleVariant/count",
+			"v1Signature": "none",
+			"v2": "countVariantArticleVariant",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getVariantArticleVariants",
+			"module": "variantArticleVariant",
+			"request": "GET variantArticleVariant",
+			"v1Signature": "query",
+			"v2": "queryVariantArticleVariant",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getWarehouseById",
+			"module": "warehouse",
+			"request": "GET warehouse/id/{id}",
+			"v1Signature": "id",
+			"v2": "getWarehouseById",
+			"v2Signature": "id",
+			"callCompatible": true
+		},
+		{
+			"v1": "getWarehouseCount",
+			"module": "warehouse",
+			"request": "GET warehouse/count",
+			"v1Signature": "none",
+			"v2": "countWarehouse",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getWarehouses",
+			"module": "warehouse",
+			"request": "GET warehouse",
+			"v1Signature": "query",
+			"v2": "queryWarehouse",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getWarehouseStockById",
+			"module": "warehouseStock",
+			"request": "GET warehouseStock/id/{id}",
+			"v1Signature": "id",
+			"v2": "getWarehouseStockById",
+			"v2Signature": "id",
+			"callCompatible": true
+		},
+		{
+			"v1": "getWarehouseStockCount",
+			"module": "warehouseStock",
+			"request": "GET warehouseStock/count",
+			"v1Signature": "query",
+			"v2": "countWarehouseStock",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getWarehouseStockMovementById",
+			"module": "warehouseStockMovement",
+			"request": "GET warehouseStockMovement/id/{id}",
+			"v1Signature": "id",
+			"v2": "getWarehouseStockMovementById",
+			"v2Signature": "id",
+			"callCompatible": true
+		},
+		{
+			"v1": "getWarehouseStockMovementCount",
+			"module": "warehouseStockMovement",
+			"request": "GET warehouseStockMovement/count",
+			"v1Signature": "query",
+			"v2": "countWarehouseStockMovement",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getWarehouseStockMovements",
+			"module": "warehouseStockMovement",
+			"request": "GET warehouseStockMovement",
+			"v1Signature": "query",
+			"v2": "queryWarehouseStockMovement",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "getWarehouseStocks",
+			"module": "warehouseStock",
+			"request": "GET warehouseStock",
+			"v1Signature": "query",
+			"v2": "queryWarehouseStock",
+			"v2Signature": "query",
+			"callCompatible": true
+		},
+		{
+			"v1": "updateArticleCategoryForId",
+			"module": "articleCategory",
+			"request": "PUT articleCategory/id/{id}",
+			"v1Signature": "id+body",
+			"v2": "updateArticleCategoryById",
+			"v2Signature": "id+body+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "updateArticleSupplySourceForId",
+			"module": "articleSupplySource",
+			"request": "PUT articleSupplySource/id/{id}",
+			"v1Signature": "id+body",
+			"v2": "updateArticleSupplySourceById",
+			"v2Signature": "id+body+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "updateCampaignForId",
+			"module": "campaign",
+			"request": "PUT campaign/id/{id}",
+			"v1Signature": "id+body",
+			"v2": "updateCampaignById",
+			"v2Signature": "id+body+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "updateCampaignParticipantForId",
+			"module": "campaignParticipant",
+			"request": "PUT campaignParticipant/id/{id}",
+			"v1Signature": "id+body",
+			"v2": "updateCampaignParticipantById",
+			"v2Signature": "id+body+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "updateCommentForId",
+			"module": "comment",
+			"request": "PUT comment/id/{id}",
+			"v1Signature": "id+body",
+			"v2": "updateCommentById",
+			"v2Signature": "id+body+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "updateCompanySizeForId",
+			"module": "companySize",
+			"request": "PUT companySize/id/{id}",
+			"v1Signature": "id+body",
+			"v2": "updateCompanySizeById",
+			"v2Signature": "id+body+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "updateContractForId",
+			"module": "contract",
+			"request": "PUT contract/id/{id}",
+			"v1Signature": "id+body",
+			"v2": "updateContractById",
+			"v2Signature": "id+body+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "updateCustomerCategoryForId",
+			"module": "customerCategory",
+			"request": "PUT customerCategory/id/{id}",
+			"v1Signature": "id+body",
+			"v2": "updateCustomerCategoryById",
+			"v2Signature": "id+body+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "updateCustomerLeadLossReasonForId",
+			"module": "customerLeadLossReason",
+			"request": "PUT customerLeadLossReason/id/{id}",
+			"v1Signature": "id+body",
+			"v2": "updateCustomerLeadLossReasonById",
+			"v2Signature": "id+body+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "updateCustomerTopicForId",
+			"module": "customerTopic",
+			"request": "PUT customerTopic/id/{id}",
+			"v1Signature": "id+body",
+			"v2": "updateCustomerTopicById",
+			"v2Signature": "id+body+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "updateCustomsTariffNumberForId",
+			"module": "customsTariffNumber",
+			"request": "PUT customsTariffNumber/id/{id}",
+			"v1Signature": "id+body",
+			"v2": "updateCustomsTariffNumberById",
+			"v2Signature": "id+body+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "updateDocumentForId",
+			"module": "document",
+			"request": "PUT document/id/{id}",
+			"v1Signature": "id+body",
+			"v2": "updateDocumentById",
+			"v2Signature": "id+body+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "updateIncomingGoodsForId",
+			"module": "incomingGoods",
+			"request": "PUT incomingGoods/id/{id}",
+			"v1Signature": "id+body",
+			"v2": "updateIncomingGoodsById",
+			"v2Signature": "id+body+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "updateLeadSourceForId",
+			"module": "leadSource",
+			"request": "PUT leadSource/id/{id}",
+			"v1Signature": "id+body",
+			"v2": "updateLeadSourceById",
+			"v2Signature": "id+body+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "updateManufacturerForId",
+			"module": "manufacturer",
+			"request": "PUT manufacturer/id/{id}",
+			"v1Signature": "id+body",
+			"v2": "updateManufacturerById",
+			"v2Signature": "id+body+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "updateOpportunityForId",
+			"module": "opportunity",
+			"request": "PUT opportunity/id/{id}",
+			"v1Signature": "id+body",
+			"v2": "updateOpportunityById",
+			"v2Signature": "id+body+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "updateOpportunityWinLossReasonForId",
+			"module": "opportunityWinLossReason",
+			"request": "PUT opportunityWinLossReason/id/{id}",
+			"v1Signature": "id+body",
+			"v2": "updateOpportunityWinLossReasonById",
+			"v2Signature": "id+body+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "updatePaymentMethodForId",
+			"module": "paymentMethod",
+			"request": "PUT paymentMethod/id/{id}",
+			"v1Signature": "id+body",
+			"v2": "updatePaymentMethodById",
+			"v2Signature": "id+body+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "updateProductionOrderForId",
+			"module": "productionOrder",
+			"request": "PUT productionOrder/id/{id}",
+			"v1Signature": "id+body",
+			"v2": "updateProductionOrderById",
+			"v2Signature": "id+body+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "updatePurchaseInvoiceForId",
+			"module": "purchaseInvoice",
+			"request": "PUT purchaseInvoice/id/{id}",
+			"v1Signature": "id+body",
+			"v2": "updatePurchaseInvoiceById",
+			"v2Signature": "id+body+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "updatePurchaseOrder",
+			"module": "purchaseOrder",
+			"request": "PUT purchaseOrder/id/{id}",
+			"v1Signature": "id+body",
+			"v2": "updatePurchaseOrderById",
+			"v2Signature": "id+body+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "updateQuotationForId",
+			"module": "quotation",
+			"request": "PUT quotation/id/{id}",
+			"v1Signature": "id+body",
+			"v2": "updateQuotationById",
+			"v2Signature": "id+body+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "updateSalesInvoiceForId",
+			"module": "salesInvoice",
+			"request": "PUT salesInvoice/id/{id}",
+			"v1Signature": "id+body",
+			"v2": "updateSalesInvoiceById",
+			"v2Signature": "id+body+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "updateSalesOrderForId",
+			"module": "salesOrder",
+			"request": "PUT salesOrder/id/{id}",
+			"v1Signature": "id+body",
+			"v2": "updateSalesOrderById",
+			"v2Signature": "id+body+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "updateSalesStageForId",
+			"module": "salesStage",
+			"request": "PUT salesStage/id/{id}",
+			"v1Signature": "id+body",
+			"v2": "updateSalesStageById",
+			"v2Signature": "id+body+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "updateSectorForId",
+			"module": "sector",
+			"request": "PUT sector/id/{id}",
+			"v1Signature": "id+body",
+			"v2": "updateSectorById",
+			"v2Signature": "id+body+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "updateSerialNumberForId",
+			"module": "serialNumber",
+			"request": "PUT serialNumber/id/{id}",
+			"v1Signature": "id+body",
+			"v2": "updateSerialNumberById",
+			"v2Signature": "id+body+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "updateShipmentForId",
+			"module": "shipment",
+			"request": "PUT shipment/id/{id}",
+			"v1Signature": "id+body",
+			"v2": "updateShipmentById",
+			"v2Signature": "id+body+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "updateShipmentMethodForId",
+			"module": "shipmentMethod",
+			"request": "PUT shipmentMethod/id/{id}",
+			"v1Signature": "id+body",
+			"v2": "updateShipmentMethodById",
+			"v2Signature": "id+body+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "updateTaxForId",
+			"module": "tax",
+			"request": "PUT tax/id/{id}",
+			"v1Signature": "id+body",
+			"v2": "updateTaxById",
+			"v2Signature": "id+body+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "updateTermOfPaymentForId",
+			"module": "termOfPayment",
+			"request": "PUT termOfPayment/id/{id}",
+			"v1Signature": "id+body",
+			"v2": "updateTermOfPaymentById",
+			"v2Signature": "id+body+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "updateTicketForId",
+			"module": "ticket",
+			"request": "PUT ticket/id/{id}",
+			"v1Signature": "id+body",
+			"v2": "updateTicketById",
+			"v2Signature": "id+body+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "updateUnitForId",
+			"module": "unit",
+			"request": "PUT unit/id/{id}",
+			"v1Signature": "id+body",
+			"v2": "updateUnitById",
+			"v2Signature": "id+body+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "updateVariantArticleAttributeForId",
+			"module": "variantArticleAttribute",
+			"request": "PUT variantArticleAttribute/id/{id}",
+			"v1Signature": "id+body",
+			"v2": "updateVariantArticleAttributeById",
+			"v2Signature": "id+body+query",
+			"callCompatible": true
+		},
+		{
+			"v1": "updateVariantArticleForId",
+			"module": "variantArticle",
+			"request": "PUT variantArticle/id/{id}",
+			"v1Signature": "id+body",
+			"v2": "updateVariantArticleById",
+			"v2Signature": "id+body+query",
+			"callCompatible": true
+		}
+	],
+	"decisions": [
+		{
+			"v1": "convertLeadToCustomer",
+			"module": "lead",
+			"request": "GET lead/id/{id}/convertLeadToCustomer",
+			"v1Signature": "id",
+			"reason": "resource-removed",
+			"replacementResource": "party",
+			"requiresReview": true,
+			"suggestedV2": null,
+			"suggestedV2Signature": null,
+			"suggestionCallCompatible": null,
+			"note": "/lead folded into /party, and this operation has no direct counterpart"
+		},
+		{
+			"v1": "createBookTransferMovement",
+			"module": "warehouseStockMovement",
+			"request": "POST warehouseStockMovement/bookTransferMovement",
+			"v1Signature": "body",
+			"reason": "undocumented-in-v1",
+			"documentedAlternative": {
+				"resource": "warehouseStockMovement/bookDirectStockTransfer",
+				"confidence": "low",
+				"note": "closest documented v2 operation -- verify the booking semantics match before porting"
+			},
+			"note": "absent from the v1 spec too, but a documented endpoint covers it -- see documentedAlternative"
+		},
+		{
+			"v1": "createContact",
+			"module": "contact",
+			"request": "POST contact",
+			"v1Signature": "body",
+			"reason": "resource-removed",
+			"replacementResource": "party",
+			"requiresReview": true,
+			"suggestedV2": "createParty",
+			"suggestedV2Signature": "body+query",
+			"suggestionCallCompatible": true,
+			"note": "/contact folded into /party; same URL shape, but verify id and role semantics per call site"
+		},
+		{
+			"v1": "createContactImageForId",
+			"module": "contact",
+			"request": "POST contact/id/{id}/uploadImage",
+			"v1Signature": "id+body",
+			"reason": "resource-removed",
+			"replacementResource": "party",
+			"requiresReview": true,
+			"suggestedV2": "uploadImagePartyById",
+			"suggestedV2Signature": "id+body",
+			"suggestionCallCompatible": true,
+			"note": "/contact folded into /party; same URL shape, but verify id and role semantics per call site"
+		},
+		{
+			"v1": "createContractImageForId",
+			"module": "contract",
+			"request": "POST contract/id/{id}/uploadImage",
+			"v1Signature": "id+body",
+			"reason": "undocumented-in-v1",
+			"documentedAlternative": null,
+			"note": "absent from the v1 spec too and no documented successor -- check whether anything still calls it before porting"
+		},
+		{
+			"v1": "createCustomer",
+			"module": "customer",
+			"request": "POST customer",
+			"v1Signature": "body",
+			"reason": "resource-removed",
+			"replacementResource": "party",
+			"requiresReview": true,
+			"suggestedV2": "createParty",
+			"suggestedV2Signature": "body+query",
+			"suggestionCallCompatible": true,
+			"note": "/customer folded into /party; same URL shape, but verify id and role semantics per call site"
+		},
+		{
+			"v1": "createCustomerForId",
+			"module": "customer",
+			"request": "POST customer/id/{id}/uploadImage",
+			"v1Signature": "id+body",
+			"reason": "resource-removed",
+			"replacementResource": "party",
+			"requiresReview": true,
+			"suggestedV2": "uploadImagePartyById",
+			"suggestedV2Signature": "id+body",
+			"suggestionCallCompatible": true,
+			"note": "/customer folded into /party; same URL shape, but verify id and role semantics per call site"
+		},
+		{
+			"v1": "createDocument",
+			"module": "document",
+			"request": "POST document/id/{id}/upload",
+			"v1Signature": "query+body",
+			"v2": "uploadDocumentById",
+			"v2Signature": "id+body+query",
+			"callCompatible": false,
+			"note": "leading parameters differ -- call sites must be rewritten, not just renamed",
+			"reason": "signature-breaking",
+			"rewrite": {
+				"v2": "uploadDocumentById",
+				"lift": [
+					"id"
+				],
+				"v1Example": "createDocument({id, comment}, body)",
+				"v2Example": "uploadDocumentById(id, body, {comment})"
+			},
+			"rewriteMechanical": true
+		},
+		{
+			"v1": "createEntityDocument",
+			"module": "document",
+			"request": "POST document/upload",
+			"v1Signature": "query+body",
+			"v2": "uploadDocument",
+			"v2Signature": "body+query",
+			"callCompatible": false,
+			"note": "leading parameters differ -- call sites must be rewritten, not just renamed",
+			"reason": "signature-breaking",
+			"rewrite": {
+				"v2": "uploadDocument",
+				"lift": [],
+				"v1Example": "createEntityDocument({entityName, entityId, name, description}, body)",
+				"v2Example": "uploadDocument(body, {entityName, entityId, name, description})",
+				"note": "options object moves from the first to the last argument"
+			},
+			"rewriteMechanical": true
+		},
+		{
+			"v1": "createLead",
+			"module": "lead",
+			"request": "POST lead",
+			"v1Signature": "body",
+			"reason": "resource-removed",
+			"replacementResource": "party",
+			"requiresReview": true,
+			"suggestedV2": "createParty",
+			"suggestedV2Signature": "body+query",
+			"suggestionCallCompatible": true,
+			"note": "/lead folded into /party; same URL shape, but verify id and role semantics per call site"
+		},
+		{
+			"v1": "createLeadImageForId",
+			"module": "lead",
+			"request": "POST lead/id/{id}/uploadImage",
+			"v1Signature": "id+body",
+			"reason": "resource-removed",
+			"replacementResource": "party",
+			"requiresReview": true,
+			"suggestedV2": "uploadImagePartyById",
+			"suggestedV2Signature": "id+body",
+			"suggestionCallCompatible": true,
+			"note": "/lead folded into /party; same URL shape, but verify id and role semantics per call site"
+		},
+		{
+			"v1": "createPrepaymentInvoiceForId",
+			"module": "salesOrder",
+			"request": "POST salesOrder/id/{id}/createPrepaymentInvoice",
+			"v1Signature": "id+body",
+			"reason": "undocumented-in-v1",
+			"documentedAlternative": {
+				"resource": "salesOrder/id/{id}/createPrepaymentFinalInvoice",
+				"confidence": "low",
+				"note": "v2 only offers a *final* prepayment invoice -- confirm that is the same document"
+			},
+			"note": "absent from the v1 spec too, but a documented endpoint covers it -- see documentedAlternative"
+		},
+		{
+			"v1": "createSupplier",
+			"module": "supplier",
+			"request": "POST supplier",
+			"v1Signature": "body",
+			"reason": "resource-removed",
+			"replacementResource": "party",
+			"requiresReview": true,
+			"suggestedV2": "createParty",
+			"suggestedV2Signature": "body+query",
+			"suggestionCallCompatible": true,
+			"note": "/supplier folded into /party; same URL shape, but verify id and role semantics per call site"
+		},
+		{
+			"v1": "createSupplierImageForId",
+			"module": "supplier",
+			"request": "POST supplier/id/{id}/uploadImage",
+			"v1Signature": "id+body",
+			"reason": "resource-removed",
+			"replacementResource": "party",
+			"requiresReview": true,
+			"suggestedV2": "uploadImagePartyById",
+			"suggestedV2Signature": "id+body",
+			"suggestionCallCompatible": true,
+			"note": "/supplier folded into /party; same URL shape, but verify id and role semantics per call site"
+		},
+		{
+			"v1": "createTicketExtraInfoForAppForId",
+			"module": "ticket",
+			"request": "POST ticket/id/{id}/extraInfoForApp",
+			"v1Signature": "id+body",
+			"reason": "undocumented-in-v1",
+			"documentedAlternative": null,
+			"note": "absent from the v1 spec too and no documented successor -- check whether anything still calls it before porting"
+		},
+		{
+			"v1": "deleteArchievedEmailById",
+			"module": "archivedEmail",
+			"request": "DELETE archivedEmail/id/{id}",
+			"v1Signature": "id",
+			"reason": "operation-removed",
+			"note": "documented in v1, but /archivedEmail/id/{id} has no v2 counterpart"
+		},
+		{
+			"v1": "deleteContactById",
+			"module": "contact",
+			"request": "DELETE contact/id/{id}",
+			"v1Signature": "id",
+			"reason": "resource-removed",
+			"replacementResource": "party",
+			"requiresReview": true,
+			"suggestedV2": "deletePartyById",
+			"suggestedV2Signature": "id+query",
+			"suggestionCallCompatible": true,
+			"note": "/contact folded into /party; same URL shape, but verify id and role semantics per call site"
+		},
+		{
+			"v1": "deleteCustomerById",
+			"module": "customer",
+			"request": "DELETE customer/id/{id}",
+			"v1Signature": "id",
+			"reason": "resource-removed",
+			"replacementResource": "party",
+			"requiresReview": true,
+			"suggestedV2": "deletePartyById",
+			"suggestedV2Signature": "id+query",
+			"suggestionCallCompatible": true,
+			"note": "/customer folded into /party; same URL shape, but verify id and role semantics per call site"
+		},
+		{
+			"v1": "deleteLeadById",
+			"module": "lead",
+			"request": "DELETE lead/id/{id}",
+			"v1Signature": "id",
+			"reason": "resource-removed",
+			"replacementResource": "party",
+			"requiresReview": true,
+			"suggestedV2": "deletePartyById",
+			"suggestedV2Signature": "id+query",
+			"suggestionCallCompatible": true,
+			"note": "/lead folded into /party; same URL shape, but verify id and role semantics per call site"
+		},
+		{
+			"v1": "deleteSupplierById",
+			"module": "supplier",
+			"request": "DELETE supplier/id/{id}",
+			"v1Signature": "id",
+			"reason": "resource-removed",
+			"replacementResource": "party",
+			"requiresReview": true,
+			"suggestedV2": "deletePartyById",
+			"suggestedV2Signature": "id+query",
+			"suggestionCallCompatible": true,
+			"note": "/supplier folded into /party; same URL shape, but verify id and role semantics per call site"
+		},
+		{
+			"v1": "getArticleImage",
+			"module": "article",
+			"request": "GET article/id/{id}/downloadArticleImage",
+			"v1Signature": "query",
+			"v2": "downloadArticleImageById",
+			"v2Signature": "id+query",
+			"callCompatible": false,
+			"note": "leading parameters differ -- call sites must be rewritten, not just renamed",
+			"reason": "signature-breaking",
+			"rewrite": {
+				"v2": "downloadArticleImageById",
+				"lift": [
+					"id"
+				],
+				"v1Example": "getArticleImage({id, articleImageId, preview, scaleWidth, scaleHeight})",
+				"v2Example": "downloadArticleImageById(id, {articleImageId, preview, scaleWidth, scaleHeight})",
+				"note": "v1 defaulted preview to false; v2 has no default, so pass it explicitly if the caller relied on it"
+			},
+			"rewriteMechanical": true
+		},
+		{
+			"v1": "getContactById",
+			"module": "contact",
+			"request": "GET contact/id/{id}",
+			"v1Signature": "id",
+			"reason": "resource-removed",
+			"replacementResource": "party",
+			"requiresReview": true,
+			"suggestedV2": "getPartyById",
+			"suggestedV2Signature": "id",
+			"suggestionCallCompatible": true,
+			"note": "/contact folded into /party; same URL shape, but verify id and role semantics per call site"
+		},
+		{
+			"v1": "getContactCount",
+			"module": "contact",
+			"request": "GET contact/count",
+			"v1Signature": "none",
+			"reason": "resource-removed",
+			"replacementResource": "party",
+			"requiresReview": true,
+			"suggestedV2": "countParty",
+			"suggestedV2Signature": "query",
+			"suggestionCallCompatible": true,
+			"note": "/contact folded into /party; same URL shape, but verify id and role semantics per call site"
+		},
+		{
+			"v1": "getContactImageById",
+			"module": "contact",
+			"request": "GET contact/id/{id}/downloadImage",
+			"v1Signature": "query",
+			"reason": "resource-removed",
+			"replacementResource": "party",
+			"requiresReview": true,
+			"suggestedV2": "downloadImagePartyById",
+			"suggestedV2Signature": "id+query",
+			"suggestionCallCompatible": false,
+			"note": "/contact folded into /party; same URL shape, but verify id and role semantics per call site",
+			"rewrite": {
+				"v2": "downloadImagePartyById",
+				"lift": [
+					"id"
+				],
+				"v1Example": "getContactImageById({id, scaleWidth, scaleHeight})",
+				"v2Example": "downloadImagePartyById(id, {scaleWidth, scaleHeight})"
+			},
+			"rewriteMechanical": false
+		},
+		{
+			"v1": "getContacts",
+			"module": "contact",
+			"request": "GET contact",
+			"v1Signature": "query",
+			"reason": "resource-removed",
+			"replacementResource": "party",
+			"requiresReview": true,
+			"suggestedV2": "queryParty",
+			"suggestedV2Signature": "query",
+			"suggestionCallCompatible": true,
+			"note": "/contact folded into /party; same URL shape, but verify id and role semantics per call site"
+		},
+		{
+			"v1": "getContractImageById",
+			"module": "contract",
+			"request": "GET contract/id/{id}/downloadImage",
+			"v1Signature": "query",
+			"reason": "undocumented-in-v1",
+			"documentedAlternative": null,
+			"note": "absent from the v1 spec too and no documented successor -- check whether anything still calls it before porting"
+		},
+		{
+			"v1": "getCustomAttributeDefinitionByIds",
+			"module": "customAttributeDefinition",
+			"request": "GET customAttributeDefinition",
+			"v1Signature": "scalar:ids",
+			"hardcodedQuery": "id-in=[{param}]",
+			"note": "v1 baked this filter into the URL -- v2 needs it passed as a query argument",
+			"v2": "queryCustomAttributeDefinition",
+			"v2Signature": "query",
+			"callCompatible": false,
+			"reason": "hardcoded-filter",
+			"rewrite": {
+				"v2": "queryCustomAttributeDefinition",
+				"lift": [],
+				"v1Example": "getCustomAttributeDefinitionByIds(ids)",
+				"v2Example": "queryCustomAttributeDefinition({'id-in': `[${ids}]`})",
+				"note": "v1 had the filter in the URL; v2 needs it passed explicitly"
+			},
+			"rewriteMechanical": true
+		},
+		{
+			"v1": "getCustomerById",
+			"module": "customer",
+			"request": "GET customer/id/{id}",
+			"v1Signature": "id",
+			"reason": "resource-removed",
+			"replacementResource": "party",
+			"requiresReview": true,
+			"suggestedV2": "getPartyById",
+			"suggestedV2Signature": "id",
+			"suggestionCallCompatible": true,
+			"note": "/customer folded into /party; same URL shape, but verify id and role semantics per call site"
+		},
+		{
+			"v1": "getCustomerCount",
+			"module": "customer",
+			"request": "GET customer/count",
+			"v1Signature": "query",
+			"reason": "resource-removed",
+			"replacementResource": "party",
+			"requiresReview": true,
+			"suggestedV2": "countParty",
+			"suggestedV2Signature": "query",
+			"suggestionCallCompatible": true,
+			"note": "/customer folded into /party; same URL shape, but verify id and role semantics per call site"
+		},
+		{
+			"v1": "getCustomerImageById",
+			"module": "customer",
+			"request": "GET customer/id/{id}/downloadImage",
+			"v1Signature": "query",
+			"reason": "resource-removed",
+			"replacementResource": "party",
+			"requiresReview": true,
+			"suggestedV2": "downloadImagePartyById",
+			"suggestedV2Signature": "id+query",
+			"suggestionCallCompatible": false,
+			"note": "/customer folded into /party; same URL shape, but verify id and role semantics per call site",
+			"rewrite": {
+				"v2": "downloadImagePartyById",
+				"lift": [
+					"id"
+				],
+				"v1Example": "getCustomerImageById({id, scaleWidth, scaleHeight})",
+				"v2Example": "downloadImagePartyById(id, {scaleWidth, scaleHeight})"
+			},
+			"rewriteMechanical": false
+		},
+		{
+			"v1": "getCustomers",
+			"module": "customer",
+			"request": "GET customer",
+			"v1Signature": "query",
+			"reason": "resource-removed",
+			"replacementResource": "party",
+			"requiresReview": true,
+			"suggestedV2": "queryParty",
+			"suggestedV2Signature": "query",
+			"suggestionCallCompatible": true,
+			"note": "/customer folded into /party; same URL shape, but verify id and role semantics per call site"
+		},
+		{
+			"v1": "getLeadById",
+			"module": "lead",
+			"request": "GET lead/id/{id}",
+			"v1Signature": "id",
+			"reason": "resource-removed",
+			"replacementResource": "party",
+			"requiresReview": true,
+			"suggestedV2": "getPartyById",
+			"suggestedV2Signature": "id",
+			"suggestionCallCompatible": true,
+			"note": "/lead folded into /party; same URL shape, but verify id and role semantics per call site"
+		},
+		{
+			"v1": "getLeadCount",
+			"module": "lead",
+			"request": "GET lead/count",
+			"v1Signature": "none",
+			"reason": "resource-removed",
+			"replacementResource": "party",
+			"requiresReview": true,
+			"suggestedV2": "countParty",
+			"suggestedV2Signature": "query",
+			"suggestionCallCompatible": true,
+			"note": "/lead folded into /party; same URL shape, but verify id and role semantics per call site"
+		},
+		{
+			"v1": "getLeadImage",
+			"module": "lead",
+			"request": "GET lead/id/{id}/downloadImage",
+			"v1Signature": "query",
+			"reason": "resource-removed",
+			"replacementResource": "party",
+			"requiresReview": true,
+			"suggestedV2": "downloadImagePartyById",
+			"suggestedV2Signature": "id+query",
+			"suggestionCallCompatible": false,
+			"note": "/lead folded into /party; same URL shape, but verify id and role semantics per call site",
+			"rewrite": {
+				"v2": "downloadImagePartyById",
+				"lift": [
+					"id"
+				],
+				"v1Example": "getLeadImage({id, scaleWidth, scaleHeight})",
+				"v2Example": "downloadImagePartyById(id, {scaleWidth, scaleHeight})"
+			},
+			"rewriteMechanical": false
+		},
+		{
+			"v1": "getLeads",
+			"module": "lead",
+			"request": "GET lead",
+			"v1Signature": "query",
+			"reason": "resource-removed",
+			"replacementResource": "party",
+			"requiresReview": true,
+			"suggestedV2": "queryParty",
+			"suggestedV2Signature": "query",
+			"suggestionCallCompatible": true,
+			"note": "/lead folded into /party; same URL shape, but verify id and role semantics per call site"
+		},
+		{
+			"v1": "getMetaQueryFilterProperties",
+			"module": "meta",
+			"request": "GET meta/queryFilterProperties",
+			"v1Signature": "scalar:resource",
+			"v2": "queryFilterPropertiesMeta",
+			"v2Signature": "query",
+			"callCompatible": false,
+			"note": "leading parameters differ -- call sites must be rewritten, not just renamed",
+			"reason": "signature-breaking",
+			"rewrite": {
+				"v2": "queryFilterPropertiesMeta",
+				"lift": [],
+				"v1Example": "getMetaQueryFilterProperties(resource)",
+				"v2Example": "queryFilterPropertiesMeta({resource})",
+				"note": "scalar argument becomes a query property"
+			},
+			"rewriteMechanical": true
+		},
+		{
+			"v1": "getMetaQuerySortProperties",
+			"module": "meta",
+			"request": "GET meta/querySortProperties",
+			"v1Signature": "scalar:resource",
+			"v2": "querySortPropertiesMeta",
+			"v2Signature": "query",
+			"callCompatible": false,
+			"note": "leading parameters differ -- call sites must be rewritten, not just renamed",
+			"reason": "signature-breaking",
+			"rewrite": {
+				"v2": "querySortPropertiesMeta",
+				"lift": [],
+				"v1Example": "getMetaQuerySortProperties(resource)",
+				"v2Example": "querySortPropertiesMeta({resource})",
+				"note": "scalar argument becomes a query property"
+			},
+			"rewriteMechanical": true
+		},
+		{
+			"v1": "getProductionOrderPicksById",
+			"module": "productionOrder",
+			"request": "GET productionOrder/id/{id}/picks",
+			"v1Signature": "id",
+			"reason": "undocumented-in-v1",
+			"documentedAlternative": null,
+			"note": "absent from the v1 spec too and no documented successor -- check whether anything still calls it before porting"
+		},
+		{
+			"v1": "getProductionOrderWidthdrawalsById",
+			"module": "productionOrder",
+			"request": "GET productionOrder/id/{id}/withdrawals",
+			"v1Signature": "id",
+			"reason": "undocumented-in-v1",
+			"documentedAlternative": null,
+			"note": "absent from the v1 spec too and no documented successor -- check whether anything still calls it before porting"
+		},
+		{
+			"v1": "getSupplierById",
+			"module": "supplier",
+			"request": "GET supplier/id/{id}",
+			"v1Signature": "id",
+			"reason": "resource-removed",
+			"replacementResource": "party",
+			"requiresReview": true,
+			"suggestedV2": "getPartyById",
+			"suggestedV2Signature": "id",
+			"suggestionCallCompatible": true,
+			"note": "/supplier folded into /party; same URL shape, but verify id and role semantics per call site"
+		},
+		{
+			"v1": "getSupplierImage",
+			"module": "supplier",
+			"request": "GET supplier/id/{id}/downloadImage",
+			"v1Signature": "query",
+			"reason": "resource-removed",
+			"replacementResource": "party",
+			"requiresReview": true,
+			"suggestedV2": "downloadImagePartyById",
+			"suggestedV2Signature": "id+query",
+			"suggestionCallCompatible": false,
+			"note": "/supplier folded into /party; same URL shape, but verify id and role semantics per call site",
+			"rewrite": {
+				"v2": "downloadImagePartyById",
+				"lift": [
+					"id"
+				],
+				"v1Example": "getSupplierImage({id, scaleWidth, scaleHeight})",
+				"v2Example": "downloadImagePartyById(id, {scaleWidth, scaleHeight})"
+			},
+			"rewriteMechanical": false
+		},
+		{
+			"v1": "getSuppliers",
+			"module": "supplier",
+			"request": "GET supplier",
+			"v1Signature": "query",
+			"reason": "resource-removed",
+			"replacementResource": "party",
+			"requiresReview": true,
+			"suggestedV2": "queryParty",
+			"suggestedV2Signature": "query",
+			"suggestionCallCompatible": true,
+			"note": "/supplier folded into /party; same URL shape, but verify id and role semantics per call site"
+		},
+		{
+			"v1": "getSuppliersCount",
+			"module": "supplier",
+			"request": "GET supplier/count",
+			"v1Signature": "none",
+			"reason": "resource-removed",
+			"replacementResource": "party",
+			"requiresReview": true,
+			"suggestedV2": "countParty",
+			"suggestedV2Signature": "query",
+			"suggestionCallCompatible": true,
+			"note": "/supplier folded into /party; same URL shape, but verify id and role semantics per call site"
+		},
+		{
+			"v1": "getTicketExtraInfoForAppById",
+			"module": "ticket",
+			"request": "GET ticket/id/{id}/extraInfoForApp",
+			"v1Signature": "query",
+			"reason": "undocumented-in-v1",
+			"documentedAlternative": null,
+			"note": "absent from the v1 spec too and no documented successor -- check whether anything still calls it before porting"
+		},
+		{
+			"v1": "getWarehouseLevelById",
+			"module": "warehouseLevel",
+			"request": "GET warehouseLevel/id/{id}",
+			"v1Signature": "id",
+			"reason": "undocumented-in-v1",
+			"documentedAlternative": {
+				"resource": "storageLocation",
+				"confidence": "high",
+				"note": "see getWarehouseLevels"
+			},
+			"note": "absent from the v1 spec too, but a documented endpoint covers it -- see documentedAlternative"
+		},
+		{
+			"v1": "getWarehouseLevelCount",
+			"module": "warehouseLevel",
+			"request": "GET warehouseLevel/count",
+			"v1Signature": "none",
+			"reason": "undocumented-in-v1",
+			"documentedAlternative": {
+				"resource": "storageLocation",
+				"confidence": "high",
+				"note": "see getWarehouseLevels"
+			},
+			"note": "absent from the v1 spec too, but a documented endpoint covers it -- see documentedAlternative"
+		},
+		{
+			"v1": "getWarehouseLevels",
+			"module": "warehouseLevel",
+			"request": "GET warehouseLevel",
+			"v1Signature": "query",
+			"reason": "undocumented-in-v1",
+			"documentedAlternative": {
+				"resource": "storageLocation",
+				"confidence": "high",
+				"note": "documented in both v1 and v2 with the same schema, including warehouseId; filter changes from deleted-eq to active-eq"
+			},
+			"note": "absent from the v1 spec too, but a documented endpoint covers it -- see documentedAlternative"
+		},
+		{
+			"v1": "updateArticleById",
+			"module": "article",
+			"request": "PUT article/id/{id}",
+			"v1Signature": "query",
+			"v2": "updateArticleById",
+			"v2Signature": "id+body+query",
+			"callCompatible": false,
+			"note": "leading parameters differ -- call sites must be rewritten, not just renamed",
+			"reason": "signature-breaking",
+			"rewrite": {
+				"v2": "updateArticleById",
+				"lift": [
+					"id",
+					"body"
+				],
+				"v1Example": "updateArticleById({id, body, ...rest})",
+				"v2Example": "updateArticleById(id, {...body, ...rest})",
+				"note": "same method name, incompatible call -- v1 merged the leftover keys into the body, so a codemod must match on the argument shape, not the name"
+			},
+			"rewriteMechanical": true
+		},
+		{
+			"v1": "updateContactForId",
+			"module": "contact",
+			"request": "PUT contact/id/{id}",
+			"v1Signature": "id+body",
+			"reason": "resource-removed",
+			"replacementResource": "party",
+			"requiresReview": true,
+			"suggestedV2": "updatePartyById",
+			"suggestedV2Signature": "id+body+query",
+			"suggestionCallCompatible": true,
+			"note": "/contact folded into /party; same URL shape, but verify id and role semantics per call site"
+		},
+		{
+			"v1": "updateCustomerForId",
+			"module": "customer",
+			"request": "PUT customer/id/{id}",
+			"v1Signature": "id+body",
+			"reason": "resource-removed",
+			"replacementResource": "party",
+			"requiresReview": true,
+			"suggestedV2": "updatePartyById",
+			"suggestedV2Signature": "id+body+query",
+			"suggestionCallCompatible": true,
+			"note": "/customer folded into /party; same URL shape, but verify id and role semantics per call site"
+		},
+		{
+			"v1": "updateLeadForId",
+			"module": "lead",
+			"request": "PUT lead/id/{id}",
+			"v1Signature": "id+body",
+			"reason": "resource-removed",
+			"replacementResource": "party",
+			"requiresReview": true,
+			"suggestedV2": "updatePartyById",
+			"suggestedV2Signature": "id+body+query",
+			"suggestionCallCompatible": true,
+			"note": "/lead folded into /party; same URL shape, but verify id and role semantics per call site"
+		},
+		{
+			"v1": "updateProductionOrderPicksById",
+			"module": "productionOrder",
+			"request": "POST productionOrder/id/{id}/updatePicks",
+			"v1Signature": "id+body",
+			"reason": "undocumented-in-v1",
+			"documentedAlternative": null,
+			"note": "absent from the v1 spec too and no documented successor -- check whether anything still calls it before porting"
+		},
+		{
+			"v1": "updateProductionOrderWidthdrawalsById",
+			"module": "productionOrder",
+			"request": "POST productionOrder/id/{id}/updateWithdrawals",
+			"v1Signature": "id+body",
+			"reason": "undocumented-in-v1",
+			"documentedAlternative": null,
+			"note": "absent from the v1 spec too and no documented successor -- check whether anything still calls it before porting"
+		},
+		{
+			"v1": "updateSupplierForId",
+			"module": "supplier",
+			"request": "PUT supplier/id/{id}",
+			"v1Signature": "id+body",
+			"reason": "resource-removed",
+			"replacementResource": "party",
+			"requiresReview": true,
+			"suggestedV2": "updatePartyById",
+			"suggestedV2Signature": "id+body+query",
+			"suggestionCallCompatible": true,
+			"note": "/supplier folded into /party; same URL shape, but verify id and role semantics per call site"
+		},
+		{
+			"v1": "uploadArticleImage",
+			"module": "article",
+			"request": "POST article/id/{id}/uploadArticleImage",
+			"v1Signature": "query+body",
+			"v2": "uploadArticleImageById",
+			"v2Signature": "id+body+query",
+			"callCompatible": false,
+			"note": "leading parameters differ -- call sites must be rewritten, not just renamed",
+			"reason": "signature-breaking",
+			"rewrite": {
+				"v2": "uploadArticleImageById",
+				"lift": [
+					"id"
+				],
+				"v1Example": "uploadArticleImage({id, name, mainImage}, body)",
+				"v2Example": "uploadArticleImageById(id, body, {name, mainImage})"
+			},
+			"rewriteMechanical": true
+		}
+	]
+}

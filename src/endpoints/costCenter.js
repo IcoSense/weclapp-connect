@@ -1,4 +1,4 @@
-const {buildUrl} = require('@icosense/connect/src/utils')
+const {buildUrl} = require('../utils')
 
 module.exports = {
 

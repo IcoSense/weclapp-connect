@@ -1,0 +1,46 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [master]
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    # Mirrors prepublishOnly (lint && test). The suite is offline: the smoke tests in
+    # test/test.js skip themselves without WECLAPP_TENANT / WECLAPP_APIKEY, so no secrets
+    # and no network are involved here.
+    name: test (node ${{ matrix.node }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        node: ['20', '22']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+          cache: npm
+      - run: npm ci
+      - run: npm run lint
+      - run: npm test
+
+  probe-node-18:
+    # Informational only, never blocks: package.json declares engines >= 20, but nothing in
+    # the published src/ actually needs it (ES2018 CommonJS, and axios declares no engines).
+    # This job answers empirically whether that gate is a technical requirement or policy.
+    name: probe (node 18, informational)
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: npm
+      - run: npm ci
+      - run: npm test

@@ -1,0 +1,72 @@
+# Publishes to npm when a GitHub Release is published.
+#
+# Authentication is npm trusted publishing (OIDC) -- there is deliberately no NPM_TOKEN
+# secret in this repo. For this to work, the package on npmjs.com must list this repository
+# and THIS FILENAME (publish.yml) as a trusted publisher. Renaming this file breaks the
+# trust relationship and the publish will fail until npmjs.com is updated to match.
+name: Publish
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: read
+  id-token: write # required for OIDC; without it npm cannot authenticate
+
+jobs:
+  publish:
+    name: publish to npm
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-node@v6
+        with:
+          # Trusted publishing needs Node >= 22.14.0 and npm >= 11.5.1. Node 24 ships an
+          # npm 11, so nothing has to be upgraded by hand here.
+          node-version: '24'
+          registry-url: 'https://registry.npmjs.org'
+          package-manager-cache: false # no caching in a release build
+
+      - name: Check package.json against the release tag
+        id: version
+        env:
+          TAG: ${{ github.event.release.tag_name }}
+        run: |
+          pkg=$(node -p "require('./package.json').version")
+          want="${TAG#v}"
+          if [ "$pkg" != "$want" ]; then
+            echo "::error::Release tag is '$TAG' but package.json says '$pkg'. Nothing was published."
+            exit 1
+          fi
+          echo "version=$pkg" >> "$GITHUB_OUTPUT"
+
+      - name: Derive the dist-tag from the version
+        id: disttag
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
+          IS_PRERELEASE: ${{ github.event.release.prerelease }}
+        run: |
+          # A prerelease must never move 'latest' -- 19 projects resolve against it.
+          case "$VERSION" in
+            *-*) tag=next ;;
+            *)   tag=latest ;;
+          esac
+          if [ "$tag" = "next" ] && [ "$IS_PRERELEASE" != "true" ]; then
+            echo "::warning::$VERSION looks like a prerelease but the GitHub Release is not marked as one."
+          fi
+          if [ "$tag" = "latest" ] && [ "$IS_PRERELEASE" = "true" ]; then
+            echo "::warning::The GitHub Release is marked as a prerelease but $VERSION is not one. Publishing as 'latest'."
+          fi
+          echo "tag=$tag" >> "$GITHUB_OUTPUT"
+          echo "Publishing $VERSION under dist-tag '$tag'" >> "$GITHUB_STEP_SUMMARY"
+
+      - run: npm ci
+
+      # npm publish runs prepublishOnly (lint && test) before it uploads anything, so the
+      # same gate CI enforces also guards the release.
+      #
+      # No token and no --provenance flag on purpose: trusted publishing authenticates over
+      # OIDC and attaches a provenance attestation by itself.
+      - run: npm publish --access public --tag ${{ steps.disttag.outputs.tag }}

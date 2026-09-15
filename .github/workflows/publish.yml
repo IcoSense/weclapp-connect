@@ -102,6 +102,35 @@ jobs:
           fi
           echo "tag=$tag" >> "$GITHUB_OUTPUT"
 
+      # Temporary: says whether the OIDC handshake is even possible from here. Prints only
+      # whether the variables are set, never their values, and omits any line of an .npmrc
+      # that could carry a credential. Remove once the release pipeline is known good.
+      - name: Diagnose OIDC availability
+        run: |
+          echo "npm             : $(npm --version)"
+          echo "registry        : $(npm config get registry)"
+          if [ -n "${ACTIONS_ID_TOKEN_REQUEST_URL:-}" ]; then
+            echo "OIDC request url: present"
+          else
+            echo "OIDC request url: MISSING -- id-token: write did not reach this job"
+          fi
+          if [ -n "${ACTIONS_ID_TOKEN_REQUEST_TOKEN:-}" ]; then
+            echo "OIDC request tok: present"
+          else
+            echo "OIDC request tok: MISSING -- id-token: write did not reach this job"
+          fi
+          echo "NPM_CONFIG_USERCONFIG: ${NPM_CONFIG_USERCONFIG:-<unset>}"
+          for f in "${NPM_CONFIG_USERCONFIG:-}" "$HOME/.npmrc" "$GITHUB_WORKSPACE/.npmrc"; do
+            if [ -n "$f" ] && [ -f "$f" ]; then
+              echo "--- $f (credential lines omitted) ---"
+              grep -vE "_authToken|_password|_auth" "$f" || true
+              if grep -qE "_authToken|_password|_auth" "$f"; then
+                echo "<this file DOES contain a credential line -- that is what suppresses OIDC>"
+              fi
+            fi
+          done
+          echo "--- end of diagnosis ---"
+
       - run: npm ci
 
       # No separate lint/test steps: the first real run showed `npm stage publish` does fire

@@ -1,0 +1,112 @@
+# Stages a release on npm when a GitHub Release is published. Nothing becomes public here:
+# the workflow uploads to npm's staging area, and a maintainer then promotes it with
+#
+#   npm stage list                 # find the stage id
+#   npm stage view <stage-id>      # inspect it
+#   npm stage download <stage-id>  # or pull the tarball and look inside
+#   npm stage approve <stage-id>   # 2FA prompt, and only now is it live
+#
+# Authentication is npm trusted publishing (OIDC) -- there is deliberately no NPM_TOKEN
+# secret in this repo. For this to work, the package on npmjs.com must list this repository
+# and THIS FILENAME (publish.yml) as a trusted publisher, with stage-publish allowed and
+# direct publish NOT allowed. Renaming this file breaks the trust relationship and staging
+# will fail until npmjs.com is updated to match.
+name: Publish
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: read
+  id-token: write # required for OIDC; without it npm cannot authenticate
+
+jobs:
+  stage:
+    name: stage release on npm
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-node@v6
+        with:
+          # Trusted publishing needs Node >= 22.14.0 and npm >= 11.5.1.
+          node-version: '24'
+          registry-url: 'https://registry.npmjs.org'
+          package-manager-cache: false # no caching in a release build
+
+      # The npm bundled with Node 24 covers trusted publishing but NOT staging: the
+      # `npm stage` command only landed in npm 11.15.0. Verified rather than assumed --
+      # npm 11.13.0 answers Unknown command: "stage".
+      - name: Install an npm that has npm stage
+        run: |
+          npm install -g npm@latest
+          have=$(npm --version)
+          need=11.15.0
+          lowest=$( { echo "$need"; echo "$have"; } | sort -V | head -n1 )
+          if [ "$lowest" != "$need" ]; then
+            echo "::error::npm $have has no npm stage command; staged publishing needs >= $need."
+            exit 1
+          fi
+          echo "npm $have"
+
+      - name: Check package.json against the release tag
+        id: version
+        env:
+          TAG: ${{ github.event.release.tag_name }}
+        run: |
+          pkg=$(node -p "require('./package.json').version")
+          want="${TAG#v}"
+          if [ "$pkg" != "$want" ]; then
+            echo "::error::Release tag is '$TAG' but package.json says '$pkg'. Nothing was staged."
+            exit 1
+          fi
+          echo "version=$pkg" >> "$GITHUB_OUTPUT"
+
+      - name: Derive the dist-tag from the version
+        id: disttag
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
+          IS_PRERELEASE: ${{ github.event.release.prerelease }}
+        run: |
+          # A prerelease must never move 'latest' -- 19 projects resolve against it.
+          case "$VERSION" in
+            *-*) tag=next ;;
+            *)   tag=latest ;;
+          esac
+          if [ "$tag" = "next" ] && [ "$IS_PRERELEASE" != "true" ]; then
+            echo "::warning::$VERSION looks like a prerelease but the GitHub Release is not marked as one."
+          fi
+          if [ "$tag" = "latest" ] && [ "$IS_PRERELEASE" = "true" ]; then
+            echo "::warning::The GitHub Release is marked as a prerelease but $VERSION is not one. Staging for 'latest'."
+          fi
+          echo "tag=$tag" >> "$GITHUB_OUTPUT"
+
+      - run: npm ci
+
+      # Run the gate explicitly instead of relying on the prepublishOnly lifecycle hook:
+      # npm documents that hook for `npm publish`, and does not say whether it fires for
+      # `npm stage publish`. A gate you can see in the job log beats one you assume ran.
+      - run: npm run lint
+      - run: npm test
+
+      - name: Stage the release
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
+          DIST_TAG: ${{ steps.disttag.outputs.tag }}
+        run: |
+          npm stage publish --access public --tag "$DIST_TAG"
+          {
+            echo "### Staged, not published"
+            echo
+            echo "@icosense/connect@$VERSION is staged for dist-tag '$DIST_TAG'."
+            echo "It is **not installable yet**. To promote it:"
+            echo
+            echo '```bash'
+            echo "npm stage list                 # find the stage id"
+            echo "npm stage view <stage-id>      # inspect what would go live"
+            echo "npm stage approve <stage-id>   # prompts for 2FA, then it is public"
+            echo '```'
+            echo
+            echo "Or drop it with 'npm stage reject <stage-id>' and nothing was ever public."
+          } >> "$GITHUB_STEP_SUMMARY"

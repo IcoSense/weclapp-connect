@@ -1,21 +1,28 @@
-# Stages a release on npm when a GitHub Release is published. Nothing becomes public here:
-# the workflow uploads to npm's staging area, and a maintainer then promotes it with
+# Stages a release on npm. Nothing becomes public here: the workflow uploads to npm's
+# staging area, and a maintainer then promotes it with
 #
-#   npm stage list                 # find the stage id
-#   npm stage view <stage-id>      # inspect it
-#   npm stage download <stage-id>  # or pull the tarball and look inside
-#   npm stage approve <stage-id>   # 2FA prompt, and only now is it live
+#   npm stage list / view / download <stage-id>   # inspect
+#   npm stage approve <stage-id>                  # 2FA prompt, and only now is it live
+#
+# or from the Staged Packages tab on npmjs.com.
 #
 # Authentication is npm trusted publishing (OIDC) -- there is deliberately no NPM_TOKEN
-# secret in this repo. For this to work, the package on npmjs.com must list this repository
-# and THIS FILENAME (publish.yml) as a trusted publisher, with stage-publish allowed and
-# direct publish NOT allowed. Renaming this file breaks the trust relationship and staging
-# will fail until npmjs.com is updated to match.
+# secret in this repo. The package on npmjs.com must list this repository and THIS FILENAME
+# (publish.yml) as a trusted publisher, with stage-publish allowed and direct publish NOT
+# allowed. Renaming this file breaks the trust relationship.
 name: Publish
 
 on:
   release:
     types: [published]
+  # Lets a failed release be retried without deleting and recreating the GitHub Release.
+  # A re-run of a failed run replays the workflow file as it was at the time, so a fix on
+  # master would not be picked up; this trigger runs the current file against an existing tag.
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Existing release tag to stage, e.g. 2.0.0'
+        required: true
 
 permissions:
   contents: read
@@ -25,14 +32,26 @@ jobs:
   stage:
     name: stage release on npm
     runs-on: ubuntu-latest
+    env:
+      TAG: ${{ github.event.release.tag_name || inputs.tag }}
     steps:
       - uses: actions/checkout@v6
+        with:
+          # Stage exactly what the tag points at, whichever trigger fired.
+          ref: ${{ github.event.release.tag_name || inputs.tag }}
 
+      # No registry-url here, on purpose. It makes setup-node write an .npmrc containing
+      # //registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN} and set NODE_AUTH_TOKEN to the
+      # placeholder XXXXX-XXXXX-XXXXX-XXXXX. npm then finds a credential, never attempts the
+      # OIDC token exchange, and sends the placeholder as a bearer token -- which is exactly
+      # how this workflow failed the first time it ran, with
+      #   npm error code E401 / Unable to authenticate, your authentication token seems to be invalid
+      # npm's own documented example has this bug; see npm/documentation#1960 and
+      # actions/setup-node#1551. registry.npmjs.org is the default registry anyway.
       - uses: actions/setup-node@v6
         with:
           # Trusted publishing needs Node >= 22.14.0 and npm >= 11.5.1.
           node-version: '24'
-          registry-url: 'https://registry.npmjs.org'
           package-manager-cache: false # no caching in a release build
 
       # The npm bundled with Node 24 covers trusted publishing but NOT staging: the
@@ -52,13 +71,11 @@ jobs:
 
       - name: Check package.json against the release tag
         id: version
-        env:
-          TAG: ${{ github.event.release.tag_name }}
         run: |
           pkg=$(node -p "require('./package.json').version")
           want="${TAG#v}"
           if [ "$pkg" != "$want" ]; then
-            echo "::error::Release tag is '$TAG' but package.json says '$pkg'. Nothing was staged."
+            echo "::error::Tag is '$TAG' but package.json at that tag says '$pkg'. Nothing was staged."
             exit 1
           fi
           echo "version=$pkg" >> "$GITHUB_OUTPUT"
@@ -68,28 +85,29 @@ jobs:
         env:
           VERSION: ${{ steps.version.outputs.version }}
           IS_PRERELEASE: ${{ github.event.release.prerelease }}
+          EVENT: ${{ github.event_name }}
         run: |
           # A prerelease must never move 'latest' -- 19 projects resolve against it.
           case "$VERSION" in
             *-*) tag=next ;;
             *)   tag=latest ;;
           esac
-          if [ "$tag" = "next" ] && [ "$IS_PRERELEASE" != "true" ]; then
-            echo "::warning::$VERSION looks like a prerelease but the GitHub Release is not marked as one."
-          fi
-          if [ "$tag" = "latest" ] && [ "$IS_PRERELEASE" = "true" ]; then
-            echo "::warning::The GitHub Release is marked as a prerelease but $VERSION is not one. Staging for 'latest'."
+          if [ "$EVENT" = "release" ]; then
+            if [ "$tag" = "next" ] && [ "$IS_PRERELEASE" != "true" ]; then
+              echo "::warning::$VERSION looks like a prerelease but the GitHub Release is not marked as one."
+            fi
+            if [ "$tag" = "latest" ] && [ "$IS_PRERELEASE" = "true" ]; then
+              echo "::warning::The GitHub Release is marked as a prerelease but $VERSION is not one. Staging for 'latest'."
+            fi
           fi
           echo "tag=$tag" >> "$GITHUB_OUTPUT"
 
       - run: npm ci
 
-      # Run the gate explicitly instead of relying on the prepublishOnly lifecycle hook:
-      # npm documents that hook for `npm publish`, and does not say whether it fires for
-      # `npm stage publish`. A gate you can see in the job log beats one you assume ran.
-      - run: npm run lint
-      - run: npm test
-
+      # No separate lint/test steps: the first real run showed `npm stage publish` does fire
+      # the prepublishOnly hook (npm notice run @icosense/connect@2.0.0 prepublishOnly), so
+      # `npm run lint && npm test` runs as part of the step below. Duplicating it here only
+      # ran the suite twice.
       - name: Stage the release
         env:
           VERSION: ${{ steps.version.outputs.version }}
@@ -100,7 +118,8 @@ jobs:
             echo "### Staged, not published"
             echo
             echo "@icosense/connect@$VERSION is staged for dist-tag '$DIST_TAG'."
-            echo "It is **not installable yet**. To promote it:"
+            echo "It is **not installable yet**. To promote it, either use the"
+            echo "Staged Packages tab on npmjs.com, or:"
             echo
             echo '```bash'
             echo "npm stage list                 # find the stage id"
